@@ -1,5 +1,6 @@
 import { Typography, Grid } from "@mui/material";
 import ContactForm from "../components/ContactForm";
+import FindUs from "../components/FindUs";
 
 const Contact = () => {
   return (
@@ -20,7 +21,9 @@ const Contact = () => {
         </Grid>
 
         {/* placeholder for FindUs */}
-        <Grid size={{ xs: 12, md: 6 }} />
+        <Grid size={{ xs: 12, md: 6 }}>
+          <FindUs />
+        </Grid>
       </Grid>
     </div>
   );
