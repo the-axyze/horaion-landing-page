@@ -8,50 +8,90 @@ import {
 } from "@mui/material";
 import { useState } from "react";
 
-const fields = [
-  { name: "name", label: "Full Name" },
-  { name: "phone", label: "Phone Number" },
-  { name: "message", label: "Message" },
-] as const;
+type Field = {
+  name: "name" | "email" | "phone" | "message";
+  label: string;
+  required: boolean;
+  multiline?: boolean;
+  rows?: number;
+  validate?: (value: string) => string | null;
+};
+
+const fields: Field[] = [
+  {
+    name: "name",
+    label: "Full Name",
+    required: true,
+  },
+  {
+    name: "email",
+    label: "Email",
+    required: true,
+    validate: (value) =>
+      /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value) ? null : "Enter a valid email",
+  },
+  {
+    name: "phone",
+    label: "Phone Number (Optional)",
+    required: false,
+  },
+  {
+    name: "message",
+    label: "Message",
+    required: true,
+    multiline: true,
+    rows: 4,
+    validate: (value) => (value.length > 200 ? "Max 200 characters" : null),
+  },
+];
 
 const ContactForm = () => {
-  const [form, setForm] = useState({ name: "", phone: "", message: "" });
-  const [errors, setErrors] = useState({
-    name: false,
-    phone: false,
-    message: false,
-  });
+  const [form, setForm] = useState<Record<string, string>>({});
+  const [errors, setErrors] = useState<Record<string, string | null>>({});
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
     const { name, value } = e.target;
     setForm((prev) => ({ ...prev, [name]: value }));
-    if (value !== "") setErrors((prev) => ({ ...prev, [name]: false }));
+  };
+
+  const validateField = (field: Field, value: string) => {
+    if (field.required && !value) return "This field is required";
+    if (field.validate) return field.validate(value);
+    return null;
   };
 
   const handleBlur = (
     e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
     const { name, value } = e.target;
-    if (value === "") setErrors((prev) => ({ ...prev, [name]: true }));
+    const field = fields.find((f) => f.name === name)!;
+
+    const error = validateField(field, value);
+
+    setErrors((prev) => ({ ...prev, [name]: error }));
   };
 
   const handleSubmit = () => {
-    const newErrors = {
-      name: form.name === "",
-      phone: form.phone === "",
-      message: form.message === "",
-    };
+    const newErrors: Record<string, string | null> = {};
+
+    fields.forEach((field) => {
+      const value = form[field.name] || "";
+      newErrors[field.name] = validateField(field, value);
+    });
+
     setErrors(newErrors);
 
-    if (!Object.values(newErrors).includes(true)) {
+    const hasError = Object.values(newErrors).some((e) => e !== null);
+
+    if (!hasError) {
       alert("Message sent!");
     }
   };
 
   return (
-    <Card sx={{ borderRadius: 4, boxShadow: 5 }}>
+    <Card sx={{ borderRadius: 4, boxShadow: 5, height: "100%" }}>
       <CardContent>
         <Box sx={{ display: "flex", flexDirection: "column", gap: 3, p: 2 }}>
           <Typography variant="h5" fontWeight={600}>
@@ -59,38 +99,44 @@ const ContactForm = () => {
             as possible!
           </Typography>
 
-          {fields.map(({ name, label }) => (
-            <Box key={name}>
+          {fields.map((field) => (
+            <Box key={field.name}>
               <Typography variant="body2" fontWeight={500} sx={{ mb: 0.5 }}>
-                {label}{" "}
-                <Box component="span" sx={{ color: "error.main" }}>
-                  *
-                </Box>
+                {field.label}{" "}
+                {field.required && (
+                  <Box component="span" sx={{ color: "error.main" }}>
+                    *
+                  </Box>
+                )}
               </Typography>
+
               <TextField
-                name={name}
-                placeholder={label}
-                required
+                name={field.name}
+                placeholder={field.label}
                 fullWidth
-                multiline={name === "message"}
-                rows={name === "message" ? 4 : 1}
-                value={form[name]}
+                required={field.required}
+                multiline={field.multiline}
+                rows={field.rows}
+                value={form[field.name] || ""}
                 onChange={handleChange}
                 onBlur={handleBlur}
-                error={errors[name]}
+                error={!!errors[field.name]}
                 helperText={
-                  errors[name]
-                    ? "This field is required"
-                    : name === "message"
-                      ? `${form.message.length}/200`
-                      : ""
+                  errors[field.name] ||
+                  (field.name === "message"
+                    ? `${form.message?.length || 0}/200`
+                    : "")
                 }
+                type={field.name === "email" ? "email" : "text"}
                 slotProps={
-                  name === "message" ? { htmlInput: { maxLength: 200 } } : {}
+                  field.name === "message"
+                    ? { htmlInput: { maxLength: 200 } }
+                    : {}
                 }
                 sx={{
-                  "& .MuiInputLabel-root": { display: "none" },
-                  "& .MuiOutlinedInput-root": { borderRadius: 2 },
+                  "& .MuiOutlinedInput-root": {
+                    borderRadius: 2,
+                  },
                 }}
               />
             </Box>
