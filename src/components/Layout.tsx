@@ -7,13 +7,20 @@ import {
   Box,
   Menu,
   MenuItem,
+  Drawer,
+  List,
+  ListItemButton,
+  ListItemText,
+  Collapse,
+  Divider,
 } from "@mui/material";
 import {
   Brightness4,
   Brightness7,
   KeyboardArrowDown,
+  Menu as MenuIcon,
 } from "@mui/icons-material";
-import { Outlet, Link as RouterLink } from "react-router-dom";
+import { Outlet, Link as RouterLink, useNavigate } from "react-router-dom";
 import { useState } from "react";
 
 interface LayoutProps {
@@ -23,19 +30,22 @@ interface LayoutProps {
 
 const Layout = ({ toggleTheme, mode }: LayoutProps) => {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
+  const [drawerOpen, setDrawerOpen] = useState(false);
+  const [solutionsOpen, setSolutionsOpen] = useState(false);
+  const navigate = useNavigate();
 
   const open = Boolean(anchorEl);
 
   const handleToggle = (event: React.MouseEvent<HTMLElement>) => {
-    if (open) {
-      setAnchorEl(null);
-    } else {
-      setAnchorEl(event.currentTarget);
-    }
+    setAnchorEl(open ? null : event.currentTarget);
   };
 
-  const handleClose = () => {
-    setAnchorEl(null);
+  const handleClose = () => setAnchorEl(null);
+
+  const handleDrawerNav = (path: string) => {
+    navigate(path);
+    setDrawerOpen(false);
+    setSolutionsOpen(false);
   };
 
   return (
@@ -50,18 +60,19 @@ const Layout = ({ toggleTheme, mode }: LayoutProps) => {
             sx={{
               textDecoration: "none",
               color: "inherit",
+              flexGrow: { xs: 1, md: 0 },
             }}
           >
             Horaion
           </Typography>
 
-          {/* CENTER - Navigation */}
+          {/* CENTER - Desktop Navigation */}
           <Box
             sx={{
               position: "absolute",
               left: "50%",
               transform: "translateX(-50%)",
-              display: "flex",
+              display: { xs: "none", md: "flex" },
               gap: 3,
             }}
           >
@@ -69,7 +80,6 @@ const Layout = ({ toggleTheme, mode }: LayoutProps) => {
               Home
             </Button>
 
-            {/* Dropdown */}
             <Button
               color="inherit"
               onClick={handleToggle}
@@ -110,14 +120,79 @@ const Layout = ({ toggleTheme, mode }: LayoutProps) => {
             </Button>
           </Box>
 
-          {/* RIGHT - Theme Toggle */}
-          <Box>
+          {/* RIGHT - Theme toggle + hamburger */}
+          <Box
+            sx={{ marginLeft: "auto", display: "flex", alignItems: "center" }}
+          >
             <IconButton color="inherit" onClick={toggleTheme}>
               {mode === "dark" ? <Brightness7 /> : <Brightness4 />}
+            </IconButton>
+
+            {/* Hamburger - mobile only */}
+            <IconButton
+              color="inherit"
+              onClick={() => setDrawerOpen(true)}
+              sx={{ display: { xs: "flex", md: "none" } }}
+            >
+              <MenuIcon />
             </IconButton>
           </Box>
         </Toolbar>
       </AppBar>
+
+      {/* Mobile Drawer */}
+      <Drawer
+        anchor="right"
+        open={drawerOpen}
+        onClose={() => setDrawerOpen(false)}
+      >
+        <Box sx={{ width: 250, pt: 2 }}>
+          <List>
+            <ListItemButton onClick={() => handleDrawerNav("/")}>
+              <ListItemText primary="Home" />
+            </ListItemButton>
+
+            <Divider />
+
+            {/* Solutions with collapse */}
+            <ListItemButton onClick={() => setSolutionsOpen(!solutionsOpen)}>
+              <ListItemText primary="Solutions" />
+              <KeyboardArrowDown
+                sx={{
+                  transition: "transform 0.2s ease",
+                  transform: solutionsOpen ? "rotate(180deg)" : "rotate(0deg)",
+                }}
+              />
+            </ListItemButton>
+            <Collapse in={solutionsOpen} timeout="auto" unmountOnExit>
+              <List disablePadding>
+                <ListItemButton
+                  sx={{ pl: 4 }}
+                  onClick={() => handleDrawerNav("/service1")}
+                >
+                  <ListItemText primary="Service 1" />
+                </ListItemButton>
+                <ListItemButton
+                  sx={{ pl: 4 }}
+                  onClick={() => handleDrawerNav("/service2")}
+                >
+                  <ListItemText primary="Service 2" />
+                </ListItemButton>
+              </List>
+            </Collapse>
+
+            <Divider />
+
+            <ListItemButton onClick={() => handleDrawerNav("/about")}>
+              <ListItemText primary="About Us" />
+            </ListItemButton>
+
+            <ListItemButton onClick={() => handleDrawerNav("/contact")}>
+              <ListItemText primary="Contact Us" />
+            </ListItemButton>
+          </List>
+        </Box>
+      </Drawer>
 
       <Outlet />
     </>
