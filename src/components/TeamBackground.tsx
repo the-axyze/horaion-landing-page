@@ -24,7 +24,15 @@ const team = [
 
 const TeamBackground = () => {
   return (
-    <Box sx={{ p: 4, bgcolor: "grey.200" }}>
+    <Box
+      sx={(theme) => ({
+        p: 4,
+        bgcolor:
+          theme.palette.mode === "light"
+            ? theme.palette.grey[200]
+            : theme.palette.background.default,
+      })}
+    >
       <Typography variant="h5" align="center" fontWeight="bold" sx={{ mb: 6 }}>
         The Team
       </Typography>

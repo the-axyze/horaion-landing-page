@@ -3,7 +3,15 @@ import { Box, Typography } from "@mui/material";
 
 const AboutHoraion = () => {
   return (
-    <Box sx={{ p: 3, bgcolor: "grey.200" }}>
+    <Box
+      sx={(theme) => ({
+        p: 4,
+        bgcolor:
+          theme.palette.mode === "light"
+            ? theme.palette.grey[200]
+            : theme.palette.background.default,
+      })}
+    >
       <Typography variant="h5" align="center" sx={{ pb: 2 }} fontWeight="bold">
         About Us
       </Typography>

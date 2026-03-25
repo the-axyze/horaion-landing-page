@@ -13,10 +13,12 @@ const socials = [
   {
     icon: <Instagram />,
     href: "https://instagram.com/",
+    color: "#C13584",
   },
   {
     icon: <LinkedIn />,
     href: "https://sg.linkedin.com/",
+    color: "#0077B5",
   },
 ];
 
@@ -44,7 +46,7 @@ const FindUs = () => {
             </Typography>
 
             <Stack direction="row" spacing={2}>
-              {socials.map(({ icon, href }) => (
+              {socials.map(({ icon, href, color }) => (
                 <IconButton
                   key={href}
                   component="a"
@@ -56,8 +58,8 @@ const FindUs = () => {
                     borderColor: "divider",
                     borderRadius: 2,
                     "&:hover": {
-                      color: "primary.main",
-                      borderColor: "primary.main",
+                      color: color,
+                      borderColor: color,
                     },
                   }}
                 >
