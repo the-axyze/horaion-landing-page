@@ -3,6 +3,7 @@ import Layout from "./components/Layout";
 import Home from "./pages/Home";
 import Contact from "./pages/Contact";
 import About from "./pages/About";
+import Pricing from "./pages/Pricing";
 
 interface AppProps {
   toggleTheme: () => void;
@@ -19,6 +20,7 @@ const App = ({ toggleTheme, mode }: AppProps) => {
         <Route index element={<Home />} />
         <Route path="contact" element={<Contact />} />
         <Route path="about" element={<About />} />
+        <Route path="pricing" element={<Pricing />} />
       </Route>
       <Route path="*" element={<Navigate to="/" />} />
     </Routes>

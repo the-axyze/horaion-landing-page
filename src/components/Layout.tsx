@@ -118,12 +118,42 @@ const Layout = ({ toggleTheme, mode }: LayoutProps) => {
             <Button color="inherit" component={RouterLink} to="/contact">
               Contact Us
             </Button>
+            <Button color="inherit" component={RouterLink} to="/pricing">
+              Pricing
+            </Button>
           </Box>
 
-          {/* RIGHT - Theme toggle + hamburger */}
+          {/* RIGHT - Buttons + Theme toggle + Hamburger */}
           <Box
-            sx={{ marginLeft: "auto", display: "flex", alignItems: "center" }}
+            sx={{
+              marginLeft: "auto",
+              display: "flex",
+              alignItems: "center",
+              gap: 1,
+            }}
           >
+            {/* Sign In + Book a Demo - desktop only */}
+            <Box sx={{ display: { xs: "none", md: "flex" }, gap: 1 }}>
+              <Button
+                color="inherit"
+                variant="text"
+                component={RouterLink}
+                to="/signin"
+                sx={{ fontWeight: 500 }}
+              >
+                Sign In
+              </Button>
+              <Button
+                variant="contained"
+                color="secondary"
+                component={RouterLink}
+                to="/demo"
+                sx={{ fontWeight: 600, borderRadius: 2 }}
+              >
+                Book a Demo
+              </Button>
+            </Box>
+
             <IconButton color="inherit" onClick={toggleTheme}>
               {mode === "dark" ? <Brightness7 /> : <Brightness4 />}
             </IconButton>
@@ -154,7 +184,6 @@ const Layout = ({ toggleTheme, mode }: LayoutProps) => {
 
             <Divider />
 
-            {/* Solutions with collapse */}
             <ListItemButton onClick={() => setSolutionsOpen(!solutionsOpen)}>
               <ListItemText primary="Solutions" />
               <KeyboardArrowDown
@@ -186,10 +215,30 @@ const Layout = ({ toggleTheme, mode }: LayoutProps) => {
             <ListItemButton onClick={() => handleDrawerNav("/about")}>
               <ListItemText primary="About Us" />
             </ListItemButton>
-
             <ListItemButton onClick={() => handleDrawerNav("/contact")}>
               <ListItemText primary="Contact Us" />
             </ListItemButton>
+            <ListItemButton onClick={() => handleDrawerNav("/pricing")}>
+              <ListItemText primary="Pricing" />
+            </ListItemButton>
+
+            <Divider />
+
+            {/* Sign In + Book a Demo - mobile drawer */}
+            <ListItemButton onClick={() => handleDrawerNav("/signin")}>
+              <ListItemText primary="Sign In" />
+            </ListItemButton>
+            <Box sx={{ px: 2, py: 1 }}>
+              <Button
+                variant="contained"
+                color="secondary"
+                fullWidth
+                onClick={() => handleDrawerNav("/demo")}
+                sx={{ fontWeight: 600, borderRadius: 2 }}
+              >
+                Book a Demo
+              </Button>
+            </Box>
           </List>
         </Box>
       </Drawer>
