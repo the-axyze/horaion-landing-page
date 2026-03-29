@@ -14,27 +14,31 @@ import {
   Collapse,
   Divider,
 } from "@mui/material";
+import { KeyboardArrowDown, Menu as MenuIcon } from "@mui/icons-material";
 import {
-  Brightness4,
-  Brightness7,
-  KeyboardArrowDown,
-  Menu as MenuIcon,
-} from "@mui/icons-material";
-import { Outlet, Link as RouterLink, useNavigate } from "react-router-dom";
+  Outlet,
+  Link as RouterLink,
+  useNavigate,
+  useLocation,
+} from "react-router-dom";
 import { useState } from "react";
 
-interface LayoutProps {
-  toggleTheme: () => void;
-  mode: "light" | "dark";
-}
+const serviceLinks = [
+  { label: "Service 1", path: "/service1" },
+  { label: "Service 2", path: "/service2" },
+];
 
-const Layout = ({ toggleTheme, mode }: LayoutProps) => {
+const Layout = () => {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [solutionsOpen, setSolutionsOpen] = useState(false);
   const navigate = useNavigate();
+  const location = useLocation();
 
   const open = Boolean(anchorEl);
+  const isServiceActive = serviceLinks.some(
+    (s) => location.pathname === s.path,
+  );
 
   const handleToggle = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorEl(open ? null : event.currentTarget);
@@ -48,9 +52,43 @@ const Layout = ({ toggleTheme, mode }: LayoutProps) => {
     setSolutionsOpen(false);
   };
 
+  const navLinkSx = (path: string) => ({
+    fontWeight: 500,
+    position: "relative",
+    "&::after": {
+      content: '""',
+      position: "absolute",
+      bottom: 2,
+      left: "50%",
+      transform: "translateX(-50%)",
+      width: location.pathname === path ? "70%" : "0%",
+      height: "2px",
+      bgcolor: "white",
+      borderRadius: 1,
+      transition: "width 0.2s ease",
+    },
+    "&:hover::after": {
+      width: "70%",
+    },
+  });
+
   return (
-    <>
-      <AppBar position="static">
+    <Box
+      sx={{
+        minHeight: "100vh",
+        background:
+          "linear-gradient(160deg, #0d1b4b 0%, #1a3a7c 40%, #4a90d9 75%, #a8d4f5 100%)",
+      }}
+    >
+      <AppBar
+        position="sticky"
+        elevation={0}
+        sx={{
+          background: "transparent",
+          backdropFilter: "blur(8px)",
+          borderBottom: "1px rgba(255,255,255,0.1)",
+        }}
+      >
         <Toolbar sx={{ position: "relative" }}>
           {/* LEFT - Logo */}
           <Typography
@@ -59,7 +97,8 @@ const Layout = ({ toggleTheme, mode }: LayoutProps) => {
             to="/"
             sx={{
               textDecoration: "none",
-              color: "inherit",
+              color: "white",
+              fontWeight: 700,
               flexGrow: { xs: 1, md: 0 },
             }}
           >
@@ -74,12 +113,19 @@ const Layout = ({ toggleTheme, mode }: LayoutProps) => {
               transform: "translateX(-50%)",
               display: { xs: "none", md: "flex" },
               gap: 3,
+              alignItems: "center",
             }}
           >
-            <Button color="inherit" component={RouterLink} to="/">
+            <Button
+              color="inherit"
+              component={RouterLink}
+              to="/"
+              sx={navLinkSx("/")}
+            >
               Home
             </Button>
 
+            {/* Solutions dropdown */}
             <Button
               color="inherit"
               onClick={handleToggle}
@@ -91,39 +137,91 @@ const Layout = ({ toggleTheme, mode }: LayoutProps) => {
                   }}
                 />
               }
+              sx={{
+                fontWeight: 500,
+                position: "relative",
+                "&::after": {
+                  content: '""',
+                  position: "absolute",
+                  bottom: 2,
+                  left: "50%",
+                  transform: "translateX(-50%)",
+                  width: isServiceActive ? "70%" : "0%",
+                  height: "2px",
+                  bgcolor: "white",
+                  borderRadius: 1,
+                  transition: "width 0.2s ease",
+                },
+                "&:hover::after": { width: "70%" },
+              }}
             >
               Solutions
             </Button>
 
-            <Menu anchorEl={anchorEl} open={open} onClose={handleClose}>
-              <MenuItem
-                component={RouterLink}
-                to="/service1"
-                onClick={handleClose}
-              >
-                Service 1
-              </MenuItem>
-              <MenuItem
-                component={RouterLink}
-                to="/service2"
-                onClick={handleClose}
-              >
-                Service 2
-              </MenuItem>
+            <Menu
+              anchorEl={anchorEl}
+              open={open}
+              onClose={handleClose}
+              PaperProps={{
+                sx: {
+                  mt: 1,
+                  borderRadius: 2,
+                  backdropFilter: "blur(12px)",
+                  background: "rgba(255,255,255,0.15)",
+                  border: "1px solid rgba(255,255,255,0.2)",
+                  color: "white",
+                  "& .MuiMenuItem-root:hover": {
+                    background: "rgba(255,255,255,0.15)",
+                  },
+                },
+              }}
+            >
+              {serviceLinks.map((s) => (
+                <MenuItem
+                  key={s.path}
+                  component={RouterLink}
+                  to={s.path}
+                  onClick={handleClose}
+                  selected={location.pathname === s.path}
+                  sx={{
+                    "&.Mui-selected": {
+                      background: "rgba(255,255,255,0.2)",
+                      fontWeight: 700,
+                    },
+                  }}
+                >
+                  {s.label}
+                </MenuItem>
+              ))}
             </Menu>
 
-            <Button color="inherit" component={RouterLink} to="/about">
+            <Button
+              color="inherit"
+              component={RouterLink}
+              to="/about"
+              sx={navLinkSx("/about")}
+            >
               About Us
             </Button>
-            <Button color="inherit" component={RouterLink} to="/contact">
+            <Button
+              color="inherit"
+              component={RouterLink}
+              to="/contact"
+              sx={navLinkSx("/contact")}
+            >
               Contact Us
             </Button>
-            <Button color="inherit" component={RouterLink} to="/pricing">
+            <Button
+              color="inherit"
+              component={RouterLink}
+              to="/pricing"
+              sx={navLinkSx("/pricing")}
+            >
               Pricing
             </Button>
           </Box>
 
-          {/* RIGHT - Buttons + Theme toggle + Hamburger */}
+          {/* RIGHT - Buttons + Hamburger */}
           <Box
             sx={{
               marginLeft: "auto",
@@ -132,7 +230,6 @@ const Layout = ({ toggleTheme, mode }: LayoutProps) => {
               gap: 1,
             }}
           >
-            {/* Sign In + Book a Demo - desktop only */}
             <Box sx={{ display: { xs: "none", md: "flex" }, gap: 1 }}>
               <Button
                 color="inherit"
@@ -145,24 +242,23 @@ const Layout = ({ toggleTheme, mode }: LayoutProps) => {
               </Button>
               <Button
                 variant="contained"
-                color="secondary"
                 component={RouterLink}
                 to="/demo"
-                sx={{ fontWeight: 600, borderRadius: 2 }}
+                sx={{
+                  fontWeight: 600,
+                  borderRadius: 2,
+                  bgcolor: "purple",
+                  color: "white",
+                  "&:hover": { bgcolor: "grey.100" },
+                }}
               >
                 Book a Demo
               </Button>
             </Box>
 
-            <IconButton color="inherit" onClick={toggleTheme}>
-              {mode === "dark" ? <Brightness7 /> : <Brightness4 />}
-            </IconButton>
-
-            {/* Hamburger - mobile only */}
             <IconButton
-              color="inherit"
+              sx={{ color: "white", display: { xs: "flex", md: "none" } }}
               onClick={() => setDrawerOpen(true)}
-              sx={{ display: { xs: "flex", md: "none" } }}
             >
               <MenuIcon />
             </IconButton>
@@ -175,14 +271,25 @@ const Layout = ({ toggleTheme, mode }: LayoutProps) => {
         anchor="right"
         open={drawerOpen}
         onClose={() => setDrawerOpen(false)}
+        PaperProps={{
+          sx: {
+            background: "linear-gradient(160deg, #0d1b4b 0%, #1a3a7c 100%)",
+            color: "white",
+            width: 260,
+          },
+        }}
       >
-        <Box sx={{ width: 250, pt: 2 }}>
+        <Box sx={{ pt: 2 }}>
           <List>
-            <ListItemButton onClick={() => handleDrawerNav("/")}>
+            <ListItemButton
+              onClick={() => handleDrawerNav("/")}
+              selected={location.pathname === "/"}
+              sx={{ "&.Mui-selected": { bgcolor: "rgba(255,255,255,0.15)" } }}
+            >
               <ListItemText primary="Home" />
             </ListItemButton>
 
-            <Divider />
+            <Divider sx={{ borderColor: "rgba(255,255,255,0.1)" }} />
 
             <ListItemButton onClick={() => setSolutionsOpen(!solutionsOpen)}>
               <ListItemText primary="Solutions" />
@@ -195,46 +302,56 @@ const Layout = ({ toggleTheme, mode }: LayoutProps) => {
             </ListItemButton>
             <Collapse in={solutionsOpen} timeout="auto" unmountOnExit>
               <List disablePadding>
-                <ListItemButton
-                  sx={{ pl: 4 }}
-                  onClick={() => handleDrawerNav("/service1")}
-                >
-                  <ListItemText primary="Service 1" />
-                </ListItemButton>
-                <ListItemButton
-                  sx={{ pl: 4 }}
-                  onClick={() => handleDrawerNav("/service2")}
-                >
-                  <ListItemText primary="Service 2" />
-                </ListItemButton>
+                {serviceLinks.map((s) => (
+                  <ListItemButton
+                    key={s.path}
+                    sx={{
+                      pl: 4,
+                      "&.Mui-selected": { bgcolor: "rgba(255,255,255,0.15)" },
+                    }}
+                    selected={location.pathname === s.path}
+                    onClick={() => handleDrawerNav(s.path)}
+                  >
+                    <ListItemText primary={s.label} />
+                  </ListItemButton>
+                ))}
               </List>
             </Collapse>
 
-            <Divider />
+            <Divider sx={{ borderColor: "rgba(255,255,255,0.1)" }} />
 
-            <ListItemButton onClick={() => handleDrawerNav("/about")}>
-              <ListItemText primary="About Us" />
-            </ListItemButton>
-            <ListItemButton onClick={() => handleDrawerNav("/contact")}>
-              <ListItemText primary="Contact Us" />
-            </ListItemButton>
-            <ListItemButton onClick={() => handleDrawerNav("/pricing")}>
-              <ListItemText primary="Pricing" />
-            </ListItemButton>
+            {[
+              { label: "About Us", path: "/about" },
+              { label: "Contact Us", path: "/contact" },
+              { label: "Pricing", path: "/pricing" },
+            ].map((item) => (
+              <ListItemButton
+                key={item.path}
+                onClick={() => handleDrawerNav(item.path)}
+                selected={location.pathname === item.path}
+                sx={{ "&.Mui-selected": { bgcolor: "rgba(255,255,255,0.15)" } }}
+              >
+                <ListItemText primary={item.label} />
+              </ListItemButton>
+            ))}
 
-            <Divider />
+            <Divider sx={{ borderColor: "rgba(255,255,255,0.1)" }} />
 
-            {/* Sign In + Book a Demo - mobile drawer */}
             <ListItemButton onClick={() => handleDrawerNav("/signin")}>
               <ListItemText primary="Sign In" />
             </ListItemButton>
             <Box sx={{ px: 2, py: 1 }}>
               <Button
                 variant="contained"
-                color="secondary"
                 fullWidth
                 onClick={() => handleDrawerNav("/demo")}
-                sx={{ fontWeight: 600, borderRadius: 2 }}
+                sx={{
+                  fontWeight: 600,
+                  borderRadius: 2,
+                  bgcolor: "purple",
+                  color: "primary.main",
+                  "&:hover": { bgcolor: "grey.100" },
+                }}
               >
                 Book a Demo
               </Button>
@@ -244,7 +361,7 @@ const Layout = ({ toggleTheme, mode }: LayoutProps) => {
       </Drawer>
 
       <Outlet />
-    </>
+    </Box>
   );
 };
 

@@ -4,17 +4,13 @@ import { Typography, Box, Grid } from "@mui/material";
 const Hero = () => {
   return (
     <Box
-      sx={(theme) => ({
+      sx={{
         minHeight: "90vh",
         display: "flex",
         alignItems: "center",
         px: { xs: 3, md: 8 },
         py: { xs: 6, md: 0 },
-        bgcolor:
-          theme.palette.mode === "light"
-            ? theme.palette.grey[100]
-            : theme.palette.background.default,
-      })}
+      }}
     >
       <Box
         display="flex"
@@ -28,15 +24,12 @@ const Hero = () => {
           <Typography
             variant="h2"
             fontWeight={700}
+            color="white"
             sx={{ mb: 3, fontSize: { xs: "2.5rem", md: "3.5rem" } }}
           >
             Horaion
           </Typography>
-          <Typography
-            variant="h6"
-            color="text.secondary"
-            sx={{ lineHeight: 1.6 }}
-          >
+          <Typography variant="h6" color="white" sx={{ lineHeight: 1.6 }}>
             A short and engaging description goes here. Explain what you do in
             one or two sentences so users immediately understand your value.
           </Typography>

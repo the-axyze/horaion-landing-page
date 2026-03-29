@@ -7,24 +7,21 @@ interface Props {
 
 const ServiceHowItWorks = ({ data }: Props) => {
   return (
-    <Box
-      sx={(theme) => ({
-        py: 10,
-        px: { xs: 3, md: 8 },
-        bgcolor:
-          theme.palette.mode === "light"
-            ? theme.palette.grey[100]
-            : theme.palette.background.paper,
-      })}
-    >
+    <Box sx={{ py: 10, px: { xs: 3, md: 8 } }}>
       <Container maxWidth="lg">
-        <Typography variant="h3" fontWeight={700} align="center" sx={{ mb: 2 }}>
+        <Typography
+          variant="h3"
+          color="white"
+          fontWeight={700}
+          align="center"
+          sx={{ mb: 2 }}
+        >
           {data.sectionTitle}
         </Typography>
         <Typography
           variant="h6"
           align="center"
-          color="text.secondary"
+          color="white"
           sx={{ mb: 8, lineHeight: 1.6, maxWidth: 600, mx: "auto" }}
         >
           {data.sectionSubtitle}
@@ -45,7 +42,8 @@ const ServiceHowItWorks = ({ data }: Props) => {
                     width: 56,
                     height: 56,
                     borderRadius: "50%",
-                    bgcolor: "primary.main",
+                    // bgcolor: "primary.main",
+                    border: "1px solid",
                     color: "white",
                     display: "flex",
                     alignItems: "center",
@@ -69,7 +67,12 @@ const ServiceHowItWorks = ({ data }: Props) => {
                   />
                 )}
 
-                <Typography variant="h6" fontWeight={600} sx={{ mb: 1 }}>
+                <Typography
+                  variant="h6"
+                  color="white"
+                  fontWeight={600}
+                  sx={{ mb: 1 }}
+                >
                   {step.title}
                 </Typography>
                 <Typography

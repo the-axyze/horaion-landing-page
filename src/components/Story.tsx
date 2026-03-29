@@ -12,7 +12,13 @@ import {
 const Story = () => {
   return (
     <Box sx={{ p: 3 }}>
-      <Typography variant="h5" align="center" fontWeight="bold" sx={{ pb: 2 }}>
+      <Typography
+        variant="h3"
+        color="white"
+        align="center"
+        fontWeight="bold"
+        sx={{ pb: 2 }}
+      >
         Our Story
       </Typography>
       <Timeline position="alternate-reverse">

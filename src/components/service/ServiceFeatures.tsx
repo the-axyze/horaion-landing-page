@@ -29,13 +29,19 @@ const ServiceFeatures = ({ data }: Props) => {
   return (
     <Box sx={{ py: 10, px: { xs: 3, md: 8 } }}>
       <Container maxWidth="lg">
-        <Typography variant="h3" fontWeight={700} align="center" sx={{ mb: 2 }}>
+        <Typography
+          variant="h3"
+          color="white"
+          fontWeight={700}
+          align="center"
+          sx={{ mb: 2 }}
+        >
           {data.sectionTitle}
         </Typography>
         <Typography
           variant="h6"
           align="center"
-          color="text.secondary"
+          color="white"
           sx={{ mb: 8, lineHeight: 1.6, maxWidth: 600, mx: "auto" }}
         >
           {data.sectionSubtitle}

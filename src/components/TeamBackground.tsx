@@ -24,16 +24,14 @@ const team = [
 
 const TeamBackground = () => {
   return (
-    <Box
-      sx={(theme) => ({
-        p: 4,
-        bgcolor:
-          theme.palette.mode === "light"
-            ? theme.palette.grey[200]
-            : theme.palette.background.default,
-      })}
-    >
-      <Typography variant="h5" align="center" fontWeight="bold" sx={{ mb: 6 }}>
+    <Box sx={{ p: 4 }}>
+      <Typography
+        variant="h3"
+        color="white"
+        align="center"
+        fontWeight="bold"
+        sx={{ mb: 6 }}
+      >
         The Team
       </Typography>
 
@@ -57,7 +55,7 @@ const TeamBackground = () => {
               sx={{
                 width: 120,
                 height: 120,
-                bgcolor: "primary.main",
+                background: "transparent",
                 fontSize: 36,
               }}
             >
@@ -73,7 +71,7 @@ const TeamBackground = () => {
             justifyContent="center"
             alignItems="center"
           >
-            <Typography variant="h6" fontWeight="bold">
+            <Typography variant="h5" color="white" fontWeight="bold">
               {member.name}
             </Typography>
 

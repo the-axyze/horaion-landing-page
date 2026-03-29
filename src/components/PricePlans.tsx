@@ -73,13 +73,19 @@ const PricePlans = () => {
     <Box sx={{ py: 10, px: { xs: 3, md: 8 } }}>
       {/* Header */}
       <Container maxWidth="md">
-        <Typography variant="h3" fontWeight={700} align="center" sx={{ mb: 2 }}>
+        <Typography
+          variant="h3"
+          color="white"
+          fontWeight={700}
+          align="center"
+          sx={{ mb: 2 }}
+        >
           Pricing
         </Typography>
         <Typography
           variant="h6"
           align="center"
-          color="text.secondary"
+          color="white"
           sx={{ mb: 8, lineHeight: 1.6 }}
         >
           Achieve more with our advanced plans or try it out free for 30 days.

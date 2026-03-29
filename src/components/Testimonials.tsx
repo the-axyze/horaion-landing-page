@@ -69,13 +69,19 @@ const Testimonials = () => {
   return (
     <Box sx={{ py: 10, px: { xs: 3, md: 8 } }}>
       <Container maxWidth="md">
-        <Typography variant="h3" fontWeight={700} align="center" sx={{ mb: 2 }}>
+        <Typography
+          variant="h3"
+          color="white"
+          fontWeight={700}
+          align="center"
+          sx={{ mb: 2 }}
+        >
           What Our Customers Say
         </Typography>
         <Typography
           variant="h6"
           align="center"
-          color="text.secondary"
+          color="white"
           sx={{ mb: 8, lineHeight: 1.6, maxWidth: 600, mx: "auto" }}
         >
           Don't just take our word for it — hear from the teams already using
@@ -97,13 +103,14 @@ const Testimonials = () => {
             display: "flex",
             flexDirection: "column",
             justifyContent: "space-between",
+            background: "transparent",
           }}
         >
           <Box>
             <FormatQuote
               sx={{
                 fontSize: 48,
-                color: "primary.main",
+                color: "black",
                 mb: 2,
                 transform: "scaleX(-1)",
               }}

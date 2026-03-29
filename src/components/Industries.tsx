@@ -50,24 +50,21 @@ const industries = [
 
 const Industries = () => {
   return (
-    <Box
-      sx={(theme) => ({
-        py: 10,
-        px: { xs: 3, md: 8 },
-        bgcolor:
-          theme.palette.mode === "light"
-            ? theme.palette.grey[100]
-            : theme.palette.background.paper,
-      })}
-    >
+    <Box sx={{ py: 10, px: { xs: 3, md: 8 } }}>
       <Container maxWidth="lg">
-        <Typography variant="h3" fontWeight={700} align="center" sx={{ mb: 2 }}>
+        <Typography
+          variant="h3"
+          color="white"
+          fontWeight={700}
+          align="center"
+          sx={{ mb: 2 }}
+        >
           Industries We Serve
         </Typography>
         <Typography
           variant="h6"
           align="center"
-          color="text.secondary"
+          color="white"
           sx={{ mb: 8, lineHeight: 1.6, maxWidth: 600, mx: "auto" }}
         >
           Our platform is built to adapt. Whether you're in healthcare, finance,
@@ -89,12 +86,18 @@ const Industries = () => {
                     width: 72,
                     height: 72,
                     bgcolor: "primary.main",
+                    background: "transparent",
                     mb: 2,
                   }}
                 >
                   {industry.icon}
                 </Avatar>
-                <Typography variant="h6" fontWeight={600} sx={{ mb: 1 }}>
+                <Typography
+                  variant="h6"
+                  color="white"
+                  fontWeight={600}
+                  sx={{ mb: 1 }}
+                >
                   {industry.name}
                 </Typography>
                 <Typography

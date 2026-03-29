@@ -9,17 +9,13 @@ interface Props {
 const ServiceHero = ({ data }: Props) => {
   return (
     <Box
-      sx={(theme) => ({
+      sx={{
         minHeight: "80vh",
         display: "flex",
         alignItems: "center",
         px: { xs: 3, md: 8 },
         py: { xs: 6, md: 0 },
-        bgcolor:
-          theme.palette.mode === "light"
-            ? theme.palette.grey[100]
-            : theme.palette.background.default,
-      })}
+      }}
     >
       <Box
         display="flex"
@@ -40,6 +36,7 @@ const ServiceHero = ({ data }: Props) => {
           )}
           <Typography
             variant="h2"
+            color="white"
             fontWeight={700}
             sx={{ mb: 3, fontSize: { xs: "2.5rem", md: "3.5rem" } }}
           >
@@ -47,7 +44,7 @@ const ServiceHero = ({ data }: Props) => {
           </Typography>
           <Typography
             variant="h6"
-            color="text.secondary"
+            color="white"
             sx={{ lineHeight: 1.6, mb: 4 }}
           >
             {data.subtitle}
