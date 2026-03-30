@@ -1,5 +1,5 @@
 // reusable template for pages
-import React from "react";
+
 import {
   ServiceHero,
   ServiceFeatures,

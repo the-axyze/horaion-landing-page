@@ -6,18 +6,10 @@ import About from "./pages/About";
 import Pricing from "./pages/Pricing";
 import Service1 from "./pages/services/Service1";
 
-interface AppProps {
-  toggleTheme: () => void;
-  mode: "light" | "dark";
-}
-
-const App = ({ toggleTheme, mode }: AppProps) => {
+const App = () => {
   return (
     <Routes>
-      <Route
-        path="/"
-        element={<Layout toggleTheme={toggleTheme} mode={mode} />}
-      >
+      <Route path="/" element={<Layout />}>
         <Route index element={<Home />} />
         <Route path="contact" element={<Contact />} />
         <Route path="about" element={<About />} />
