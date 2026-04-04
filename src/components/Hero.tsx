@@ -1,4 +1,10 @@
-import { Typography, Box } from "@mui/material";
+import { Typography, Box, Button } from "@mui/material";
+
+const stats = [
+  { value: "98%", label: "Accuracy" },
+  { value: "10x", label: "Faster" },
+  { value: "24/7", label: "Available" },
+];
 
 const Hero = () => {
   return (
@@ -26,12 +32,64 @@ const Hero = () => {
             color="white"
             sx={{ mb: 3, fontSize: { xs: "2.5rem", md: "3.5rem" } }}
           >
-            Horaion
+            Master Complex Scheduling with AI
           </Typography>
-          <Typography variant="h6" color="white" sx={{ lineHeight: 1.6 }}>
-            A short and engaging description goes here. Explain what you do in
-            one or two sentences so users immediately understand your value.
+          <Typography
+            variant="h6"
+            color="white"
+            sx={{ lineHeight: 1.6, mb: 4 }}
+          >
+            Transform your most challenging scheduling problems into automated
+            solutions. Our AI engine understands constraints, preferences, and
+            conflicts to create optimal schedules in seconds.
           </Typography>
+
+          {/* CTA Button */}
+          <Button
+            variant="contained"
+            size="large"
+            sx={{
+              py: 1.5,
+              px: 4,
+              fontWeight: 700,
+              fontSize: "1rem",
+              borderRadius: 2,
+              bgcolor: "purple",
+              color: "white",
+              mb: 5,
+              transition: "transform 0.2s ease",
+              "&:hover": { transform: "scale(1.05)", bgcolor: "purple" },
+            }}
+          >
+            Get Started Free
+          </Button>
+
+          {/* Stats Row */}
+          <Box
+            sx={{
+              display: "flex",
+              gap: { xs: 4, md: 6 },
+              flexWrap: "wrap",
+            }}
+          >
+            {stats.map((stat) => (
+              <Box key={stat.label}>
+                <Typography
+                  fontWeight={700}
+                  color="white"
+                  sx={{ fontSize: { xs: "2rem", md: "2.4rem" }, lineHeight: 1 }}
+                >
+                  {stat.value}
+                </Typography>
+                <Typography
+                  color="rgba(255,255,255,0.7)"
+                  sx={{ fontSize: "0.85rem", mt: 0.5, letterSpacing: 0.5 }}
+                >
+                  {stat.label}
+                </Typography>
+              </Box>
+            ))}
+          </Box>
         </Box>
 
         {/* RIGHT SIDE */}

@@ -1,11 +1,11 @@
 import { Box, Typography, Container, Grid, Avatar } from "@mui/material";
 import {
   LocalHospital,
-  AccountBalance,
+  LocalPolice,
   School,
-  ShoppingCart,
-  Factory,
-  FlightTakeoff,
+  Restaurant,
+  PrecisionManufacturing,
+  LocalShipping,
 } from "@mui/icons-material";
 
 const industries = [
@@ -13,37 +13,34 @@ const industries = [
     icon: <LocalHospital fontSize="large" />,
     name: "Healthcare",
     description:
-      "Streamline patient management, compliance tracking, and operational workflows for healthcare providers.",
+      "Nurse rostering, on-call rotations, skill-mix, and compliance.",
   },
   {
-    icon: <AccountBalance fontSize="large" />,
-    name: "Finance",
+    icon: <LocalPolice fontSize="large" />, // ✅ better than AccountBalance
+    name: "Public Safety",
     description:
-      "Empower financial institutions with secure, real-time data processing and regulatory compliance tools.",
+      "Police, fire, and EMS coverage planning with fairness constraints.",
   },
   {
     icon: <School fontSize="large" />,
     name: "Education",
-    description:
-      "Help educational institutions manage resources, track outcomes, and deliver better learning experiences.",
+    description: "Scheduling for faculty, staff, and student services.",
   },
   {
-    icon: <ShoppingCart fontSize="large" />,
-    name: "Retail & E-Commerce",
-    description:
-      "Optimise inventory, personalise customer experiences, and drive conversions across every channel.",
+    icon: <Restaurant fontSize="large" />, // ✅ better for hospitality
+    name: "Retail & Hospitality",
+    description: "Demand-driven staffing with seasonal and hourly variability.",
   },
   {
-    icon: <Factory fontSize="large" />,
+    icon: <PrecisionManufacturing fontSize="large" />, // ✅ more modern
     name: "Manufacturing",
-    description:
-      "Improve production efficiency, reduce downtime, and gain full visibility across your supply chain.",
+    description: "Multi-line shift design with skill constraints and downtime.",
   },
   {
-    icon: <FlightTakeoff fontSize="large" />,
-    name: "Logistics & Travel",
+    icon: <LocalShipping fontSize="large" />, // ✅ better than plane
+    name: "Logistics",
     description:
-      "Coordinate complex operations, track assets in real time, and deliver seamless customer journeys.",
+      "Warehouse, drivers, and field operations scheduling at scale.",
   },
 ];
 
@@ -66,19 +63,33 @@ const Industries = () => {
           color="white"
           sx={{ mb: 8, lineHeight: 1.6, maxWidth: 600, mx: "auto" }}
         >
-          Our platform is built to adapt. Whether you're in healthcare, finance,
-          or retail, we have the tools to help you thrive.
+          Flexible and reliable scheduling for complex, shift-based operations
+          across sectors.
         </Typography>
 
         <Grid container spacing={4}>
           {industries.map((industry, index) => (
             <Grid key={index} size={{ xs: 12, sm: 6, md: 4 }}>
               <Box
-                display="flex"
-                flexDirection="column"
-                alignItems="center"
-                textAlign="center"
-                sx={{ p: 3 }}
+                sx={{
+                  p: 4,
+                  borderRadius: 4, // ✅ rounded corners
+                  background: "rgba(255,255,255,0.03)", // subtle glass look
+                  backdropFilter: "blur(6px)",
+                  border: "1px solid rgba(255,255,255,0.08)",
+                  transition: "all 0.3s ease",
+                  height: "100%", // ✅ equal height cards
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "center",
+                  textAlign: "center",
+
+                  "&:hover": {
+                    transform: "translateY(-6px)", // 🔥 lift effect
+                    borderColor: "rgba(255,255,255,0.2)",
+                    background: "rgba(255,255,255,0.06)",
+                  },
+                }}
               >
                 <Avatar
                   sx={{

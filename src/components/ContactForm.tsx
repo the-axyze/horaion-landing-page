@@ -37,7 +37,7 @@ const fields: Field[] = [
   },
   {
     name: "message",
-    label: "Message",
+    label: "How can we help?",
     required: true,
     multiline: true,
     rows: 4,
@@ -94,11 +94,6 @@ const ContactForm = () => {
     <Card sx={{ borderRadius: 4, boxShadow: 5, height: "100%" }}>
       <CardContent>
         <Box sx={{ display: "flex", flexDirection: "column", gap: 3, p: 2 }}>
-          <Typography variant="h5" fontWeight={600}>
-            Send us a message and we will do our best to get back to you as soon
-            as possible!
-          </Typography>
-
           {fields.map((field) => (
             <Box key={field.name}>
               <Typography variant="body2" fontWeight={500} sx={{ mb: 0.5 }}>
@@ -150,10 +145,10 @@ const ContactForm = () => {
               borderRadius: 2,
               textTransform: "none",
               py: 1.5,
-              alignSelf: "flex-end",
+              alignSelf: "flex-start",
             }}
           >
-            Submit
+            Send Message
           </Button>
         </Box>
       </CardContent>

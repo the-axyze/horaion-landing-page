@@ -55,7 +55,6 @@ const Testimonials = () => {
     goTo((current - 1 + testimonials.length) % testimonials.length);
   const next = () => goTo((current + 1) % testimonials.length);
 
-  // Auto-advance
   useEffect(() => {
     if (paused) return;
     const timer = setInterval(() => {
@@ -67,28 +66,18 @@ const Testimonials = () => {
   const t = testimonials[current];
 
   return (
-    <Box sx={{ py: 10, px: { xs: 3, md: 8 } }}>
+    <Box sx={{ pt: 4, pb: 10, px: { xs: 3, md: 8 } }}>
       <Container maxWidth="md">
         <Typography
-          variant="h3"
-          color="white"
-          fontWeight={700}
-          align="center"
-          sx={{ mb: 2 }}
-        >
-          What Our Customers Say
-        </Typography>
-        <Typography
-          variant="h6"
+          variant="h5"
           align="center"
           color="white"
-          sx={{ mb: 8, lineHeight: 1.6, maxWidth: 600, mx: "auto" }}
+          sx={{ mb: 6, lineHeight: 1.6, maxWidth: 600, mx: "auto" }}
         >
-          Don't just take our word for it — hear from the teams already using
-          Horaion to do their best work.
+          Don't just take it from us. Hear what our customers have to say about
+          our solution.
         </Typography>
 
-        {/* Card */}
         <Paper
           elevation={0}
           onMouseEnter={() => setPaused(true)}
@@ -158,7 +147,6 @@ const Testimonials = () => {
             <ArrowBack fontSize="small" />
           </IconButton>
 
-          {/* Dots */}
           {testimonials.map((_, index) => (
             <Box
               key={index}

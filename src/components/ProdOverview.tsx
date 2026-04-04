@@ -1,7 +1,7 @@
 import { Box, Typography, Container, Grid, Paper } from "@mui/material";
 import {
   RocketLaunch,
-  TrendingUp,
+  ElectricBolt,
   Security,
   AccessTime,
   Groups,
@@ -11,39 +11,39 @@ import {
 const features = [
   {
     icon: <RocketLaunch fontSize="large" color="primary" />,
-    title: "Fast Onboarding",
+    title: "AI-Powered Intelligence",
     description:
-      "Get up and running in minutes. Our streamlined setup means your team spends less time configuring and more time doing.",
-  },
-  {
-    icon: <TrendingUp fontSize="large" color="primary" />,
-    title: "Accelerate Growth",
-    description:
-      "Drive measurable results with tools built to scale alongside your business, from startup to enterprise.",
-  },
-  {
-    icon: <Security fontSize="large" color="primary" />,
-    title: "Enterprise-Grade Security",
-    description:
-      "Your data is protected with end-to-end encryption and compliance standards that meet the most demanding requirements.",
+      "Advanced machine learning algorithms understand complex scheduling constraints and preferences to generate optimal solutions.",
   },
   {
     icon: <AccessTime fontSize="large" color="primary" />,
-    title: "Save Time",
+    title: "Real-Time Optimization",
     description:
-      "Automate repetitive workflows and free your team to focus on high-impact work that actually moves the needle.",
+      "Instantly adapt to changes, conflicts, and new requirements. Your schedule stays perfect as conditions evolve.",
   },
   {
     icon: <Groups fontSize="large" color="primary" />,
-    title: "Built for Teams",
+    title: "Multi-Stakeholder Support",
     description:
-      "Collaborate seamlessly across departments with shared dashboards, role-based access, and real-time updates.",
+      "Coordinate schedules across teams, departments, and external partners with intelligent conflict resolution.",
+  },
+  {
+    icon: <ElectricBolt fontSize="large" color="primary" />,
+    title: "Lightning Fast Results",
+    description:
+      "Generate complex schedules in seconds, not hours. What used to take days now happens instantly.",
+  },
+  {
+    icon: <Security fontSize="large" color="primary" />,
+    title: "Enterprise Security",
+    description:
+      "Bank-grade encryption and compliance with SOC 2, GDPR, and HIPAA standards protect your sensitive data.",
   },
   {
     icon: <Insights fontSize="large" color="primary" />,
-    title: "Actionable Insights",
+    title: "Analytics & Insights",
     description:
-      "Turn raw data into clear decisions with powerful analytics and reporting built directly into the platform.",
+      "Deep analytics reveal scheduling patterns, optimization opportunities, and resource utilization metrics.",
   },
 ];
 
@@ -59,7 +59,7 @@ const ProductOverview = () => {
           align="center"
           sx={{ mb: 2 }}
         >
-          What Our Product Can Do For You
+          Powerful Features for Complex Scheduling
         </Typography>
         <Typography
           variant="h6"
@@ -67,8 +67,8 @@ const ProductOverview = () => {
           color="white"
           sx={{ mb: 8, lineHeight: 1.6, maxWidth: 600, mx: "auto" }}
         >
-          Everything you need to run smarter, move faster, and deliver more
-          value to your customers — all in one place.
+          Our AI engine handles the complexity so you can focus on what matters
+          most. From simple appointments to multi-resource project scheduling.
         </Typography>
 
         {/* Feature Grid */}

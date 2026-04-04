@@ -55,6 +55,8 @@ const Layout = () => {
   const navLinkSx = (path: string) => ({
     fontWeight: 500,
     position: "relative",
+    transition: "transform 0.2s ease",
+    "&:hover": { transform: "scale(1.07)" },
     "&::after": {
       content: '""',
       position: "absolute",
@@ -140,6 +142,8 @@ const Layout = () => {
               sx={{
                 fontWeight: 500,
                 position: "relative",
+                transition: "transform 0.2s ease",
+                "&:hover": { transform: "scale(1.07)" },
                 "&::after": {
                   content: '""',
                   position: "absolute",
@@ -236,7 +240,11 @@ const Layout = () => {
                 variant="text"
                 component={RouterLink}
                 to="/signin"
-                sx={{ fontWeight: 500 }}
+                sx={{
+                  fontWeight: 500,
+                  transition: "transform 0.2s ease",
+                  "&:hover": { transform: "scale(1.07)" },
+                }}
               >
                 Sign In
               </Button>
@@ -249,10 +257,31 @@ const Layout = () => {
                   borderRadius: 2,
                   bgcolor: "purple",
                   color: "white",
-                  "&:hover": { bgcolor: "grey.100" },
+                  transition: "transform 0.2s ease",
+                  "&:hover": { transform: "scale(1.07)", bgcolor: "purple" },
                 }}
               >
                 Book a Demo
+              </Button>
+              {/* ✦ NEW: Start for Free button */}
+              <Button
+                variant="outlined"
+                component={RouterLink}
+                to="/"
+                sx={{
+                  fontWeight: 600,
+                  borderRadius: 2,
+                  borderColor: "rgba(255,255,255,0.7)",
+                  color: "white",
+                  transition: "transform 0.2s ease",
+                  "&:hover": {
+                    transform: "scale(1.07)",
+                    borderColor: "white",
+                    bgcolor: "rgba(255,255,255,0.1)",
+                  },
+                }}
+              >
+                Start for Free
               </Button>
             </Box>
 
@@ -340,6 +369,7 @@ const Layout = () => {
             <ListItemButton onClick={() => handleDrawerNav("/signin")}>
               <ListItemText primary="Sign In" />
             </ListItemButton>
+
             <Box sx={{ px: 2, py: 1 }}>
               <Button
                 variant="contained"
@@ -349,11 +379,33 @@ const Layout = () => {
                   fontWeight: 600,
                   borderRadius: 2,
                   bgcolor: "purple",
-                  color: "primary.main",
-                  "&:hover": { bgcolor: "grey.100" },
+                  color: "white",
+                  mb: 1,
+                  transition: "transform 0.2s ease",
+                  "&:hover": { transform: "scale(1.03)", bgcolor: "purple" },
                 }}
               >
                 Book a Demo
+              </Button>
+              {/* ✦ NEW: Start for Free button (mobile) */}
+              <Button
+                variant="outlined"
+                fullWidth
+                onClick={() => handleDrawerNav("/")}
+                sx={{
+                  fontWeight: 600,
+                  borderRadius: 2,
+                  borderColor: "rgba(255,255,255,0.7)",
+                  color: "white",
+                  transition: "transform 0.2s ease",
+                  "&:hover": {
+                    transform: "scale(1.03)",
+                    borderColor: "white",
+                    bgcolor: "rgba(255,255,255,0.1)",
+                  },
+                }}
+              >
+                Start for Free
               </Button>
             </Box>
           </List>
