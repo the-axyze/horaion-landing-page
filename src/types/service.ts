@@ -16,6 +16,7 @@ export interface ServiceData {
       description: string;
       icon?: string;
     }[];
+    benefits?: string[];
   };
   howItWorks: {
     sectionTitle: string;

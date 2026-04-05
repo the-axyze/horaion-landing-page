@@ -7,10 +7,10 @@ import {
   Groups,
   Insights,
   Star,
+  CheckCircleOutline,
 } from "@mui/icons-material";
 import type { ServiceData } from "../../types/service";
 
-// Map icon name strings to actual icon components
 const iconMap: Record<string, React.ReactNode> = {
   RocketLaunch: <RocketLaunch fontSize="large" color="primary" />,
   TrendingUp: <TrendingUp fontSize="large" color="primary" />,
@@ -47,7 +47,8 @@ const ServiceFeatures = ({ data }: Props) => {
           {data.sectionSubtitle}
         </Typography>
 
-        <Grid container spacing={4}>
+        {/* Feature cards */}
+        <Grid container spacing={4} justifyContent="center">
           {data.items.map((feature, index) => (
             <Grid key={index} size={{ xs: 12, sm: 6, md: 4 }}>
               <Paper
@@ -79,6 +80,47 @@ const ServiceFeatures = ({ data }: Props) => {
             </Grid>
           ))}
         </Grid>
+
+        {/* Benefits subsection */}
+        {data.benefits && data.benefits.length > 0 && (
+          <Box
+            sx={{
+              mt: 8,
+              p: { xs: 3, md: 5 },
+              borderRadius: 4,
+              background: "rgba(255,255,255,0.08)",
+              backdropFilter: "blur(12px)",
+              border: "1px solid rgba(255,255,255,0.15)",
+            }}
+          >
+            <Typography
+              variant="h6"
+              color="white"
+              fontWeight={600}
+              sx={{ mb: 3 }}
+            >
+              What you get
+            </Typography>
+            <Box sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
+              {data.benefits.map((benefit, index) => (
+                <Box
+                  key={index}
+                  sx={{ display: "flex", alignItems: "center", gap: 2 }}
+                >
+                  <CheckCircleOutline
+                    sx={{ color: "rgba(255,255,255,0.8)", flexShrink: 0 }}
+                  />
+                  <Typography
+                    color="rgba(255,255,255,0.85)"
+                    sx={{ lineHeight: 1.6 }}
+                  >
+                    {benefit}
+                  </Typography>
+                </Box>
+              ))}
+            </Box>
+          </Box>
+        )}
       </Container>
     </Box>
   );

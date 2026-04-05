@@ -12,7 +12,7 @@ const Contact = () => {
 
         <Typography variant="h6" color="white" sx={{ mt: 2 }}>
           Tell us about your scheduling challenges and we'll show you how
-          TimeSoft can help.
+          Horaion can help.
         </Typography>
       </div>
 

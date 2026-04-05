@@ -236,19 +236,6 @@ const Layout = () => {
           >
             <Box sx={{ display: { xs: "none", md: "flex" }, gap: 1 }}>
               <Button
-                color="inherit"
-                variant="text"
-                component={RouterLink}
-                to="/signin"
-                sx={{
-                  fontWeight: 500,
-                  transition: "transform 0.2s ease",
-                  "&:hover": { transform: "scale(1.07)" },
-                }}
-              >
-                Sign In
-              </Button>
-              <Button
                 variant="contained"
                 component={RouterLink}
                 to="/demo"
@@ -282,6 +269,19 @@ const Layout = () => {
                 }}
               >
                 Start for Free
+              </Button>
+              <Button
+                color="inherit"
+                variant="text"
+                component={RouterLink}
+                to="/signin"
+                sx={{
+                  fontWeight: 500,
+                  transition: "transform 0.2s ease",
+                  "&:hover": { transform: "scale(1.07)" },
+                }}
+              >
+                Sign In
               </Button>
             </Box>
 

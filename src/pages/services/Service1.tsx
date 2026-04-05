@@ -3,54 +3,34 @@ import type { ServiceData } from "../../types/service";
 
 const service1Data: ServiceData = {
   hero: {
-    title: "Service One",
+    title: "AI Scheduling Solutions",
     subtitle:
-      "A compelling one-liner about what this service does and why it matters to your business.",
+      "Solve complex workforce scheduling in minutes, not hours. Our optimization engine combines operations research with responsible AI to deliver feasible, fair, and efficient schedules.",
     badgeLabel: "Popular",
     ctaText: "Get Started",
     ctaLink: "/contact",
     videoSrc: "/placeholder-video.mp4",
   },
   features: {
-    sectionTitle: "What You Get",
-    sectionSubtitle:
-      "Everything included in Service One, designed to help your team move faster.",
+    sectionTitle: "Features",
+    sectionSubtitle: "",
+    benefits: [
+      "Fast scenario generation and side-by-side comparisons",
+      "Transparent trade-offs and explainable decisions",
+      "Simple export and integration options",
+    ],
     items: [
       {
-        title: "Feature One",
+        title: "Demand & Capacity Planning",
         description:
-          "Placeholder description of this feature and its direct benefit.",
+          "Balance labor demand with staffing capacity, skills, and constraints to reduce overtime and improve service levels.",
         icon: "RocketLaunch",
       },
       {
-        title: "Feature Two",
+        title: "Fair & Compliant Scheduling",
         description:
-          "Placeholder description of this feature and its direct benefit.",
+          "Respect labor laws, union rules, and employee preferences while maximizing coverage and minimizing costs.",
         icon: "TrendingUp",
-      },
-      {
-        title: "Feature Three",
-        description:
-          "Placeholder description of this feature and its direct benefit.",
-        icon: "Security",
-      },
-      {
-        title: "Feature Four",
-        description:
-          "Placeholder description of this feature and its direct benefit.",
-        icon: "AccessTime",
-      },
-      {
-        title: "Feature Five",
-        description:
-          "Placeholder description of this feature and its direct benefit.",
-        icon: "Groups",
-      },
-      {
-        title: "Feature Six",
-        description:
-          "Placeholder description of this feature and its direct benefit.",
-        icon: "Insights",
       },
     ],
   },
