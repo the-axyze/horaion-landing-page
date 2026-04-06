@@ -12,7 +12,7 @@ const CTA = () => {
       <Container maxWidth="md">
         <Typography
           variant="h3"
-          color="white"
+          color="#FFFCF6"
           fontWeight={700}
           align="center"
           sx={{ mb: 2 }}
@@ -22,7 +22,7 @@ const CTA = () => {
         <Typography
           variant="h6"
           align="center"
-          color="white"
+          color="#FFFCF6"
           sx={{ mb: 6, lineHeight: 1.6, maxWidth: 600, mx: "auto" }}
         >
           Join thousands of organizations already using our AI technology to
@@ -50,17 +50,17 @@ const CTA = () => {
               fontWeight: 700,
               fontSize: "1rem",
               borderRadius: 2,
-              bgcolor: "purple",
-              color: "white",
+              bgcolor: "#034488",
+              color: "#FFFCF6",
               transition: "transform 0.2s ease",
-              "&:hover": { transform: "scale(1.05)", bgcolor: "purple" },
+              "&:hover": { transform: "scale(1.05)", bgcolor: "#178FD6" },
             }}
           >
             Start Free Trial
           </Button>
           <Typography
             variant="body2"
-            color="rgba(255,255,255,0.6)"
+            color="#EDECE8"
             sx={{
               fontSize: "0.8rem",
               textAlign: "center", // ✅ keeps it centered under button on small screens
@@ -84,7 +84,7 @@ const CTA = () => {
             <Box key={stat.label} sx={{ gap: 3 }}>
               <Typography
                 fontWeight={700}
-                color="white"
+                color="#FFFCF6"
                 sx={{
                   fontSize: { xs: "2rem", md: "2.4rem" },
                   lineHeight: 1,

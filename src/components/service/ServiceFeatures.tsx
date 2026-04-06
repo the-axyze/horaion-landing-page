@@ -31,7 +31,7 @@ const ServiceFeatures = ({ data }: Props) => {
       <Container maxWidth="lg">
         <Typography
           variant="h3"
-          color="white"
+          color="#FFFCF6"
           fontWeight={700}
           align="center"
           sx={{ mb: 2 }}
@@ -41,7 +41,7 @@ const ServiceFeatures = ({ data }: Props) => {
         <Typography
           variant="h6"
           align="center"
-          color="white"
+          color="#FFFCF6"
           sx={{ mb: 8, lineHeight: 1.6, maxWidth: 600, mx: "auto" }}
         >
           {data.sectionSubtitle}
@@ -95,7 +95,7 @@ const ServiceFeatures = ({ data }: Props) => {
           >
             <Typography
               variant="h6"
-              color="white"
+              color="#FFFCF6"
               fontWeight={600}
               sx={{ mb: 3 }}
             >

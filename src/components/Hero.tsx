@@ -29,14 +29,14 @@ const Hero = () => {
           <Typography
             variant="h2"
             fontWeight={700}
-            color="white"
+            color="#FFFCF6"
             sx={{ mb: 3, fontSize: { xs: "2.5rem", md: "3.5rem" } }}
           >
             Master Complex Scheduling with AI
           </Typography>
           <Typography
             variant="h6"
-            color="white"
+            color="#FFFCF6"
             sx={{ lineHeight: 1.6, mb: 4 }}
           >
             Transform your most challenging scheduling problems into automated
@@ -54,11 +54,11 @@ const Hero = () => {
               fontWeight: 700,
               fontSize: "1rem",
               borderRadius: 2,
-              bgcolor: "purple",
-              color: "white",
+              bgcolor: "#178FD6",
+              color: "#FFFCF6",
               mb: 5,
               transition: "transform 0.2s ease",
-              "&:hover": { transform: "scale(1.05)", bgcolor: "purple" },
+              "&:hover": { transform: "scale(1.05)", bgcolor: "#034488" },
             }}
           >
             Get Started Free
@@ -76,13 +76,13 @@ const Hero = () => {
               <Box key={stat.label}>
                 <Typography
                   fontWeight={700}
-                  color="white"
+                  color="#FFFCF6"
                   sx={{ fontSize: { xs: "2rem", md: "2.4rem" }, lineHeight: 1 }}
                 >
                   {stat.value}
                 </Typography>
                 <Typography
-                  color="rgba(255,255,255,0.7)"
+                  color="#CCDDE8"
                   sx={{ fontSize: "0.85rem", mt: 0.5, letterSpacing: 0.5 }}
                 >
                   {stat.label}

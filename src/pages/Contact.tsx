@@ -6,11 +6,11 @@ const Contact = () => {
   return (
     <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "80px 20px" }}>
       <div style={{ textAlign: "center", marginBottom: "60px" }}>
-        <Typography variant="h3" color="white" fontWeight={700}>
+        <Typography variant="h3" color="#FFFCF6" fontWeight={700}>
           Contact Us
         </Typography>
 
-        <Typography variant="h6" color="white" sx={{ mt: 2 }}>
+        <Typography variant="h6" color="#FFFCF6" sx={{ mt: 2 }}>
           Tell us about your scheduling challenges and we'll show you how
           Horaion can help.
         </Typography>

@@ -75,11 +75,11 @@ const TeamBackground = () => {
               {member.name}
             </Typography>
 
-            <Typography variant="body1" color="text.primary">
+            <Typography variant="body1" color="#EDECE8">
               {member.role}
             </Typography>
 
-            <Typography variant="body1" color="text.secondary">
+            <Typography variant="body1" color="#CCDDE8">
               {member.description}
             </Typography>
           </Grid>

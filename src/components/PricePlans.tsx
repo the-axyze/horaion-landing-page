@@ -1,8 +1,6 @@
 import {
   Box,
   Typography,
-  Card,
-  CardContent,
   Button,
   List,
   ListItem,
@@ -74,7 +72,7 @@ const PricePlans = () => {
       <Container maxWidth="md">
         <Typography
           variant="h3"
-          color="white"
+          color="#FFFCF6"
           fontWeight={700}
           align="center"
           sx={{ mb: 2 }}
@@ -84,7 +82,7 @@ const PricePlans = () => {
         <Typography
           variant="h6"
           align="center"
-          color="white"
+          color="#EDECE8"
           sx={{ mb: 8, lineHeight: 1.6 }}
         >
           Achieve more with our advanced plans or try it out free for 30 days.
@@ -102,101 +100,139 @@ const PricePlans = () => {
           justifyContent="center"
         >
           {plans.map((plan) => (
-            <Card
+            <Box
               key={plan.name}
-              elevation={plan.highlighted ? 8 : 1}
               sx={{
                 flex: 1,
                 maxWidth: { md: 340 },
                 borderRadius: 3,
-                border: plan.highlighted ? "2px solid" : "1px solid",
-                borderColor: plan.highlighted ? "primary.main" : "divider",
+                border: plan.highlighted
+                  ? "2px solid #178FD6"
+                  : "1px solid #178FD6",
+                backdropFilter: "blur(12px)",
+                background: plan.highlighted
+                  ? "rgba(255,255,255,0.18)"
+                  : "rgba(255,255,255,0.08)",
                 display: "flex",
                 flexDirection: "column",
                 position: "relative",
+                p: 4,
+                transition: "transform 0.2s ease, box-shadow 0.2s ease",
+                "&:hover": {
+                  transform: "translateY(-4px)",
+                  boxShadow: "0 12px 40px rgba(0,0,0,0.2)",
+                },
               }}
             >
               {/* Most Popular badge */}
               {plan.badge && (
                 <Chip
                   label={plan.badge}
-                  color="primary"
                   size="small"
                   sx={{
                     position: "absolute",
                     top: 16,
                     right: 16,
                     fontWeight: 600,
+                    bgcolor: "rgba(255,255,255,0.25)",
+                    color: "#FFFCF6",
+                    border: "1px solid #CCDDE8",
                   }}
                 />
               )}
 
-              <CardContent sx={{ p: 4, flexGrow: 1 }}>
-                {/* Plan name */}
-                <Typography
-                  variant="overline"
-                  color="text.secondary"
-                  fontWeight={600}
-                >
-                  {plan.name}
-                </Typography>
+              {/* Plan name */}
+              <Typography
+                variant="overline"
+                fontWeight={600}
+                color="rgba(255,255,255,0.6)"
+              >
+                {plan.name}
+              </Typography>
 
-                {/* Price */}
-                <Box
-                  display="flex"
-                  alignItems="flex-end"
-                  gap={0.5}
-                  sx={{ mt: 1, mb: 2 }}
-                >
-                  <Typography variant="h3" fontWeight={700}>
-                    {plan.price}
+              {/* Price */}
+              <Box
+                display="flex"
+                alignItems="flex-end"
+                gap={0.5}
+                sx={{ mt: 1, mb: 2 }}
+              >
+                <Typography variant="h3" fontWeight={700} color="#FFFCF6">
+                  {plan.price}
+                </Typography>
+                {plan.period && (
+                  <Typography
+                    variant="body1"
+                    color="rgba(255,255,255,0.6)"
+                    sx={{ mb: 1 }}
+                  >
+                    {plan.period}
                   </Typography>
-                  {plan.period && (
-                    <Typography
-                      variant="body1"
-                      color="text.secondary"
-                      sx={{ mb: 1 }}
-                    >
-                      {plan.period}
-                    </Typography>
-                  )}
-                </Box>
+                )}
+              </Box>
 
-                {/* Description */}
-                <Typography
-                  variant="body2"
-                  color="text.secondary"
-                  sx={{ mb: 3 }}
-                >
-                  {plan.description}
-                </Typography>
+              {/* Description */}
+              <Typography
+                variant="body2"
+                color="rgba(255,255,255,0.7)"
+                sx={{ mb: 3 }}
+              >
+                {plan.description}
+              </Typography>
 
-                {/* CTA */}
-                <Button
-                  variant={plan.highlighted ? "contained" : "outlined"}
-                  fullWidth
-                  size="large"
-                  sx={{ borderRadius: 2, mb: 3 }}
-                >
-                  {plan.cta}
-                </Button>
+              {/* CTA */}
+              <Button
+                variant={plan.highlighted ? "contained" : "outlined"}
+                fullWidth
+                size="large"
+                sx={{
+                  borderRadius: 2,
+                  mb: 3,
+                  fontWeight: 600,
+                  ...(plan.highlighted
+                    ? {
+                        bgcolor: "#178FD6",
+                        color: "#FFFCF6",
+                        "&:hover": {
+                          bgcolor: "#034488",
+                          transform: "scale(1.02)",
+                        },
+                      }
+                    : {
+                        borderColor: "rgba(255,255,255,0.4)",
+                        color: "#FFFCF6",
+                        "&:hover": {
+                          borderColor: "#FFFCF6",
+                          bgcolor: "rgba(255,255,255,0.08)",
+                        },
+                      }),
+                  transition: "transform 0.2s ease",
+                }}
+              >
+                {plan.cta}
+              </Button>
 
-                {/* Features */}
-                <List disablePadding>
-                  {plan.features.map((feature) => (
-                    <ListItem key={feature} disablePadding sx={{ mb: 1 }}>
-                      <ListItemIcon sx={{ minWidth: 32 }}>
-                        <Check fontSize="small" color="primary" />
-                      </ListItemIcon>
-                      <ListItemText
-                        primary={feature}
-                        primaryTypographyProps={{ variant: "body2" }}
+              {/* Features */}
+              <List disablePadding>
+                {plan.features.map((feature) => (
+                  <ListItem key={feature} disablePadding sx={{ mb: 1 }}>
+                    <ListItemIcon sx={{ minWidth: 32 }}>
+                      <Check
+                        fontSize="small"
+                        sx={{ color: "rgba(255,255,255,0.8)" }}
                       />
-                    </ListItem>
-                  ))}
-                </List>
-              </CardContent>
-            </Card>
+                    </ListItemIcon>
+                    <ListItemText
+                      primary={feature}
+                      primaryTypographyProps={{
+                        variant: "body2",
+                        color: "rgba(255,255,255,0.8)",
+                      }}
+                    />
+                  </ListItem>
+                ))}
+              </List>
+            </Box>
           ))}
         </Box>
       </Container>

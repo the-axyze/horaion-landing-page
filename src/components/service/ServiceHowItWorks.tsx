@@ -11,7 +11,7 @@ const ServiceHowItWorks = ({ data }: Props) => {
       <Container maxWidth="lg">
         <Typography
           variant="h3"
-          color="white"
+          color="#FFFCF6"
           fontWeight={700}
           align="center"
           sx={{ mb: 2 }}
@@ -21,7 +21,7 @@ const ServiceHowItWorks = ({ data }: Props) => {
         <Typography
           variant="h6"
           align="center"
-          color="white"
+          color="#FFFCF6"
           sx={{ mb: 8, lineHeight: 1.6, maxWidth: 600, mx: "auto" }}
         >
           {data.sectionSubtitle}
@@ -44,7 +44,7 @@ const ServiceHowItWorks = ({ data }: Props) => {
                     borderRadius: "50%",
                     // bgcolor: "primary.main",
                     border: "1px solid",
-                    color: "white",
+                    color: "#FFFCF6",
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
@@ -69,7 +69,7 @@ const ServiceHowItWorks = ({ data }: Props) => {
 
                 <Typography
                   variant="h6"
-                  color="white"
+                  color="#FFFCF6"
                   fontWeight={600}
                   sx={{ mb: 1 }}
                 >

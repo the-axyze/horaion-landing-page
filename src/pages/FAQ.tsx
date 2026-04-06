@@ -40,7 +40,7 @@ const FAQ = () => {
       <Container maxWidth="md">
         <Typography
           variant="h3"
-          color="white"
+          color="#FFFCF6"
           fontWeight={700}
           align="center"
           sx={{ mb: 2 }}
@@ -50,7 +50,7 @@ const FAQ = () => {
         <Typography
           variant="h6"
           align="center"
-          color="rgba(255,255,255,0.7)"
+          color="#EDECE8"
           sx={{ mb: 8, lineHeight: 1.6, maxWidth: 560, mx: "auto" }}
         >
           Can't find what you're looking for? Feel free to{" "}
@@ -58,7 +58,7 @@ const FAQ = () => {
             component="a"
             href="/contact"
             sx={{
-              color: "white",
+              color: "#FFFCF6",
               fontWeight: 600,
               textDecoration: "underline",
               textUnderlineOffset: 3,
@@ -91,22 +91,19 @@ const FAQ = () => {
                 }}
               >
                 <AccordionSummary
-                  expandIcon={<ExpandMore sx={{ color: "white" }} />}
+                  expandIcon={<ExpandMore sx={{ color: "#FFFCF6" }} />}
                   sx={{ px: 3, py: 1 }}
                 >
                   <Typography
                     fontWeight={600}
-                    color="white"
+                    color="#FFFCF6"
                     sx={{ fontSize: "1rem" }}
                   >
                     {faq.question}
                   </Typography>
                 </AccordionSummary>
                 <AccordionDetails sx={{ px: 3, pb: 3 }}>
-                  <Typography
-                    color="rgba(255,255,255,0.7)"
-                    sx={{ lineHeight: 1.8 }}
-                  >
+                  <Typography color="#CCDDE8" sx={{ lineHeight: 1.8 }}>
                     {faq.answer}
                   </Typography>
                 </AccordionDetails>

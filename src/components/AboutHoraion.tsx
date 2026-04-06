@@ -5,14 +5,19 @@ const AboutHoraion = () => {
     <Box sx={{ p: 4 }}>
       <Typography
         variant="h3"
-        color="white"
+        color="#FFFCF6"
         align="center"
         sx={{ pb: 2 }}
         fontWeight="bold"
       >
         About Us
       </Typography>
-      <Typography variant="body1" align="center" sx={{ px: 10, mx: 10 }}>
+      <Typography
+        variant="body1"
+        color="#FFFCF6"
+        align="center"
+        sx={{ px: 10, mx: 10 }}
+      >
         At Horaion, our mission is to reimagine HR systems with AI and humanity—
         streamlining operations while keeping people at the center. Our core
         technology was developed at SMU and commercialized by a talented team of

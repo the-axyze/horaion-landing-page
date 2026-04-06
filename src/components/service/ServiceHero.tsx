@@ -36,7 +36,7 @@ const ServiceHero = ({ data }: Props) => {
           )}
           <Typography
             variant="h2"
-            color="white"
+            color="#FFFCF6"
             fontWeight={700}
             sx={{ mb: 3, fontSize: { xs: "2.5rem", md: "3.5rem" } }}
           >
@@ -44,7 +44,7 @@ const ServiceHero = ({ data }: Props) => {
           </Typography>
           <Typography
             variant="h6"
-            color="white"
+            color="#FFFCF6"
             sx={{ lineHeight: 1.6, mb: 4 }}
           >
             {data.subtitle}

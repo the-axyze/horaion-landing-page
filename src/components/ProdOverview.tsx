@@ -10,37 +10,37 @@ import {
 
 const features = [
   {
-    icon: <RocketLaunch fontSize="large" color="primary" />,
+    icon: <RocketLaunch fontSize="large" />,
     title: "AI-Powered Intelligence",
     description:
       "Advanced machine learning algorithms understand complex scheduling constraints and preferences to generate optimal solutions.",
   },
   {
-    icon: <AccessTime fontSize="large" color="primary" />,
+    icon: <AccessTime fontSize="large" />,
     title: "Real-Time Optimization",
     description:
       "Instantly adapt to changes, conflicts, and new requirements. Your schedule stays perfect as conditions evolve.",
   },
   {
-    icon: <Groups fontSize="large" color="primary" />,
+    icon: <Groups fontSize="large" />,
     title: "Multi-Stakeholder Support",
     description:
       "Coordinate schedules across teams, departments, and external partners with intelligent conflict resolution.",
   },
   {
-    icon: <ElectricBolt fontSize="large" color="primary" />,
+    icon: <ElectricBolt fontSize="large" />,
     title: "Lightning Fast Results",
     description:
       "Generate complex schedules in seconds, not hours. What used to take days now happens instantly.",
   },
   {
-    icon: <Security fontSize="large" color="primary" />,
+    icon: <Security fontSize="large" />,
     title: "Enterprise Security",
     description:
       "Bank-grade encryption and compliance with SOC 2, GDPR, and HIPAA standards protect your sensitive data.",
   },
   {
-    icon: <Insights fontSize="large" color="primary" />,
+    icon: <Insights fontSize="large" />,
     title: "Analytics & Insights",
     description:
       "Deep analytics reveal scheduling patterns, optimization opportunities, and resource utilization metrics.",
@@ -54,7 +54,7 @@ const ProductOverview = () => {
         {/* Header */}
         <Typography
           variant="h3"
-          color="white"
+          color="#FFFCF6"
           fontWeight={700}
           align="center"
           sx={{ mb: 2 }}
@@ -64,7 +64,7 @@ const ProductOverview = () => {
         <Typography
           variant="h6"
           align="center"
-          color="white"
+          color="#FFFCF6"
           sx={{ mb: 8, lineHeight: 1.6, maxWidth: 600, mx: "auto" }}
         >
           Our AI engine handles the complexity so you can focus on what matters
@@ -79,24 +79,38 @@ const ProductOverview = () => {
                 elevation={0}
                 sx={{
                   p: 4,
-                  height: "100%",
-                  borderRadius: 3,
-                  border: "1px solid",
-                  borderColor: "divider",
-                  transition: "all 0.2s ease",
+                  borderRadius: 4, // ✅ rounded corners
+                  background: "rgba(255,255,255,0.03)", // subtle glass look
+                  backdropFilter: "blur(6px)",
+                  border: "1px solid #EDECE8",
+                  transition: "all 0.3s ease",
+                  height: "100%", // ✅ equal height cards
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "center",
+                  textAlign: "center",
+
                   "&:hover": {
-                    boxShadow: 4,
-                    transform: "translateY(-4px)",
+                    transform: "translateY(-6px)", // 🔥 lift effect
+                    borderColor: "rgba(255,255,255,0.2)",
+                    background: "rgba(255,255,255,0.06)",
                   },
                 }}
               >
-                <Box sx={{ mb: 2 }}>{feature.icon}</Box>
-                <Typography variant="h6" fontWeight={600} sx={{ mb: 1 }}>
+                <Box color="#FFFCF6" sx={{ mb: 2 }}>
+                  {feature.icon}
+                </Box>
+                <Typography
+                  variant="h6"
+                  color="#FFFCF6"
+                  fontWeight={600}
+                  sx={{ mb: 1 }}
+                >
                   {feature.title}
                 </Typography>
                 <Typography
                   variant="body2"
-                  color="text.secondary"
+                  color="#FFFCF6"
                   sx={{ lineHeight: 1.7 }}
                 >
                   {feature.description}

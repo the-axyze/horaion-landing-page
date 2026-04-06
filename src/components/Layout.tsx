@@ -24,7 +24,7 @@ import {
 import { useState } from "react";
 
 const serviceLinks = [
-  { label: "Service 1", path: "/service1" },
+  { label: "AI Scheduling Solutions", path: "/ai-scheduling-solutions" },
   { label: "Service 2", path: "/service2" },
 ];
 
@@ -55,6 +55,7 @@ const Layout = () => {
   const navLinkSx = (path: string) => ({
     fontWeight: 500,
     position: "relative",
+    whiteSpace: "nowrap",
     transition: "transform 0.2s ease",
     "&:hover": { transform: "scale(1.07)" },
     "&::after": {
@@ -65,7 +66,7 @@ const Layout = () => {
       transform: "translateX(-50%)",
       width: location.pathname === path ? "70%" : "0%",
       height: "2px",
-      bgcolor: "white",
+      bgcolor: "#FFFCF6",
       borderRadius: 1,
       transition: "width 0.2s ease",
     },
@@ -79,7 +80,7 @@ const Layout = () => {
       sx={{
         minHeight: "100vh",
         background:
-          "linear-gradient(160deg, #0d1b4b 0%, #1a3a7c 40%, #4a90d9 75%, #a8d4f5 100%)",
+          "linear-gradient(160deg, #0d1b4b 0%, #1a3a7c 40%, #4a90d9 75%, #178FD6 100%)",
       }}
     >
       <AppBar
@@ -91,7 +92,7 @@ const Layout = () => {
           borderBottom: "1px rgba(255,255,255,0.1)",
         }}
       >
-        <Toolbar sx={{ position: "relative" }}>
+        <Toolbar sx={{ gap: 2 }}>
           {/* LEFT - Logo */}
           <Typography
             variant="h6"
@@ -99,9 +100,9 @@ const Layout = () => {
             to="/"
             sx={{
               textDecoration: "none",
-              color: "white",
+              color: "#FFFCF6",
               fontWeight: 700,
-              flexGrow: { xs: 1, md: 0 },
+              flexShrink: 0,
             }}
           >
             Horaion
@@ -110,12 +111,11 @@ const Layout = () => {
           {/* CENTER - Desktop Navigation */}
           <Box
             sx={{
-              position: "absolute",
-              left: "50%",
-              transform: "translateX(-50%)",
               display: { xs: "none", md: "flex" },
-              gap: 3,
+              flex: 1,
+              justifyContent: "center",
               alignItems: "center",
+              gap: 1,
             }}
           >
             <Button
@@ -142,6 +142,7 @@ const Layout = () => {
               sx={{
                 fontWeight: 500,
                 position: "relative",
+                whiteSpace: "nowrap",
                 transition: "transform 0.2s ease",
                 "&:hover": { transform: "scale(1.07)" },
                 "&::after": {
@@ -152,7 +153,7 @@ const Layout = () => {
                   transform: "translateX(-50%)",
                   width: isServiceActive ? "70%" : "0%",
                   height: "2px",
-                  bgcolor: "white",
+                  bgcolor: "#FFFCF6",
                   borderRadius: 1,
                   transition: "width 0.2s ease",
                 },
@@ -173,7 +174,7 @@ const Layout = () => {
                   backdropFilter: "blur(12px)",
                   background: "rgba(255,255,255,0.15)",
                   border: "1px solid rgba(255,255,255,0.2)",
-                  color: "white",
+                  color: "#FFFCF6",
                   "& .MuiMenuItem-root:hover": {
                     background: "rgba(255,255,255,0.15)",
                   },
@@ -228,13 +229,20 @@ const Layout = () => {
           {/* RIGHT - Buttons + Hamburger */}
           <Box
             sx={{
-              marginLeft: "auto",
               display: "flex",
               alignItems: "center",
               gap: 1,
+              flexShrink: 0,
+              ml: { xs: "auto", md: 0 },
             }}
           >
-            <Box sx={{ display: { xs: "none", md: "flex" }, gap: 1 }}>
+            <Box
+              sx={{
+                display: { xs: "none", md: "flex" },
+                gap: 1,
+                alignItems: "center",
+              }}
+            >
               <Button
                 variant="contained"
                 component={RouterLink}
@@ -242,15 +250,15 @@ const Layout = () => {
                 sx={{
                   fontWeight: 600,
                   borderRadius: 2,
-                  bgcolor: "purple",
-                  color: "white",
+                  bgcolor: "#178FD6",
+                  color: "#FFFCF6",
+                  whiteSpace: "nowrap",
                   transition: "transform 0.2s ease",
-                  "&:hover": { transform: "scale(1.07)", bgcolor: "purple" },
+                  "&:hover": { transform: "scale(1.07)", bgcolor: "#034488" },
                 }}
               >
                 Book a Demo
               </Button>
-              {/* ✦ NEW: Start for Free button */}
               <Button
                 variant="outlined"
                 component={RouterLink}
@@ -259,11 +267,12 @@ const Layout = () => {
                   fontWeight: 600,
                   borderRadius: 2,
                   borderColor: "rgba(255,255,255,0.7)",
-                  color: "white",
+                  color: "#FFFCF6",
+                  whiteSpace: "nowrap",
                   transition: "transform 0.2s ease",
                   "&:hover": {
                     transform: "scale(1.07)",
-                    borderColor: "white",
+                    borderColor: "#EDECE8",
                     bgcolor: "rgba(255,255,255,0.1)",
                   },
                 }}
@@ -277,6 +286,7 @@ const Layout = () => {
                 to="/signin"
                 sx={{
                   fontWeight: 500,
+                  whiteSpace: "nowrap",
                   transition: "transform 0.2s ease",
                   "&:hover": { transform: "scale(1.07)" },
                 }}
@@ -286,7 +296,7 @@ const Layout = () => {
             </Box>
 
             <IconButton
-              sx={{ color: "white", display: { xs: "flex", md: "none" } }}
+              sx={{ color: "#FFFCF6", display: { xs: "flex", md: "none" } }}
               onClick={() => setDrawerOpen(true)}
             >
               <MenuIcon />
@@ -303,7 +313,7 @@ const Layout = () => {
         PaperProps={{
           sx: {
             background: "linear-gradient(160deg, #0d1b4b 0%, #1a3a7c 100%)",
-            color: "white",
+            color: "#FFFCF6",
             width: 260,
           },
         }}
@@ -378,16 +388,15 @@ const Layout = () => {
                 sx={{
                   fontWeight: 600,
                   borderRadius: 2,
-                  bgcolor: "purple",
-                  color: "white",
+                  bgcolor: "#178FD6",
+                  color: "#FFFCF6",
                   mb: 1,
                   transition: "transform 0.2s ease",
-                  "&:hover": { transform: "scale(1.03)", bgcolor: "purple" },
+                  "&:hover": { transform: "scale(1.03)", bgcolor: "#034488" },
                 }}
               >
                 Book a Demo
               </Button>
-              {/* ✦ NEW: Start for Free button (mobile) */}
               <Button
                 variant="outlined"
                 fullWidth
@@ -396,11 +405,11 @@ const Layout = () => {
                   fontWeight: 600,
                   borderRadius: 2,
                   borderColor: "rgba(255,255,255,0.7)",
-                  color: "white",
+                  color: "#FFFCF6",
                   transition: "transform 0.2s ease",
                   "&:hover": {
                     transform: "scale(1.03)",
-                    borderColor: "white",
+                    borderColor: "#EDECE8",
                     bgcolor: "rgba(255,255,255,0.1)",
                   },
                 }}

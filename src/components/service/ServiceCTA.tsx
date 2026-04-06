@@ -14,7 +14,7 @@ const ServiceCTA = ({ data }: Props) => {
         px: { xs: 3, md: 8 },
         textAlign: "center",
         bgcolor: "primary.main",
-        color: "white",
+        color: "#FFFCF6",
       }}
     >
       <Container maxWidth="md">
@@ -31,7 +31,7 @@ const ServiceCTA = ({ data }: Props) => {
             component={RouterLink}
             to={data.primaryButtonLink}
             sx={{
-              bgcolor: "white",
+              bgcolor: "#FFFCF6",
               color: "primary.main",
               fontWeight: 700,
               borderRadius: 2,
@@ -48,8 +48,8 @@ const ServiceCTA = ({ data }: Props) => {
               component={RouterLink}
               to={data.secondaryButtonLink ?? "/"}
               sx={{
-                borderColor: "white",
-                color: "white",
+                borderColor: "#FFFCF6",
+                color: "#FFFCF6",
                 borderRadius: 2,
                 px: 4,
                 "&:hover": {

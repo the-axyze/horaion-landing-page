@@ -1,12 +1,5 @@
 import { useState, useEffect } from "react";
-import {
-  Box,
-  Typography,
-  Container,
-  Paper,
-  Avatar,
-  IconButton,
-} from "@mui/material";
+import { Box, Typography, Container, Paper, IconButton } from "@mui/material";
 import { FormatQuote, ArrowBack, ArrowForward } from "@mui/icons-material";
 
 const testimonials = [
@@ -16,7 +9,6 @@ const testimonials = [
     name: "Sarah Lim",
     role: "Operations Manager",
     company: "TechCorp Pte Ltd",
-    initials: "SL",
   },
   {
     quote:
@@ -24,7 +16,6 @@ const testimonials = [
     name: "James Tan",
     role: "Head of Product",
     company: "Finova Solutions",
-    initials: "JT",
   },
   {
     quote:
@@ -32,7 +23,6 @@ const testimonials = [
     name: "Priya Nair",
     role: "CTO",
     company: "Meridian Health",
-    initials: "PN",
   },
 ];
 
@@ -71,7 +61,7 @@ const Testimonials = () => {
         <Typography
           variant="h5"
           align="center"
-          color="white"
+          color="#FFFCF6"
           sx={{ mb: 6, lineHeight: 1.6, maxWidth: 600, mx: "auto" }}
         >
           Don't just take it from us. Hear what our customers have to say about
@@ -99,14 +89,14 @@ const Testimonials = () => {
             <FormatQuote
               sx={{
                 fontSize: 48,
-                color: "black",
+                color: "#CCDDE8",
                 mb: 2,
                 transform: "scaleX(-1)",
               }}
             />
             <Typography
               variant="h6"
-              color="text.secondary"
+              color="#FFFCF6"
               sx={{ lineHeight: 1.8, mb: 4, fontWeight: 400 }}
             >
               {t.quote}
@@ -114,21 +104,11 @@ const Testimonials = () => {
           </Box>
 
           <Box display="flex" alignItems="center" gap={2}>
-            <Avatar
-              sx={{
-                bgcolor: "primary.main",
-                fontWeight: 600,
-                width: 48,
-                height: 48,
-              }}
-            >
-              {t.initials}
-            </Avatar>
             <Box>
-              <Typography variant="subtitle1" fontWeight={700}>
+              <Typography color="#FFFCF6" variant="subtitle1" fontWeight={700}>
                 {t.name}
               </Typography>
-              <Typography variant="body2" color="text.secondary">
+              <Typography variant="body2" color="#EDECE8">
                 {t.role}, {t.company}
               </Typography>
             </Box>

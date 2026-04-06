@@ -76,7 +76,7 @@ const Industries = () => {
                   borderRadius: 4, // ✅ rounded corners
                   background: "rgba(255,255,255,0.03)", // subtle glass look
                   backdropFilter: "blur(6px)",
-                  border: "1px solid rgba(255,255,255,0.08)",
+                  border: "1px solid #EDECE8",
                   transition: "all 0.3s ease",
                   height: "100%", // ✅ equal height cards
                   display: "flex",
@@ -112,7 +112,7 @@ const Industries = () => {
                 </Typography>
                 <Typography
                   variant="body2"
-                  color="text.secondary"
+                  color="#FFFCF6"
                   sx={{ lineHeight: 1.7 }}
                 >
                   {industry.description}

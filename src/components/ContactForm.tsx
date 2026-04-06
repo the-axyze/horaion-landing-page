@@ -1,11 +1,4 @@
-import {
-  Card,
-  CardContent,
-  Typography,
-  Button,
-  TextField,
-  Box,
-} from "@mui/material";
+import { Typography, Button, TextField, Box } from "@mui/material";
 import { useState } from "react";
 
 type Field = {
@@ -45,6 +38,26 @@ const fields: Field[] = [
   },
 ];
 
+const fieldSx = {
+  "& .MuiOutlinedInput-root": {
+    borderRadius: 2,
+    color: "white",
+    "& fieldset": { borderColor: "rgba(255,255,255,0.25)" },
+    "&:hover fieldset": { borderColor: "rgba(255,255,255,0.5)" },
+    "&.Mui-focused fieldset": { borderColor: "white" },
+  },
+  "& .MuiInputBase-input::placeholder": {
+    color: "rgba(255,255,255,0.4)",
+    opacity: 1,
+  },
+  "& .MuiFormHelperText-root": {
+    color: "rgba(255,255,255,0.5)",
+  },
+  "& .MuiFormHelperText-root.Mui-error": {
+    color: "#ff8a80",
+  },
+};
+
 const ContactForm = () => {
   const [form, setForm] = useState<Record<string, string>>({});
   const [errors, setErrors] = useState<Record<string, string | null>>({});
@@ -67,92 +80,96 @@ const ContactForm = () => {
   ) => {
     const { name, value } = e.target;
     const field = fields.find((f) => f.name === name)!;
-
-    const error = validateField(field, value);
-
-    setErrors((prev) => ({ ...prev, [name]: error }));
+    setErrors((prev) => ({ ...prev, [name]: validateField(field, value) }));
   };
 
   const handleSubmit = () => {
     const newErrors: Record<string, string | null> = {};
-
     fields.forEach((field) => {
       const value = form[field.name] || "";
       newErrors[field.name] = validateField(field, value);
     });
-
     setErrors(newErrors);
-
-    const hasError = Object.values(newErrors).some((e) => e !== null);
-
-    if (!hasError) {
+    if (!Object.values(newErrors).some((e) => e !== null)) {
       alert("Message sent!");
     }
   };
 
   return (
-    <Card sx={{ borderRadius: 4, boxShadow: 5, height: "100%" }}>
-      <CardContent>
-        <Box sx={{ display: "flex", flexDirection: "column", gap: 3, p: 2 }}>
-          {fields.map((field) => (
-            <Box key={field.name}>
-              <Typography variant="body2" fontWeight={500} sx={{ mb: 0.5 }}>
-                {field.label}{" "}
-                {field.required && (
-                  <Box component="span" sx={{ color: "error.main" }}>
-                    *
-                  </Box>
-                )}
-              </Typography>
-
-              <TextField
-                name={field.name}
-                placeholder={field.label}
-                fullWidth
-                required={field.required}
-                multiline={field.multiline}
-                rows={field.rows}
-                value={form[field.name] || ""}
-                onChange={handleChange}
-                onBlur={handleBlur}
-                error={!!errors[field.name]}
-                helperText={
-                  errors[field.name] ||
-                  (field.name === "message"
-                    ? `${form.message?.length || 0}/200`
-                    : "")
-                }
-                type={field.name === "email" ? "email" : "text"}
-                slotProps={
-                  field.name === "message"
-                    ? { htmlInput: { maxLength: 200 } }
-                    : {}
-                }
-                sx={{
-                  "& .MuiOutlinedInput-root": {
-                    borderRadius: 2,
-                  },
-                }}
-              />
-            </Box>
-          ))}
-
-          <Button
-            variant="contained"
-            size="medium"
-            onClick={handleSubmit}
-            sx={{
-              borderRadius: 2,
-              textTransform: "none",
-              py: 1.5,
-              alignSelf: "flex-start",
-            }}
+    <Box
+      sx={{
+        borderRadius: 4,
+        height: "100%",
+        backdropFilter: "blur(12px)",
+        background: "rgba(255,255,255,0.08)",
+        border: "1px solid #178FD6",
+        p: { xs: 3, md: 4 },
+        display: "flex",
+        flexDirection: "column",
+        gap: 3,
+      }}
+    >
+      {fields.map((field) => (
+        <Box key={field.name}>
+          <Typography
+            variant="body2"
+            fontWeight={500}
+            color="rgba(255,255,255,0.85)"
+            sx={{ mb: 0.5 }}
           >
-            Send Message
-          </Button>
+            {field.label}{" "}
+            {field.required && (
+              <Box component="span" sx={{ color: "#ff8a80" }}>
+                *
+              </Box>
+            )}
+          </Typography>
+
+          <TextField
+            name={field.name}
+            placeholder={field.label}
+            fullWidth
+            required={field.required}
+            multiline={field.multiline}
+            rows={field.rows}
+            value={form[field.name] || ""}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            error={!!errors[field.name]}
+            helperText={
+              errors[field.name] ||
+              (field.name === "message"
+                ? `${form.message?.length || 0}/200`
+                : "")
+            }
+            type={field.name === "email" ? "email" : "text"}
+            slotProps={
+              field.name === "message" ? { htmlInput: { maxLength: 200 } } : {}
+            }
+            sx={fieldSx}
+          />
         </Box>
-      </CardContent>
-    </Card>
+      ))}
+
+      <Button
+        variant="contained"
+        size="medium"
+        onClick={handleSubmit}
+        sx={{
+          borderRadius: 2,
+          textTransform: "none",
+          py: 1.5,
+          alignSelf: "flex-start",
+          fontWeight: 600,
+          bgcolor: "#178FD6",
+          color: "white",
+          transition: "transform 0.2s ease",
+          "&:hover": { transform: "scale(1.04)", bgcolor: "#034488" },
+        }}
+      >
+        Send Message
+      </Button>
+    </Box>
   );
 };
 

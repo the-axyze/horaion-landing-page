@@ -13,7 +13,7 @@ const Story = () => {
     <Box sx={{ p: 3 }}>
       <Typography
         variant="h3"
-        color="white"
+        color="#FFFCF6"
         align="center"
         fontWeight="bold"
         sx={{ pb: 2 }}
@@ -26,27 +26,27 @@ const Story = () => {
             <TimelineDot />
             <TimelineConnector />
           </TimelineSeparator>
-          <TimelineContent>In the beginning...</TimelineContent>
+          <TimelineContent color="#CCDDE8">In the beginning...</TimelineContent>
         </TimelineItem>
         <TimelineItem>
           <TimelineSeparator>
             <TimelineDot />
             <TimelineConnector />
           </TimelineSeparator>
-          <TimelineContent>Prototype 1</TimelineContent>
+          <TimelineContent color="#CCDDE8">Prototype 1</TimelineContent>
         </TimelineItem>
         <TimelineItem>
           <TimelineSeparator>
             <TimelineDot />
             <TimelineConnector />
           </TimelineSeparator>
-          <TimelineContent>Prototype 2</TimelineContent>
+          <TimelineContent color="#CCDDE8">Prototype 2</TimelineContent>
         </TimelineItem>
         <TimelineItem>
           <TimelineSeparator>
             <TimelineDot />
           </TimelineSeparator>
-          <TimelineContent>Final Product</TimelineContent>
+          <TimelineContent color="#CCDDE8">Final Product</TimelineContent>
         </TimelineItem>
       </Timeline>
     </Box>

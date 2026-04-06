@@ -21,14 +21,14 @@ const industries = [
 
 const fieldSx = {
   "& .MuiOutlinedInput-root": {
-    color: "white",
+    color: "#FFFCF6",
     borderRadius: 2,
     "& fieldset": { borderColor: "rgba(255,255,255,0.3)" },
     "&:hover fieldset": { borderColor: "rgba(255,255,255,0.6)" },
-    "&.Mui-focused fieldset": { borderColor: "white" },
+    "&.Mui-focused fieldset": { borderColor: "#FFFCF6" },
   },
   "& .MuiInputLabel-root": { color: "rgba(255,255,255,0.6)" },
-  "& .MuiInputLabel-root.Mui-focused": { color: "white" },
+  "& .MuiInputLabel-root.Mui-focused": { color: "#FFFCF6" },
   "& .MuiSelect-icon": { color: "rgba(255,255,255,0.6)" },
 };
 
@@ -47,7 +47,7 @@ const DemoForm = () => {
       <Container maxWidth="sm">
         <Typography
           variant="h3"
-          color="white"
+          color="#FFFCF6"
           fontWeight={700}
           align="center"
           sx={{ mb: 2 }}
@@ -84,17 +84,19 @@ const DemoForm = () => {
             value={industry}
             onChange={(e) => setIndustry(e.target.value)}
             sx={fieldSx}
-            SelectProps={{
-              MenuProps: {
-                PaperProps: {
-                  sx: {
-                    bgcolor: "#1a3a7c",
-                    color: "white",
-                    "& .MuiMenuItem-root:hover": {
-                      bgcolor: "rgba(255,255,255,0.1)",
-                    },
-                    "& .MuiMenuItem-root.Mui-selected": {
-                      bgcolor: "rgba(255,255,255,0.15)",
+            slotProps={{
+              select: {
+                MenuProps: {
+                  PaperProps: {
+                    sx: {
+                      bgcolor: "#034488",
+                      color: "#FFFCF6",
+                      "& .MuiMenuItem-root:hover": {
+                        bgcolor: "rgba(255,255,255,0.1)",
+                      },
+                      "& .MuiMenuItem-root.Mui-selected": {
+                        bgcolor: "rgba(255,255,255,0.15)",
+                      },
                     },
                   },
                 },
@@ -139,10 +141,10 @@ const DemoForm = () => {
               fontWeight: 700,
               fontSize: "1rem",
               borderRadius: 2,
-              bgcolor: "purple",
-              color: "white",
+              bgcolor: "#178FD6",
+              color: "#FFFCF6",
               transition: "transform 0.2s ease",
-              "&:hover": { transform: "scale(1.02)", bgcolor: "purple" },
+              "&:hover": { transform: "scale(1.02)", bgcolor: "#034488" },
             }}
           >
             Request a Demo
