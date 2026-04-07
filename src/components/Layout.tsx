@@ -224,6 +224,14 @@ const Layout = () => {
             >
               Pricing
             </Button>
+            <Button
+              color="inherit"
+              component={RouterLink}
+              to="/faq"
+              sx={navLinkSx("/faq")}
+            >
+              FAQ
+            </Button>
           </Box>
 
           {/* RIGHT - Buttons + Hamburger */}
@@ -363,6 +371,7 @@ const Layout = () => {
               { label: "About Us", path: "/about" },
               { label: "Contact Us", path: "/contact" },
               { label: "Pricing", path: "/pricing" },
+              { label: "FAQ", path: "/faq" },
             ].map((item) => (
               <ListItemButton
                 key={item.path}
