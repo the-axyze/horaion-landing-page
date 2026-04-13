@@ -1,4 +1,6 @@
 import { Box, Typography, Container, Button } from "@mui/material";
+import { MovingBorder } from "./MovingBorder";
+import { Link as RouterLink } from "react-router-dom";
 
 const stats = [
   { value: "10,000+", label: "Organizations Trust Us" },
@@ -41,23 +43,27 @@ const CTA = () => {
             textAlign: "center", // ✅ helps when wrapped
           }}
         >
-          <Button
-            variant="contained"
-            size="large"
-            sx={{
-              py: 1.5,
-              px: 4,
-              fontWeight: 700,
-              fontSize: "1rem",
-              borderRadius: 2,
-              bgcolor: "#034488",
-              color: "#FFFCF6",
-              transition: "transform 0.2s ease",
-              "&:hover": { transform: "scale(1.05)", bgcolor: "#178FD6" },
-            }}
-          >
-            Start Free Trial
-          </Button>
+          <MovingBorder borderRadius="8px">
+            <Button
+              variant="contained"
+              size="large"
+              component={RouterLink}
+              to="/start-free"
+              sx={{
+                py: 1.5,
+                px: 4,
+                fontWeight: 700,
+                fontSize: "1rem",
+                borderRadius: 2,
+                bgcolor: "#034488",
+                color: "#FFFCF6",
+                transition: "transform 0.2s ease",
+                "&:hover": { transform: "scale(1.05)", bgcolor: "#178FD6" },
+              }}
+            >
+              Start Free Trial
+            </Button>
+          </MovingBorder>
           <Typography
             variant="body2"
             color="#EDECE8"

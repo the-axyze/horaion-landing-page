@@ -1,6 +1,7 @@
 import { Box, Typography, Button, Chip } from "@mui/material";
 import { Link as RouterLink } from "react-router-dom";
 import type { ServiceData } from "../../types/service";
+import { MovingBorder } from "../MovingBorder";
 
 interface Props {
   data: ServiceData["hero"];
@@ -49,15 +50,27 @@ const ServiceHero = ({ data }: Props) => {
           >
             {data.subtitle}
           </Typography>
-          <Button
-            variant="contained"
-            size="large"
-            component={RouterLink}
-            to={data.ctaLink}
-            sx={{ borderRadius: 2, px: 4 }}
-          >
-            {data.ctaText}
-          </Button>
+          <MovingBorder borderRadius="8px">
+            <Button
+              variant="contained"
+              size="large"
+              component={RouterLink}
+              to={data.ctaLink}
+              sx={{
+                py: 1.5,
+                px: 4,
+                fontWeight: 700,
+                fontSize: "1rem",
+                borderRadius: 2,
+                bgcolor: "#178FD6", // match MovingBorder inner bg
+                color: "#FFFCF6",
+                transition: "transform 0.2s ease",
+                "&:hover": { bgcolor: "#034488" },
+              }}
+            >
+              {data.ctaText}
+            </Button>
+          </MovingBorder>
         </Box>
 
         {/* RIGHT - video or image */}

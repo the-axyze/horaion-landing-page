@@ -6,7 +6,6 @@ const service1Data: ServiceData = {
     title: "AI Scheduling Solutions",
     subtitle:
       "Solve complex workforce scheduling in minutes, not hours. Our optimization engine combines operations research with responsible AI to deliver feasible, fair, and efficient schedules.",
-    badgeLabel: "Popular",
     ctaText: "Get Started",
     ctaLink: "/contact",
     videoSrc: "/placeholder-video.mp4",
@@ -63,7 +62,7 @@ const service1Data: ServiceData = {
     title: "Ready to Get Started?",
     subtitle: "Try Service One free for 30 days. No credit card required.",
     primaryButtonText: "Start Free Trial",
-    primaryButtonLink: "/signup",
+    primaryButtonLink: "/start-free",
     secondaryButtonText: "Book a Demo",
     secondaryButtonLink: "/demo",
   },

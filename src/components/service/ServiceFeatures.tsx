@@ -1,4 +1,4 @@
-import { Box, Typography, Container, Grid, Paper } from "@mui/material";
+import { Box, Typography, Container, Grid } from "@mui/material";
 import {
   RocketLaunch,
   TrendingUp,
@@ -12,8 +12,8 @@ import {
 import type { ServiceData } from "../../types/service";
 
 const iconMap: Record<string, React.ReactNode> = {
-  RocketLaunch: <RocketLaunch fontSize="large" color="primary" />,
-  TrendingUp: <TrendingUp fontSize="large" color="primary" />,
+  RocketLaunch: <RocketLaunch fontSize="large" sx={{ color: "#FFFCF6" }} />,
+  TrendingUp: <TrendingUp fontSize="large" sx={{ color: "#FFFCF6" }} />,
   Security: <Security fontSize="large" color="primary" />,
   AccessTime: <AccessTime fontSize="large" color="primary" />,
   Groups: <Groups fontSize="large" color="primary" />,
@@ -51,32 +51,42 @@ const ServiceFeatures = ({ data }: Props) => {
         <Grid container spacing={4} justifyContent="center">
           {data.items.map((feature, index) => (
             <Grid key={index} size={{ xs: 12, sm: 6, md: 4 }}>
-              <Paper
-                elevation={0}
+              <Box
                 sx={{
                   p: 4,
                   height: "100%",
                   borderRadius: 3,
-                  border: "1px solid",
-                  borderColor: "divider",
+                  backdropFilter: "blur(12px)",
+                  background: "rgba(255,255,255,0.08)",
+                  border: "1px solid #FFFCF6",
                   transition: "all 0.2s ease",
-                  "&:hover": { boxShadow: 4, transform: "translateY(-4px)" },
+                  "&:hover": {
+                    background: "rgba(255,255,255,0.06)",
+                    borderColor: "rgba(255,255,255,0.2)",
+                    transform: "translateY(-4px)",
+                    boxShadow: "0 12px 40px rgba(0,0,0,0.2)",
+                  },
                 }}
               >
                 <Box sx={{ mb: 2 }}>
                   {iconMap[feature.icon ?? "Default"] ?? iconMap["Default"]}
                 </Box>
-                <Typography variant="h6" fontWeight={600} sx={{ mb: 1 }}>
+                <Typography
+                  variant="h6"
+                  fontWeight={600}
+                  color="#FFFCF6"
+                  sx={{ mb: 1 }}
+                >
                   {feature.title}
                 </Typography>
                 <Typography
                   variant="body2"
-                  color="text.secondary"
+                  color="#FFFCF6"
                   sx={{ lineHeight: 1.7 }}
                 >
                   {feature.description}
                 </Typography>
-              </Paper>
+              </Box>
             </Grid>
           ))}
         </Grid>

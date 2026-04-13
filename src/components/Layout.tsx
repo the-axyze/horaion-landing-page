@@ -25,7 +25,6 @@ import { useState } from "react";
 
 const serviceLinks = [
   { label: "AI Scheduling Solutions", path: "/ai-scheduling-solutions" },
-  { label: "Service 2", path: "/service2" },
 ];
 
 const Layout = () => {
@@ -270,7 +269,7 @@ const Layout = () => {
               <Button
                 variant="outlined"
                 component={RouterLink}
-                to="/"
+                to="/start-free"
                 sx={{
                   fontWeight: 600,
                   borderRadius: 2,
@@ -290,8 +289,10 @@ const Layout = () => {
               <Button
                 color="inherit"
                 variant="text"
-                component={RouterLink}
-                to="/signin"
+                component="a"
+                href="https://ui-horizon-dev-rbac.vercel.app/login"
+                target="_blank"
+                rel="noopener noreferrer"
                 sx={{
                   fontWeight: 500,
                   whiteSpace: "nowrap",
@@ -385,7 +386,15 @@ const Layout = () => {
 
             <Divider sx={{ borderColor: "rgba(255,255,255,0.1)" }} />
 
-            <ListItemButton onClick={() => handleDrawerNav("/signin")}>
+            <ListItemButton
+              onClick={() =>
+                window.open(
+                  "https://ui-horizon-dev-rbac.vercel.app/login",
+                  "_blank",
+                  "noopener,noreferrer",
+                )
+              }
+            >
               <ListItemText primary="Sign In" />
             </ListItemButton>
 
@@ -409,7 +418,7 @@ const Layout = () => {
               <Button
                 variant="outlined"
                 fullWidth
-                onClick={() => handleDrawerNav("/")}
+                onClick={() => handleDrawerNav("/start-free")}
                 sx={{
                   fontWeight: 600,
                   borderRadius: 2,

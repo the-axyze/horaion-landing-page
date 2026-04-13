@@ -1,6 +1,7 @@
 import { Typography, Box, Button } from "@mui/material";
 import GlobalStyles from "@mui/material/GlobalStyles";
 import { MovingBorder } from "./MovingBorder";
+import { Link as RouterLink } from "react-router-dom";
 
 const stats = [
   { value: "98%", label: "Accuracy" },
@@ -70,6 +71,8 @@ const Hero = () => {
                 <Button
                   variant="contained"
                   size="medium"
+                  component={RouterLink}
+                  to="/start-free"
                   sx={{
                     py: 1.5,
                     px: 4,

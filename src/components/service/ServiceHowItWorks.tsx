@@ -77,7 +77,7 @@ const ServiceHowItWorks = ({ data }: Props) => {
                 </Typography>
                 <Typography
                   variant="body2"
-                  color="text.secondary"
+                  color="#FFFCF6"
                   sx={{ lineHeight: 1.7 }}
                 >
                   {step.description}
