@@ -162,7 +162,7 @@ const ContactForm = () => {
           alignSelf: "flex-start",
           fontWeight: 600,
           bgcolor: "#178FD6",
-          color: "white",
+          color: "#FFFCF6",
           transition: "transform 0.2s ease",
           "&:hover": { transform: "scale(1.04)", bgcolor: "#034488" },
         }}

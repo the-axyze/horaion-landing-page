@@ -13,7 +13,7 @@ const ServiceCTA = ({ data }: Props) => {
         py: 10,
         px: { xs: 3, md: 8 },
         textAlign: "center",
-        bgcolor: "primary.main",
+        bgcolor: "#178FD6",
         color: "#FFFCF6",
       }}
     >
@@ -32,11 +32,11 @@ const ServiceCTA = ({ data }: Props) => {
             to={data.primaryButtonLink}
             sx={{
               bgcolor: "#FFFCF6",
-              color: "primary.main",
+              color: "#034488",
               fontWeight: 700,
               borderRadius: 2,
               px: 4,
-              "&:hover": { bgcolor: "grey.100" },
+              "&:hover": { bgcolor: "#CCDDE8" },
             }}
           >
             {data.primaryButtonText}
@@ -54,7 +54,7 @@ const ServiceCTA = ({ data }: Props) => {
                 px: 4,
                 "&:hover": {
                   borderColor: "grey.100",
-                  bgcolor: "rgba(255,255,255,0.1)",
+                  bgcolor: "#CCDDE8",
                 },
               }}
             >

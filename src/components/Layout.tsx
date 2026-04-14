@@ -22,6 +22,7 @@ import {
   useLocation,
 } from "react-router-dom";
 import { useState } from "react";
+import background from "../assets/background.svg";
 
 const serviceLinks = [
   { label: "AI Scheduling Solutions", path: "/ai-scheduling-solutions" },
@@ -78,8 +79,11 @@ const Layout = () => {
     <Box
       sx={{
         minHeight: "100vh",
-        background:
-          "linear-gradient(160deg, #0d1b4b 0%, #1a3a7c 40%, #4a90d9 75%, #178FD6 100%)",
+        backgroundImage: `url(${background})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+        backgroundAttachment: "fixed",
       }}
     >
       <AppBar

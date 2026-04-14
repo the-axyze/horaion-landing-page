@@ -8,6 +8,7 @@ import {
   AccordionDetails,
 } from "@mui/material";
 import { ExpandMore } from "@mui/icons-material";
+import { Helmet } from "react-helmet-async";
 
 const faqs = [
   {
@@ -36,83 +37,88 @@ const FAQ = () => {
     };
 
   return (
-    <Box sx={{ py: 10, px: { xs: 3, md: 8 } }}>
-      <Container maxWidth="md">
-        <Typography
-          variant="h3"
-          color="#FFFCF6"
-          fontWeight={700}
-          align="center"
-          sx={{ mb: 2 }}
-        >
-          Frequently Asked Questions
-        </Typography>
-        <Typography
-          variant="h6"
-          align="center"
-          color="#EDECE8"
-          sx={{ mb: 8, lineHeight: 1.6, maxWidth: 560, mx: "auto" }}
-        >
-          Can't find what you're looking for? Feel free to{" "}
-          <Box
-            component="a"
-            href="/contact"
-            sx={{
-              color: "#FFFCF6",
-              fontWeight: 600,
-              textDecoration: "underline",
-              textUnderlineOffset: 3,
-              "&:hover": { opacity: 0.75 },
-            }}
+    <>
+      <Helmet>
+        <title>Frequently Asked Questions</title>
+      </Helmet>
+      <Box sx={{ py: 10, px: { xs: 3, md: 8 } }}>
+        <Container maxWidth="md">
+          <Typography
+            variant="h3"
+            color="#FFFCF6"
+            fontWeight={700}
+            align="center"
+            sx={{ mb: 2 }}
           >
-            reach out to us
-          </Box>
-          .
-        </Typography>
+            Frequently Asked Questions
+          </Typography>
+          <Typography
+            variant="h6"
+            align="center"
+            color="#EDECE8"
+            sx={{ mb: 8, lineHeight: 1.6, maxWidth: 560, mx: "auto" }}
+          >
+            Can't find what you're looking for? Feel free to{" "}
+            <Box
+              component="a"
+              href="/contact"
+              sx={{
+                color: "#FFFCF6",
+                fontWeight: 600,
+                textDecoration: "underline",
+                textUnderlineOffset: 3,
+                "&:hover": { opacity: 0.75 },
+              }}
+            >
+              reach out to us
+            </Box>
+            .
+          </Typography>
 
-        <Box sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
-          {faqs.map((faq, index) => {
-            const panel = `panel${index}`;
-            return (
-              <Accordion
-                key={panel}
-                expanded={expanded === panel}
-                onChange={handleChange(panel)}
-                elevation={0}
-                sx={{
-                  background: "rgba(255,255,255,0.08)",
-                  backdropFilter: "blur(12px)",
-                  border: "1px solid rgba(255,255,255,0.15)",
-                  borderRadius: "12px !important",
-                  "&:before": { display: "none" },
-                  "&.Mui-expanded": {
-                    background: "rgba(255,255,255,0.12)",
-                  },
-                }}
-              >
-                <AccordionSummary
-                  expandIcon={<ExpandMore sx={{ color: "#FFFCF6" }} />}
-                  sx={{ px: 3, py: 1 }}
+          <Box sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
+            {faqs.map((faq, index) => {
+              const panel = `panel${index}`;
+              return (
+                <Accordion
+                  key={panel}
+                  expanded={expanded === panel}
+                  onChange={handleChange(panel)}
+                  elevation={0}
+                  sx={{
+                    background: "rgba(255,255,255,0.08)",
+                    backdropFilter: "blur(12px)",
+                    border: "1px solid rgba(255,255,255,0.15)",
+                    borderRadius: "12px !important",
+                    "&:before": { display: "none" },
+                    "&.Mui-expanded": {
+                      background: "rgba(255,255,255,0.12)",
+                    },
+                  }}
                 >
-                  <Typography
-                    fontWeight={600}
-                    color="#FFFCF6"
-                    sx={{ fontSize: "1rem" }}
+                  <AccordionSummary
+                    expandIcon={<ExpandMore sx={{ color: "#FFFCF6" }} />}
+                    sx={{ px: 3, py: 1 }}
                   >
-                    {faq.question}
-                  </Typography>
-                </AccordionSummary>
-                <AccordionDetails sx={{ px: 3, pb: 3 }}>
-                  <Typography color="#CCDDE8" sx={{ lineHeight: 1.8 }}>
-                    {faq.answer}
-                  </Typography>
-                </AccordionDetails>
-              </Accordion>
-            );
-          })}
-        </Box>
-      </Container>
-    </Box>
+                    <Typography
+                      fontWeight={600}
+                      color="#FFFCF6"
+                      sx={{ fontSize: "1rem" }}
+                    >
+                      {faq.question}
+                    </Typography>
+                  </AccordionSummary>
+                  <AccordionDetails sx={{ px: 3, pb: 3 }}>
+                    <Typography color="#CCDDE8" sx={{ lineHeight: 1.8 }}>
+                      {faq.answer}
+                    </Typography>
+                  </AccordionDetails>
+                </Accordion>
+              );
+            })}
+          </Box>
+        </Container>
+      </Box>
+    </>
   );
 };
 

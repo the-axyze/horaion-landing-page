@@ -1,4 +1,5 @@
 export interface ServiceData {
+  title: string,
   hero: {
     title: string;
     subtitle: string;

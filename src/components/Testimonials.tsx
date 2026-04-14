@@ -124,7 +124,7 @@ const Testimonials = () => {
           sx={{ mt: 4 }}
         >
           <IconButton onClick={prev} size="small">
-            <ArrowBack fontSize="small" />
+            <ArrowBack fontSize="small" sx={{ color: "#FFFCF6" }} />
           </IconButton>
 
           {testimonials.map((_, index) => (
@@ -135,7 +135,7 @@ const Testimonials = () => {
                 width: index === current ? 24 : 8,
                 height: 8,
                 borderRadius: 4,
-                bgcolor: index === current ? "primary.main" : "divider",
+                bgcolor: index === current ? "#FFFCF6" : "#EDECE8",
                 cursor: "pointer",
                 transition: "all 0.3s ease",
               }}
@@ -143,7 +143,7 @@ const Testimonials = () => {
           ))}
 
           <IconButton onClick={next} size="small">
-            <ArrowForward fontSize="small" />
+            <ArrowForward fontSize="small" sx={{ color: "#FFFCF6" }} />
           </IconButton>
         </Box>
       </Container>

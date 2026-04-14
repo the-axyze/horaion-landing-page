@@ -2,6 +2,7 @@ import ServicePage from "./ServicePage";
 import type { ServiceData } from "../../types/service";
 
 const service1Data: ServiceData = {
+  title: "AI Scheduling Solutions",
   hero: {
     title: "AI Scheduling Solutions",
     subtitle:
@@ -36,7 +37,7 @@ const service1Data: ServiceData = {
   howItWorks: {
     sectionTitle: "How It Works",
     sectionSubtitle:
-      "Three simple steps to get up and running with Service One.",
+      "Three simple steps to get up and running with AI Scheduling Solutions.",
     steps: [
       {
         stepNumber: 1,
@@ -60,7 +61,7 @@ const service1Data: ServiceData = {
   },
   cta: {
     title: "Ready to Get Started?",
-    subtitle: "Try Service One free for 30 days. No credit card required.",
+    subtitle: "Try our service free for 30 days. No credit card required.",
     primaryButtonText: "Start Free Trial",
     primaryButtonLink: "/start-free",
     secondaryButtonText: "Book a Demo",
