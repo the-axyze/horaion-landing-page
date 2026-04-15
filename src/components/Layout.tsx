@@ -1,7 +1,6 @@
 import {
   AppBar,
   Toolbar,
-  Typography,
   Button,
   IconButton,
   Box,
@@ -23,6 +22,7 @@ import {
 } from "react-router-dom";
 import { useState } from "react";
 import background from "../assets/background.svg";
+import HoraionLogo from "../assets/HoraionLogo.png";
 
 const serviceLinks = [
   { label: "AI Scheduling Solutions", path: "/ai-scheduling-solutions" },
@@ -97,19 +97,24 @@ const Layout = () => {
       >
         <Toolbar sx={{ gap: 2 }}>
           {/* LEFT - Logo */}
-          <Typography
-            variant="h6"
+          <Box
             component={RouterLink}
             to="/"
             sx={{
-              textDecoration: "none",
-              color: "#FFFCF6",
-              fontWeight: 700,
-              flexShrink: 0,
+              height: 150,
+              width: 150,
+              maxHeight: { xs: 100, md: 125 },
+              maxWidth: { xs: 100, md: 125 },
+              display: "inline-block",
             }}
           >
-            Horaion
-          </Typography>
+            <Box
+              component="img"
+              sx={{ width: "100%", height: "100%" }}
+              alt="Horaion Logo"
+              src={HoraionLogo}
+            />
+          </Box>
 
           {/* CENTER - Desktop Navigation */}
           <Box
