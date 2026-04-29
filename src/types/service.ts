@@ -33,7 +33,7 @@ export interface ServiceData {
     subtitle: string;
     primaryButtonText: string;
     primaryButtonLink: string;
-    secondaryButtonText: string;
-    secondaryButtonLink: string;
+    secondaryButtonText?: string;
+    secondaryButtonLink?: string;
   };
 }
