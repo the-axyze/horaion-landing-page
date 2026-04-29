@@ -1,5 +1,5 @@
-import ServicePage from "./ServicePage";
 import type { ServiceData } from "../../types/service";
+import ServicePage from "./ServicePage";
 
 const service1Data: ServiceData = {
   title: "AI Scheduling Solutions",
@@ -61,11 +61,14 @@ const service1Data: ServiceData = {
   },
   cta: {
     title: "Ready to Get Started?",
-    subtitle: "Try our service free for 30 days. No credit card required.",
-    primaryButtonText: "Start Free Trial",
-    primaryButtonLink: "/start-free",
-    secondaryButtonText: "Book a Demo",
-    secondaryButtonLink: "/demo",
+    subtitle: "Book a demo with us and try it for free!",
+    // subtitle: "Try our service free for 30 days. No credit card required.",
+    primaryButtonText: "Book a demo",
+    primaryButtonLink: "/demo"
+    // primaryButtonText: "Start Free Trial",
+    // primaryButtonLink: "/start-free",
+    // secondaryButtonText: "Book a Demo",
+    // secondaryButtonLink: "/demo",
   },
 };
 
