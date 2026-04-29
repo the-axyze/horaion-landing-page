@@ -1,6 +1,6 @@
-import { Box, Typography, Container, Button } from "@mui/material";
-import { MovingBorder } from "./MovingBorder";
+import { Box, Button, Container, Typography } from "@mui/material";
 import { Link as RouterLink } from "react-router-dom";
+import { MovingBorder } from "./MovingBorder";
 
 const stats = [
   { value: "10,000+", label: "Organizations Trust Us" },
