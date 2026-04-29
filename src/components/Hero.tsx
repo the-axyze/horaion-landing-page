@@ -1,7 +1,7 @@
-import { Typography, Box, Button } from "@mui/material";
+import { Box, Button, Typography } from "@mui/material";
 import GlobalStyles from "@mui/material/GlobalStyles";
-import { MovingBorder } from "./MovingBorder";
 import { Link as RouterLink } from "react-router-dom";
+import { MovingBorder } from "./MovingBorder";
 
 const stats = [
   { value: "98%", label: "Accuracy" },
@@ -72,7 +72,7 @@ const Hero = () => {
                   variant="contained"
                   size="medium"
                   component={RouterLink}
-                  to="/start-free"
+                  to="/demo"
                   sx={{
                     py: 1.5,
                     px: 4,
@@ -85,7 +85,7 @@ const Hero = () => {
                     "&:hover": { bgcolor: "#034488" },
                   }}
                 >
-                  Get Started Free
+                  Book a Demo with Us
                 </Button>
               </MovingBorder>
             </Box>

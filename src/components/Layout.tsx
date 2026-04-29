@@ -408,7 +408,7 @@ const Layout = () => {
             </ListItemButton>
 
             <Box sx={{ px: 2, py: 1 }}>
-              <Button
+              {/* <Button
                 variant="contained"
                 fullWidth
                 onClick={() => handleDrawerNav("/demo")}
@@ -423,7 +423,7 @@ const Layout = () => {
                 }}
               >
                 Book a Demo
-              </Button>
+              </Button> */}
               <Button
                 variant="outlined"
                 fullWidth
