@@ -1,26 +1,26 @@
+import { KeyboardArrowDown, Menu as MenuIcon } from "@mui/icons-material";
 import {
   AppBar,
-  Toolbar,
-  Button,
-  IconButton,
   Box,
-  Menu,
-  MenuItem,
+  Button,
+  Collapse,
+  Divider,
   Drawer,
+  IconButton,
   List,
   ListItemButton,
   ListItemText,
-  Collapse,
-  Divider,
+  Menu,
+  MenuItem,
+  Toolbar,
 } from "@mui/material";
-import { KeyboardArrowDown, Menu as MenuIcon } from "@mui/icons-material";
+import { useState } from "react";
 import {
   Outlet,
   Link as RouterLink,
-  useNavigate,
   useLocation,
+  useNavigate,
 } from "react-router-dom";
-import { useState } from "react";
 import background from "../assets/background.svg";
 import HoraionLogo from "../assets/HoraionLogo.png";
 
@@ -224,14 +224,14 @@ const Layout = () => {
             >
               Contact Us
             </Button>
-            <Button
+            {/* <Button
               color="inherit"
               component={RouterLink}
               to="/pricing"
               sx={navLinkSx("/pricing")}
             >
               Pricing
-            </Button>
+            </Button> */}
             <Button
               color="inherit"
               component={RouterLink}
@@ -275,7 +275,7 @@ const Layout = () => {
               >
                 Book a Demo
               </Button>
-              <Button
+              {/* <Button
                 variant="outlined"
                 component={RouterLink}
                 to="/start-free"
@@ -310,7 +310,7 @@ const Layout = () => {
                 }}
               >
                 Sign In
-              </Button>
+              </Button> */}
             </Box>
 
             <IconButton

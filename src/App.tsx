@@ -1,12 +1,12 @@
-import { Routes, Route, Navigate } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
 import Layout from "./components/Layout";
-import Home from "./pages/Home";
-import Contact from "./pages/Contact";
 import About from "./pages/About";
-import Pricing from "./pages/Pricing";
-import Service1 from "./pages/services/Service1";
+import Contact from "./pages/Contact";
 import Demo from "./pages/Demo";
 import FAQ from "./pages/FAQ";
+import Home from "./pages/Home";
+import Pricing from "./pages/Pricing";
+import Service1 from "./pages/services/Service1";
 import StartFree from "./pages/StartFree";
 
 const App = () => {
