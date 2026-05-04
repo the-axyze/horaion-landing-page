@@ -1,6 +1,4 @@
 // reusable template for pages
-
-import { Helmet } from "react-helmet-async";
 import {
   ServiceHero,
   ServiceFeatures,
@@ -14,11 +12,12 @@ interface Props {
 }
 
 const ServicePage = ({ data }: Props) => {
+  document.title = `Solutions | ${data.title}`;
   return (
     <>
-      <Helmet>
-        <title>Solutions | AI Scheduling</title>
-      </Helmet>
+      {/* <Helmet>
+        <title>Solutions | {data.title}</title>
+      </Helmet> */}
       <ServiceHero data={data.hero} />
       <ServiceFeatures data={data.features} />
       <ServiceHowItWorks data={data.howItWorks} />

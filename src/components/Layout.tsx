@@ -26,6 +26,17 @@ import HoraionLogo from "../assets/HoraionLogo.png";
 
 const serviceLinks = [
   { label: "AI Scheduling Solutions", path: "/ai-scheduling-solutions" },
+  // {
+  //   label: "Scheduling",
+  //   children: [
+  //     { label: "Flexi Scheduling", path: "/flexi-scheduling" },
+  //     { label: "Gig Scheduling", path: "/gig-scheduling" },
+  //     { label: "Leave Application", path: "/leave-application" },
+  //   ],
+  // },
+  { label: "Route Optimization", path: "/route-optimization" },
+  { label: "Demand Forecasting", path: "/demand-forecasting" },
+  { label: "Profile Management", path: "/profile-management" },
 ];
 
 const Layout = () => {
