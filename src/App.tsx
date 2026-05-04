@@ -11,6 +11,9 @@ import RouteOptimization from "./pages/services/RouteOptimization";
 import StartFree from "./pages/StartFree";
 import DemandForecasting from "./pages/services/DemandForecasting";
 import ProfileManagement from "./pages/services/ProfileManagement";
+import FlexiScheduling from "./pages/services/FlexiScheduling";
+import GigScheduling from "./pages/services/GigScheduling";
+import LeaveApp from "./pages/services/LeaveApp";
 
 const App = () => {
   return (
@@ -20,6 +23,8 @@ const App = () => {
         <Route path="contact" element={<Contact />} />
         <Route path="about" element={<About />} />
         <Route path="pricing" element={<Pricing />} />
+
+        {/* solutions routes */}
         <Route
           path="ai-scheduling-solutions"
           element={<SchedulingSolutions />}
@@ -27,6 +32,10 @@ const App = () => {
         <Route path="/route-optimization" element={<RouteOptimization />} />
         <Route path="/demand-forecasting" element={<DemandForecasting />} />
         <Route path="/profile-management" element={<ProfileManagement />} />
+        <Route path="/flexi-schedule" element={<FlexiScheduling />} />
+        <Route path="/gig-schedule" element={<GigScheduling />} />
+        <Route path="/leave-application" element={<LeaveApp />} />
+
         <Route path="demo" element={<Demo />} />
         <Route path="faq" element={<FAQ />} />
         <Route path="start-free" element={<StartFree />} />

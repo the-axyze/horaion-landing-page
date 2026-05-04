@@ -25,15 +25,15 @@ import background from "../assets/background.svg";
 import HoraionLogo from "../assets/HoraionLogo.png";
 
 const serviceLinks = [
-  { label: "AI Scheduling Solutions", path: "/ai-scheduling-solutions" },
-  // {
-  //   label: "Scheduling",
-  //   children: [
-  //     { label: "Flexi Scheduling", path: "/flexi-scheduling" },
-  //     { label: "Gig Scheduling", path: "/gig-scheduling" },
-  //     { label: "Leave Application", path: "/leave-application" },
-  //   ],
-  // },
+  // { label: "AI Scheduling Solutions", path: "/ai-scheduling-solutions" },
+  {
+    label: "Scheduling",
+    children: [
+      { label: "Flexi Scheduling", path: "/flexi-scheduling" },
+      { label: "Gig Scheduling", path: "/gig-scheduling" },
+      { label: "Leave Application", path: "/leave-application" },
+    ],
+  },
   { label: "Route Optimization", path: "/route-optimization" },
   { label: "Demand Forecasting", path: "/demand-forecasting" },
   { label: "Profile Management", path: "/profile-management" },
@@ -47,9 +47,12 @@ const Layout = () => {
   const location = useLocation();
 
   const open = Boolean(anchorEl);
-  const isServiceActive = serviceLinks.some(
-    (s) => location.pathname === s.path,
-  );
+  const isServiceActive = serviceLinks.some((s) => {
+    if (s.children) {
+      return s.children.some((c) => location.pathname === c.path);
+    }
+    return location.pathname === s.path;
+  });
 
   const handleToggle = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorEl(open ? null : event.currentTarget);
@@ -200,23 +203,52 @@ const Layout = () => {
                 },
               }}
             >
-              {serviceLinks.map((s) => (
-                <MenuItem
-                  key={s.path}
-                  component={RouterLink}
-                  to={s.path}
-                  onClick={handleClose}
-                  selected={location.pathname === s.path}
-                  sx={{
-                    "&.Mui-selected": {
-                      background: "rgba(255,255,255,0.2)",
-                      fontWeight: 700,
-                    },
-                  }}
-                >
-                  {s.label}
-                </MenuItem>
-              ))}
+              {serviceLinks.map((s) =>
+                s.children ? (
+                  <Box key={s.label}>
+                    {/* Group title */}
+                    <MenuItem disabled sx={{ fontWeight: 700, opacity: 0.7 }}>
+                      {s.label}
+                    </MenuItem>
+
+                    {/* Sub-items */}
+                    {s.children.map((child) => (
+                      <MenuItem
+                        key={child.path}
+                        component={RouterLink}
+                        to={child.path}
+                        onClick={handleClose}
+                        selected={location.pathname === child.path}
+                        sx={{
+                          pl: 3,
+                          "&.Mui-selected": {
+                            background: "rgba(255,255,255,0.2)",
+                            fontWeight: 700,
+                          },
+                        }}
+                      >
+                        {child.label}
+                      </MenuItem>
+                    ))}
+                  </Box>
+                ) : (
+                  <MenuItem
+                    key={s.path}
+                    component={RouterLink}
+                    to={s.path}
+                    onClick={handleClose}
+                    selected={location.pathname === s.path}
+                    sx={{
+                      "&.Mui-selected": {
+                        background: "rgba(255,255,255,0.2)",
+                        fontWeight: 700,
+                      },
+                    }}
+                  >
+                    {s.label}
+                  </MenuItem>
+                ),
+              )}
             </Menu>
 
             <Button
@@ -370,19 +402,33 @@ const Layout = () => {
             </ListItemButton>
             <Collapse in={solutionsOpen} timeout="auto" unmountOnExit>
               <List disablePadding>
-                {serviceLinks.map((s) => (
-                  <ListItemButton
-                    key={s.path}
-                    sx={{
-                      pl: 4,
-                      "&.Mui-selected": { bgcolor: "rgba(255,255,255,0.15)" },
-                    }}
-                    selected={location.pathname === s.path}
-                    onClick={() => handleDrawerNav(s.path)}
-                  >
-                    <ListItemText primary={s.label} />
-                  </ListItemButton>
-                ))}
+                {serviceLinks.map((s) =>
+                  s.children ? (
+                    <Box key={s.label}>
+                      <ListItemButton>
+                        <ListItemText primary={s.label} />
+                      </ListItemButton>
+
+                      {s.children.map((child) => (
+                        <ListItemButton
+                          key={child.path}
+                          sx={{ pl: 4 }}
+                          selected={location.pathname === child.path}
+                          onClick={() => handleDrawerNav(child.path)}
+                        >
+                          <ListItemText primary={child.label} />
+                        </ListItemButton>
+                      ))}
+                    </Box>
+                  ) : (
+                    <ListItemButton
+                      selected={location.pathname === s.path}
+                      onClick={() => handleDrawerNav(s.path)}
+                    >
+                      <ListItemText primary={s.label} />
+                    </ListItemButton>
+                  ),
+                )}
               </List>
             </Collapse>
 
