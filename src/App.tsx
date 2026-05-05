@@ -32,8 +32,8 @@ const App = () => {
         <Route path="/route-optimization" element={<RouteOptimization />} />
         <Route path="/demand-forecasting" element={<DemandForecasting />} />
         <Route path="/profile-management" element={<ProfileManagement />} />
-        <Route path="/flexi-schedule" element={<FlexiScheduling />} />
-        <Route path="/gig-schedule" element={<GigScheduling />} />
+        <Route path="/flexi-scheduling" element={<FlexiScheduling />} />
+        <Route path="/gig-scheduling" element={<GigScheduling />} />
         <Route path="/leave-application" element={<LeaveApp />} />
 
         <Route path="demo" element={<Demo />} />
