@@ -8,6 +8,7 @@ import {
   Button,
   Collapse,
 } from "@mui/material";
+import { sendDemoRequest } from "../api/demo";
 
 const industries = [
   "Healthcare",
@@ -37,9 +38,23 @@ const DemoForm = () => {
   const [otherIndustry, setOtherIndustry] = useState("");
   const [email, setEmail] = useState("");
 
-  const handleSubmit = () => {
-    // handle submission
-    console.log({ industry, otherIndustry, email });
+  // const handleSubmit = () => {
+  //   // handle submission
+  //   console.log({ industry, otherIndustry, email });
+  // };
+
+  const handleSubmit = async () => {
+    try {
+      await sendDemoRequest({
+        industry,
+        otherIndustry,
+        email,
+      });
+
+      alert("✅ Demo request sent!");
+    } catch (err: any) {
+      alert("❌ " + err.message);
+    }
   };
 
   return (

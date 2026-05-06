@@ -1,5 +1,6 @@
 import { Typography, Button, TextField, Box } from "@mui/material";
 import { useState } from "react";
+import { sendContactForm } from "../api/contact";
 
 type Field = {
   name: "name" | "email" | "phone" | "message";
@@ -83,15 +84,42 @@ const ContactForm = () => {
     setErrors((prev) => ({ ...prev, [name]: validateField(field, value) }));
   };
 
-  const handleSubmit = () => {
+  // const handleSubmit = () => {
+  //   const newErrors: Record<string, string | null> = {};
+  //   fields.forEach((field) => {
+  //     const value = form[field.name] || "";
+  //     newErrors[field.name] = validateField(field, value);
+  //   });
+  //   setErrors(newErrors);
+  //   if (!Object.values(newErrors).some((e) => e !== null)) {
+  //     alert("Message sent!");
+  //   }
+  // };
+
+  const handleSubmit = async () => {
     const newErrors: Record<string, string | null> = {};
+
     fields.forEach((field) => {
       const value = form[field.name] || "";
       newErrors[field.name] = validateField(field, value);
     });
+
     setErrors(newErrors);
-    if (!Object.values(newErrors).some((e) => e !== null)) {
-      alert("Message sent!");
+
+    if (Object.values(newErrors).some((e) => e !== null)) return;
+
+    try {
+      await sendContactForm({
+        name: form.name,
+        email: form.email,
+        phone: form.phone,
+        message: form.message,
+      });
+
+      alert("✅ Message sent!");
+      setForm({});
+    } catch (err: any) {
+      alert("❌ " + err.message);
     }
   };
 
