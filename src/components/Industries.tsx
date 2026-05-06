@@ -95,8 +95,8 @@ const Industries = () => {
                   sx={{
                     width: 72,
                     height: 72,
-                    bgcolor: "primary.main",
                     background: "transparent",
+                    color: "primary.main",
                     mb: 2,
                   }}
                 >

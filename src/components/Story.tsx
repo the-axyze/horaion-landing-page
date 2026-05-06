@@ -8,12 +8,15 @@ import {
   timelineItemClasses,
 } from "@mui/lab";
 import { Box, Stack, Typography } from "@mui/material";
+import { motion, useReducedMotion } from "framer-motion";
 
 import aisgLogo from "../assets/logos/aisg.jpg";
 import horaionLogo from "../assets/logos/horaion-logo-black-bg.svg";
 import pizzahutLogo from "../assets/logos/pizza-hut.jpg";
 import ttshLogo from "../assets/logos/ttsh.jpg";
 import uparcelLogo from "../assets/logos/uparcel.webp";
+import { EASE_OUT_EXPO } from "../lib/motion";
+import Reveal from "./Reveal";
 
 type StoryLogo = {
   src: string;
@@ -23,8 +26,7 @@ type StoryLogo = {
 
 type StoryEntry = {
   // Free-form so you can write a single month ("Mar 2023") or a range
-  // ("Late 2025 → 2026"). Kept as a string for flexibility — replace with
-  // real dates once the months are confirmed.
+  // ("Late 2025 → 2026"). Replace with real dates once confirmed.
   date: string;
   title: string;
   description?: string;
@@ -74,15 +76,15 @@ const LogoTile = ({ logo }: { logo: StoryLogo }) => {
     <Box
       sx={{
         flexShrink: 0,
-        width: { xs: 56, sm: 80 },
-        height: { xs: 56, sm: 80 },
+        width: "clamp(56px, 8vw, 80px)",
+        height: "clamp(56px, 8vw, 80px)",
         borderRadius: 2,
         bgcolor: "rgba(255,255,255,0.95)",
         border: "1px solid rgba(255,255,255,0.15)",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        p: { xs: 1, sm: 1.25 },
+        p: 1.25,
         overflow: "hidden",
       }}
     >
@@ -91,16 +93,13 @@ const LogoTile = ({ logo }: { logo: StoryLogo }) => {
         src={logo.src}
         alt={logo.alt}
         loading="lazy"
-        sx={{
-          maxWidth: "100%",
-          maxHeight: "100%",
-          objectFit: "contain",
-        }}
+        sx={{ maxWidth: "100%", maxHeight: "100%", objectFit: "contain" }}
       />
     </Box>
   );
 
-  return logo.href ? (
+  if (!logo.href) return tile;
+  return (
     <Box
       component="a"
       href={logo.href}
@@ -110,31 +109,136 @@ const LogoTile = ({ logo }: { logo: StoryLogo }) => {
     >
       {tile}
     </Box>
-  ) : (
-    tile
   );
 };
 
-const Story = () => {
-  return (
-    <Box sx={{ px: { xs: 2, md: 6 }, py: { xs: 4, md: 6 } }}>
+const StoryHeader = () => (
+  <>
+    <Reveal>
+      <Typography
+        align="center"
+        sx={{
+          color: "#7ec8ff",
+          fontWeight: 700,
+          fontSize: "0.8rem",
+          letterSpacing: "0.18em",
+          textTransform: "uppercase",
+          mb: 1,
+        }}
+      >
+        The Journey
+      </Typography>
+    </Reveal>
+    <Reveal delay={0.05}>
       <Typography
         variant="h3"
         color="#FFFCF6"
         align="center"
-        fontWeight="bold"
-        sx={{ pb: { xs: 1, md: 2 }, fontSize: { xs: "2rem", md: "3rem" } }}
+        sx={{
+          fontWeight: 700,
+          pb: 1.5,
+          fontSize: "clamp(2rem, 5vw, 3rem)",
+        }}
       >
         Our Story
       </Typography>
+    </Reveal>
+    <Reveal delay={0.1}>
       <Typography
         align="center"
         color="rgba(255,255,255,0.65)"
-        sx={{ pb: { xs: 3, md: 5 }, fontSize: { xs: "0.95rem", md: "1.1rem" } }}
+        sx={{
+          pb: "clamp(2rem, 5vw, 4rem)",
+          fontSize: "clamp(0.95rem, 2vw, 1.1rem)",
+          maxWidth: 560,
+          mx: "auto",
+        }}
       >
         Three years in the making — from logistics, to gig work, to hospitals.
       </Typography>
+    </Reveal>
+  </>
+);
 
+const StoryItem = ({
+  entry,
+  idx,
+  isLast,
+  reduce,
+}: {
+  entry: StoryEntry;
+  idx: number;
+  isLast: boolean;
+  reduce: boolean;
+}) => (
+  <TimelineItem
+    component={motion.li}
+    initial={reduce ? false : { opacity: 0, y: 24 }}
+    whileInView={reduce ? undefined : { opacity: 1, y: 0 }}
+    viewport={{ once: true, margin: "-60px" }}
+    transition={{ duration: 0.65, delay: idx * 0.08, ease: EASE_OUT_EXPO }}
+  >
+    <TimelineSeparator>
+      <TimelineDot
+        sx={{
+          bgcolor: "#178FD6",
+          boxShadow: "0 0 0 4px rgba(23,143,214,0.15)",
+        }}
+      />
+      {!isLast && (
+        <TimelineConnector sx={{ bgcolor: "rgba(255,255,255,0.2)" }} />
+      )}
+    </TimelineSeparator>
+    <TimelineContent sx={{ pb: "clamp(1.5rem, 3vw, 2.5rem)", pl: 2.5 }}>
+      <Stack direction="row" spacing={2.5} alignItems="flex-start">
+        {entry.logos?.[0] && <LogoTile logo={entry.logos[0]} />}
+        <Box sx={{ flex: 1, minWidth: 0 }}>
+          <Typography
+            variant="overline"
+            color="#178FD6"
+            sx={{
+              fontWeight: 700,
+              letterSpacing: "0.08em",
+              lineHeight: 1.2,
+              display: "block",
+            }}
+          >
+            {entry.date}
+          </Typography>
+          <Typography
+            variant="h6"
+            fontWeight={600}
+            color="#FFFCF6"
+            sx={{ fontSize: "clamp(1rem, 2.4vw, 1.25rem)", mt: 0.25 }}
+          >
+            {entry.title}
+          </Typography>
+          {entry.description && (
+            <Typography
+              variant="body2"
+              color="#CCDDE8"
+              sx={{ mt: 0.75, lineHeight: 1.6 }}
+            >
+              {entry.description}
+            </Typography>
+          )}
+        </Box>
+      </Stack>
+    </TimelineContent>
+  </TimelineItem>
+);
+
+const Story = () => {
+  const reduce = useReducedMotion() ?? false;
+
+  return (
+    <Box
+      sx={{
+        px: "clamp(1rem, 4vw, 3rem)",
+        py: "clamp(3rem, 8vw, 6rem)",
+      }}
+    >
+      <StoryHeader />
       <Timeline
         sx={{
           maxWidth: 760,
@@ -146,72 +250,15 @@ const Story = () => {
           },
         }}
       >
-        {story.map((entry, idx) => {
-          const isLast = idx === story.length - 1;
-          return (
-            <TimelineItem key={`${entry.date}-${entry.title}`}>
-              <TimelineSeparator>
-                <TimelineDot
-                  sx={{
-                    bgcolor: "#178FD6",
-                    boxShadow: "0 0 0 4px rgba(23,143,214,0.15)",
-                  }}
-                />
-                {!isLast && (
-                  <TimelineConnector
-                    sx={{ bgcolor: "rgba(255,255,255,0.2)" }}
-                  />
-                )}
-              </TimelineSeparator>
-              <TimelineContent
-                sx={{ pb: { xs: 3, md: 4 }, pl: { xs: 2, md: 3 } }}
-              >
-                <Stack
-                  direction="row"
-                  spacing={{ xs: 2, sm: 2.5 }}
-                  alignItems="flex-start"
-                >
-                  {entry.logos?.[0] && <LogoTile logo={entry.logos[0]} />}
-                  <Box sx={{ flex: 1, minWidth: 0 }}>
-                    <Typography
-                      variant="overline"
-                      color="#178FD6"
-                      sx={{
-                        fontWeight: 700,
-                        letterSpacing: "0.08em",
-                        lineHeight: 1.2,
-                        display: "block",
-                      }}
-                    >
-                      {entry.date}
-                    </Typography>
-                    <Typography
-                      variant="h6"
-                      fontWeight={600}
-                      color="#FFFCF6"
-                      sx={{
-                        fontSize: { xs: "1rem", md: "1.25rem" },
-                        mt: 0.25,
-                      }}
-                    >
-                      {entry.title}
-                    </Typography>
-
-                    {entry.description && (
-                      <Typography
-                        variant="body2"
-                        color="#CCDDE8"
-                        sx={{ mt: 0.75, lineHeight: 1.6 }}
-                      >
-                        {entry.description}
-                      </Typography>
-                    )}
-                  </Box>
-                </Stack>
-              </TimelineContent>
-            </TimelineItem>
-          );
-        })}
+        {story.map((entry, idx) => (
+          <StoryItem
+            key={`${entry.date}-${entry.title}`}
+            entry={entry}
+            idx={idx}
+            isLast={idx === story.length - 1}
+            reduce={reduce}
+          />
+        ))}
       </Timeline>
     </Box>
   );

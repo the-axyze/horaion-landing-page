@@ -23,6 +23,7 @@ import {
 } from "react-router-dom";
 import background from "../assets/background.svg";
 import HoraionLogo from "../assets/HoraionLogo.png";
+import Aurora from "./Aurora";
 
 const serviceLinks = [
   // { label: "AI Scheduling Solutions", path: "/ai-scheduling-solutions" },
@@ -92,6 +93,7 @@ const Layout = () => {
   return (
     <Box
       sx={{
+        position: "relative",
         minHeight: "100vh",
         backgroundImage: `url(${background})`,
         backgroundSize: "cover",
@@ -100,6 +102,8 @@ const Layout = () => {
         backgroundAttachment: "fixed",
       }}
     >
+      <Aurora />
+      <Box sx={{ position: "relative", zIndex: 1 }}>
       <AppBar
         position="sticky"
         elevation={0}
@@ -506,6 +510,7 @@ const Layout = () => {
       </Drawer>
 
       <Outlet />
+      </Box>
     </Box>
   );
 };
