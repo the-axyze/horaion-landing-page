@@ -1,7 +1,6 @@
 import type { ServiceData } from "../../types/service";
-import ServicePage from "./ServicePage";
 
-const leaveData: ServiceData = {
+export const leaveApplicationData: ServiceData = {
   title: "Leave Application",
   hero: {
     title: "Leave Application",
@@ -73,13 +72,8 @@ const leaveData: ServiceData = {
   },
   cta: {
     title: "Stop approving leave blind",
-    subtitle:
-      "Give your managers the full picture before they say yes.",
+    subtitle: "Give your managers the full picture before they say yes.",
     primaryButtonText: "Book a Demo",
     primaryButtonLink: "/demo",
   },
 };
-
-const LeaveApp = () => <ServicePage data={leaveData} />;
-
-export default LeaveApp;

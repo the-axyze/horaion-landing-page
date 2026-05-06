@@ -1,23 +1,17 @@
-// reusable template for pages
-import {
-  ServiceHero,
-  ServiceFeatures,
-  ServiceHowItWorks,
-  ServiceCTA,
-} from "../../components/service";
 import type { ServiceData } from "../../types/service";
+import ServiceCTA from "./ServiceCTA";
+import ServiceFeatures from "./ServiceFeatures";
+import ServiceHero from "./ServiceHero";
+import ServiceHowItWorks from "./ServiceHowItWorks";
 
 interface Props {
   data: ServiceData;
 }
 
-const ServicePage = ({ data }: Props) => {
+const ServicePageTemplate = ({ data }: Props) => {
   document.title = `Solutions | ${data.title}`;
   return (
     <>
-      {/* <Helmet>
-        <title>Solutions | {data.title}</title>
-      </Helmet> */}
       <ServiceHero data={data.hero} />
       <ServiceFeatures data={data.features} />
       <ServiceHowItWorks data={data.howItWorks} />
@@ -26,4 +20,4 @@ const ServicePage = ({ data }: Props) => {
   );
 };
 
-export default ServicePage;
+export default ServicePageTemplate;

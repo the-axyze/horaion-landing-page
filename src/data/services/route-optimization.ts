@@ -1,7 +1,6 @@
 import type { ServiceData } from "../../types/service";
-import ServicePage from "./ServicePage";
 
-const ROData: ServiceData = {
+export const routeOptimizationData: ServiceData = {
   title: "Route Optimization",
   hero: {
     title: "Route Optimization",
@@ -48,8 +47,7 @@ const ROData: ServiceData = {
   },
   howItWorks: {
     sectionTitle: "How It Works",
-    sectionSubtitle:
-      "From a list of stops to a dispatched fleet in minutes.",
+    sectionSubtitle: "From a list of stops to a dispatched fleet in minutes.",
     steps: [
       {
         stepNumber: 1,
@@ -73,13 +71,8 @@ const ROData: ServiceData = {
   },
   cta: {
     title: "Routes that keep up with your day",
-    subtitle:
-      "See the engine that powered our first deployment with UParcel.",
+    subtitle: "See the engine that powered our first deployment with UParcel.",
     primaryButtonText: "Book a Demo",
     primaryButtonLink: "/demo",
   },
 };
-
-const RouteOptimization = () => <ServicePage data={ROData} />;
-
-export default RouteOptimization;

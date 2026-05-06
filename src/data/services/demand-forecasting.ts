@@ -1,7 +1,6 @@
 import type { ServiceData } from "../../types/service";
-import ServicePage from "./ServicePage";
 
-const DFData: ServiceData = {
+export const demandForecastingData: ServiceData = {
   title: "Demand Forecasting",
   hero: {
     title: "Demand Forecasting",
@@ -79,7 +78,3 @@ const DFData: ServiceData = {
     primaryButtonLink: "/demo",
   },
 };
-
-const DemandForecasting = () => <ServicePage data={DFData} />;
-
-export default DemandForecasting;

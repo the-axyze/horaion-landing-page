@@ -1,7 +1,6 @@
 import type { ServiceData } from "../../types/service";
-import ServicePage from "./ServicePage";
 
-const PMData: ServiceData = {
+export const profileManagementData: ServiceData = {
   title: "Profile Management",
   hero: {
     title: "Profile Management",
@@ -79,7 +78,3 @@ const PMData: ServiceData = {
     primaryButtonLink: "/demo",
   },
 };
-
-const ProfileManagement = () => <ServicePage data={PMData} />;
-
-export default ProfileManagement;

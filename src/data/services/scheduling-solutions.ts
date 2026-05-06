@@ -1,7 +1,6 @@
 import type { ServiceData } from "../../types/service";
-import ServicePage from "./ServicePage";
 
-const service1Data: ServiceData = {
+export const schedulingSolutionsData: ServiceData = {
   title: "AI Scheduling Solutions",
   hero: {
     title: "AI Scheduling Solutions",
@@ -73,12 +72,9 @@ const service1Data: ServiceData = {
   },
   cta: {
     title: "Stop fighting your spreadsheets",
-    subtitle: "See it run on your own schedule. Book a demo and we'll show you.",
+    subtitle:
+      "See it run on your own schedule. Book a demo and we'll show you.",
     primaryButtonText: "Book a demo",
     primaryButtonLink: "/demo",
   },
 };
-
-const Service1 = () => <ServicePage data={service1Data} />;
-
-export default Service1;

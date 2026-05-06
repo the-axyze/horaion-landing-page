@@ -1,7 +1,6 @@
 import type { ServiceData } from "../../types/service";
-import ServicePage from "./ServicePage";
 
-const gigData: ServiceData = {
+export const gigSchedulingData: ServiceData = {
   title: "Gig Scheduling",
   hero: {
     title: "Gig Scheduling",
@@ -48,8 +47,7 @@ const gigData: ServiceData = {
   },
   howItWorks: {
     sectionTitle: "How It Works",
-    sectionSubtitle:
-      "From open shifts to confirmed coverage in three steps.",
+    sectionSubtitle: "From open shifts to confirmed coverage in three steps.",
     steps: [
       {
         stepNumber: 1,
@@ -79,7 +77,3 @@ const gigData: ServiceData = {
     primaryButtonLink: "/demo",
   },
 };
-
-const GigScheduling = () => <ServicePage data={gigData} />;
-
-export default GigScheduling;

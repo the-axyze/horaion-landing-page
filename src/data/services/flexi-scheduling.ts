@@ -1,7 +1,6 @@
 import type { ServiceData } from "../../types/service";
-import ServicePage from "./ServicePage";
 
-const FlexiData: ServiceData = {
+export const flexiSchedulingData: ServiceData = {
   title: "Flexi Scheduling",
   hero: {
     title: "Flexi Scheduling",
@@ -79,7 +78,3 @@ const FlexiData: ServiceData = {
     primaryButtonLink: "/demo",
   },
 };
-
-const FlexiScheduling = () => <ServicePage data={FlexiData} />;
-
-export default FlexiScheduling;
