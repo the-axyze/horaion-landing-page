@@ -1,6 +1,7 @@
 import { Box, Button, Typography } from "@mui/material";
 import GlobalStyles from "@mui/material/GlobalStyles";
 import { Link as RouterLink } from "react-router-dom";
+import heroImage from "../assets/product/overview.png";
 import { MovingBorder } from "./MovingBorder";
 
 const stats = [
@@ -131,21 +132,17 @@ const Hero = () => {
               }}
             >
               <Box
-                component="video"
-                autoPlay
-                loop
-                muted
-                playsInline
+                component="img"
+                src={heroImage}
+                alt="Master complex scheduling with AI"
+                loading="eager"
                 sx={{
                   width: "100%",
                   height: "100%",
                   objectFit: "cover",
                   display: "block",
                 }}
-              >
-                <source src="/placeholder-video.mp4" type="video/mp4" />
-                Your browser does not support the video tag.
-              </Box>
+              />
             </Box>
           </Box>
         </Box>
