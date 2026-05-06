@@ -9,7 +9,7 @@ export const demandForecastingData: ServiceData = {
       "A roster is only as good as the demand it's built for. We forecast at the granularity scheduling actually needs — by hour, by store, by skill — and feed it straight into your shift plan.",
     ctaText: "Book a Demo",
     ctaLink: "/demo",
-    imageSrc: "/src/assets/product/demand-forecasting.png",
+    imageSrc: demandImg,
   },
   features: {
     sectionTitle: "Forecasts your scheduler can act on",
