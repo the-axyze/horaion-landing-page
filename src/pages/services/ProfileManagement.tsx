@@ -6,63 +6,76 @@ const PMData: ServiceData = {
   hero: {
     title: "Profile Management",
     subtitle:
-      "Centralise and manage employee profiles, skills, certifications, and availability in one place. Ensure the right people are assigned to the right roles with up-to-date information at your fingertips.",
-    ctaText: "Get Started",
-    ctaLink: "/contact",
-    imageSrc: "/src/assets/product/profile-management.png"
+      "Skills, certifications, contracts, availability — the data your scheduler needs to work properly. We turn scattered spreadsheets and HR exports into one source of truth that powers every roster decision.",
+    ctaText: "Book a Demo",
+    ctaLink: "/demo",
+    imageSrc: "/src/assets/product/profile-management.png",
   },
   features: {
-    sectionTitle: "Features",
+    sectionTitle: "The foundation under every good schedule",
     sectionSubtitle: "",
     benefits: [
-      "Centralised employee data accessible across your organisation",
-      "Real-time updates to skills, certifications, and availability",
-      "Seamless integration with scheduling and workforce tools",
+      "One profile per employee, used by every workflow",
+      "Cert expiries and contract changes flow through automatically",
+      "Two-way sync with HRIS and payroll, no double-entry",
     ],
     items: [
       {
         title: "Unified Employee Profiles",
         description:
-          "Store and manage all employee information — skills, certifications, availability, and work history — in a single, easily accessible platform.",
+          "Skills, qualifications, contracts, working-time rules, and personal preferences in one record — referenced by scheduling, leave, and reporting.",
         icon: "Groups",
       },
       {
-        title: "Role-Based Access Control",
+        title: "Role-Based Access & Audit",
         description:
-          "Define who can view and edit employee data with granular permission settings, keeping sensitive information secure and compliant.",
+          "Granular permissions for HR, managers, and employees, with a full audit trail of who changed what — built for compliance reviews.",
         icon: "Security",
+      },
+      {
+        title: "Certification & Expiry Tracking",
+        description:
+          "Track qualifications with expiry dates and automatic alerts. Schedules won't assign someone whose cert lapsed yesterday.",
+        icon: "EventNote",
+      },
+      {
+        title: "Self-Service for Staff",
+        description:
+          "Employees update their own contact info, availability, and preferences — with manager approvals where you need them.",
+        icon: "AutoAwesome",
       },
     ],
   },
   howItWorks: {
     sectionTitle: "How It Works",
     sectionSubtitle:
-      "Three simple steps to get up and running with Profile Management.",
+      "From scattered records to a clean profile layer in days, not months.",
     steps: [
       {
         stepNumber: 1,
-        title: "Sign Up",
+        title: "Import or onboard staff",
         description:
-          "Create your account in minutes and configure your workspace to match your organisation's structure.",
+          "Pull from your existing HRIS or upload via spreadsheet. We map fields and reconcile duplicates automatically.",
       },
       {
         stepNumber: 2,
-        title: "Connect",
+        title: "Map skills and constraints",
         description:
-          "Import existing employee data from your current systems with zero disruption to your operations.",
+          "Define the qualifications, certifications, and working-time rules that matter for your operations — once.",
       },
       {
         stepNumber: 3,
-        title: "Go Live",
+        title: "Sync with scheduling and ops",
         description:
-          "Launch with confidence. Our onboarding team is available every step of the way.",
+          "Profiles feed directly into rosters, leave approvals, and payroll. Updates propagate everywhere in real time.",
       },
     ],
   },
   cta: {
-    title: "Ready to Get Started?",
-    subtitle: "Book a demo with us and try it for free!",
-    primaryButtonText: "Book a demo",
+    title: "One source of truth for your workforce",
+    subtitle:
+      "See how a clean profile layer makes every downstream system work better.",
+    primaryButtonText: "Book a Demo",
     primaryButtonLink: "/demo",
   },
 };

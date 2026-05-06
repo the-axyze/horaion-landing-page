@@ -6,63 +6,76 @@ const ROData: ServiceData = {
   hero: {
     title: "Route Optimization",
     subtitle:
-      "Automatically calculate the most efficient delivery and transit routes based on real-time traffic, vehicle capacity, and time windows — reducing fuel costs and improving on-time performance.",
-    ctaText: "Get Started",
-    ctaLink: "/contact",
-    imageSrc: "/src/assets/product/route-optimization.png"
+      "Where Horaion started. Born from our work with UParcel on Singapore last-mile, our routing engine plans every stop against real traffic, capacity, and time windows — and re-plans the moment reality changes.",
+    ctaText: "Book a Demo",
+    ctaLink: "/demo",
+    imageSrc: "/src/assets/product/route-optimization.png",
   },
   features: {
-    sectionTitle: "Features",
+    sectionTitle: "Routing that holds up in the real world",
     sectionSubtitle: "",
     benefits: [
-      "Real-time route adjustments based on live traffic data",
-      "Multi-stop and multi-vehicle route planning",
-      "Detailed analytics on route performance and cost savings",
+      "Live re-routing on traffic, cancellations, and new orders",
+      "Multi-vehicle, multi-depot, multi-shift planning",
+      "Per-route analytics on cost, distance, and on-time performance",
     ],
     items: [
       {
         title: "Smart Route Planning",
         description:
-          "Generate optimized routes across multiple stops and vehicles, factoring in delivery windows, vehicle capacity, and driver availability.",
+          "Plan thousands of stops across vehicles in seconds — respecting time windows, capacity, driver hours, and customer SLAs.",
         icon: "RocketLaunch",
       },
       {
-        title: "Real-Time Adaptability",
+        title: "Real-Time Re-Routing",
         description:
-          "Dynamically reroute in response to traffic, road closures, or last-minute order changes to keep deliveries on schedule.",
+          "Traffic spikes, cancellations, and add-on orders trigger an instant re-plan. Drivers see updates in their app without manual dispatch.",
         icon: "TrendingUp",
+      },
+      {
+        title: "Driver-First Mobile App",
+        description:
+          "Drivers get turn-by-turn directions, proof of delivery, and one-tap escalation built in — no second app, no extra logins.",
+        icon: "FlashOn",
+      },
+      {
+        title: "Operations Analytics",
+        description:
+          "See cost-per-stop, on-time rate, and idle time per driver and per route. Identify the patterns that move the needle.",
+        icon: "Insights",
       },
     ],
   },
   howItWorks: {
     sectionTitle: "How It Works",
     sectionSubtitle:
-      "Three simple steps to get up and running with Route Optimization.",
+      "From a list of stops to a dispatched fleet in minutes.",
     steps: [
       {
         stepNumber: 1,
-        title: "Sign Up",
+        title: "Upload your stops",
         description:
-          "Create your account in minutes and configure your workspace to match your team's needs.",
+          "Connect your order management system or upload a CSV. Vehicle and driver constraints are configured once.",
       },
       {
         stepNumber: 2,
-        title: "Connect",
+        title: "Generate optimized routes",
         description:
-          "Integrate with your existing tools and import your data with zero disruption.",
+          "The engine produces routes that meet every constraint and minimize distance, time, and cost — your call which to optimize for.",
       },
       {
         stepNumber: 3,
-        title: "Go Live",
+        title: "Dispatch and track",
         description:
-          "Launch with confidence. Our onboarding team is available every step of the way.",
+          "Drivers receive routes on their phone. Operations sees live progress; the engine re-plans on the fly when reality shifts.",
       },
     ],
   },
   cta: {
-    title: "Ready to Get Started?",
-    subtitle: "Book a demo with us and try it for free!",
-    primaryButtonText: "Book a demo",
+    title: "Routes that keep up with your day",
+    subtitle:
+      "See the engine that powered our first deployment with UParcel.",
+    primaryButtonText: "Book a Demo",
     primaryButtonLink: "/demo",
   },
 };

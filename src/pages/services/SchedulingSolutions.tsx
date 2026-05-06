@@ -6,69 +6,76 @@ const service1Data: ServiceData = {
   hero: {
     title: "AI Scheduling Solutions",
     subtitle:
-      "Solve complex workforce scheduling in minutes, not hours. Our optimization engine combines operations research with responsible AI to deliver feasible, fair, and efficient schedules.",
-    ctaText: "Get Started",
-    ctaLink: "/contact",
+      "From hospital wards to gig workforces, we turn weeks of manual rostering into minutes. Our engine pairs operations research with explainable AI to produce schedules that respect every hard constraint and every personal preference.",
+    ctaText: "Book a Demo",
+    ctaLink: "/demo",
     videoSrc: "/placeholder-video.mp4",
   },
   features: {
-    sectionTitle: "Features",
+    sectionTitle: "Built for the hardest scheduling problems",
     sectionSubtitle: "",
     benefits: [
-      "Fast scenario generation and side-by-side comparisons",
-      "Transparent trade-offs and explainable decisions",
-      "Simple export and integration options",
+      "Generate and compare scenarios side by side before you commit",
+      "Every assignment comes with the reasoning behind it",
+      "Plug into the rosters, payroll, and HRIS systems you already use",
     ],
     items: [
       {
-        title: "Demand & Capacity Planning",
+        title: "Constraint-Aware Optimization",
         description:
-          "Balance labor demand with staffing capacity, skills, and constraints to reduce overtime and improve service levels.",
+          "Skills, certifications, fatigue rules, fairness, union agreements, employee preferences — encoded once and respected on every run.",
         icon: "RocketLaunch",
       },
       {
-        title: "Fair & Compliant Scheduling",
+        title: "Fair, Compliant, Transparent",
         description:
-          "Respect labor laws, union rules, and employee preferences while maximizing coverage and minimizing costs.",
+          "Built-in checks for labor laws and contractual rules, with audit-ready logs that show exactly why each shift was assigned.",
         icon: "TrendingUp",
+      },
+      {
+        title: "What-If Scenarios",
+        description:
+          "Compare staffing models, shift patterns, and policy changes side-by-side — with cost, coverage, and fairness numbers attached.",
+        icon: "AutoAwesome",
+      },
+      {
+        title: "Plays Well With Your Stack",
+        description:
+          "Integrates with HRIS, payroll, time-and-attendance, and rostering tools your team already uses. No rip-and-replace.",
+        icon: "Update",
       },
     ],
   },
   howItWorks: {
     sectionTitle: "How It Works",
     sectionSubtitle:
-      "Three simple steps to get up and running with AI Scheduling Solutions.",
+      "From your first conversation to a live schedule — typically inside a few weeks.",
     steps: [
       {
         stepNumber: 1,
-        title: "Sign Up",
+        title: "Map your constraints",
         description:
-          "Create your account in minutes and configure your workspace to match your team's needs.",
+          "We work with your operations team to model every rule that matters — coverage, skills, contracts, preferences.",
       },
       {
         stepNumber: 2,
-        title: "Connect",
+        title: "Generate schedules",
         description:
-          "Integrate with your existing tools and import your data with zero disruption.",
+          "Run scenarios in minutes. Compare cost, fairness, and coverage trade-offs, and pick the version your team is happiest with.",
       },
       {
         stepNumber: 3,
-        title: "Go Live",
+        title: "Roll out and refine",
         description:
-          "Launch with confidence. Our onboarding team is available every step of the way.",
+          "Publish to your existing tools, gather feedback, and tune the model. Each cycle gets faster and more accurate.",
       },
     ],
   },
   cta: {
-    title: "Ready to Get Started?",
-    subtitle: "Book a demo with us and try it for free!",
-    // subtitle: "Try our service free for 30 days. No credit card required.",
+    title: "Stop fighting your spreadsheets",
+    subtitle: "See it run on your own schedule. Book a demo and we'll show you.",
     primaryButtonText: "Book a demo",
-    primaryButtonLink: "/demo"
-    // primaryButtonText: "Start Free Trial",
-    // primaryButtonLink: "/start-free",
-    // secondaryButtonText: "Book a Demo",
-    // secondaryButtonLink: "/demo",
+    primaryButtonLink: "/demo",
   },
 };
 
