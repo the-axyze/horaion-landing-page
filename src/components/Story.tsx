@@ -9,8 +9,11 @@ import {
 } from "@mui/lab";
 import { Box, Stack, Typography } from "@mui/material";
 
+import aisgLogo from "../assets/logos/aisg.jpg";
 import horaionLogo from "../assets/logos/horaion-logo-black-bg.svg";
-import { default as aisgLogo, default as pizzahutLogo, default as ttshLogo, default as uparcelLogo } from "../assets/logos/uparcel.webp"; //"../assets/story/aisg.png";
+import pizzahutLogo from "../assets/logos/pizza-hut.jpg";
+import ttshLogo from "../assets/logos/ttsh.jpg";
+import uparcelLogo from "../assets/logos/uparcel.webp";
 
 type StoryLogo = {
   src: string;
