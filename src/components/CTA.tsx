@@ -48,7 +48,8 @@ const CTA = () => {
               variant="contained"
               size="large"
               component={RouterLink}
-              to="/start-free"
+              // to="/start-free"
+              to="/demo"
               sx={{
                 py: 1.5,
                 px: 4,
@@ -61,7 +62,8 @@ const CTA = () => {
                 "&:hover": { transform: "scale(1.05)", bgcolor: "#178FD6" },
               }}
             >
-              Start Free Trial
+              {/* Start Free Trial */}
+              Book a demo
             </Button>
           </MovingBorder>
           <Typography
@@ -72,7 +74,8 @@ const CTA = () => {
               textAlign: "center", // ✅ keeps it centered under button on small screens
             }}
           >
-            No credit card required • 14-day free trial • Cancel anytime
+            {/* No credit card required • 14-day free trial • Cancel anytime */}
+            Request a demo with us • Get a free demo account • Talk to our AI scheduling specialists
           </Typography>
         </Box>
         <Box
