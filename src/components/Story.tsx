@@ -18,6 +18,8 @@ import uparcelLogo from "../assets/logos/uparcel.webp";
 import { EASE_OUT_EXPO } from "../lib/motion";
 import Reveal from "./Reveal";
 
+const MotionTimelineItem = motion(TimelineItem);
+
 type StoryLogo = {
   src: string;
   alt: string;
@@ -171,8 +173,7 @@ const StoryItem = ({
   isLast: boolean;
   reduce: boolean;
 }) => (
-  <TimelineItem
-    component={motion.li}
+  <MotionTimelineItem
     initial={reduce ? false : { opacity: 0, y: 24 }}
     whileInView={reduce ? undefined : { opacity: 1, y: 0 }}
     viewport={{ once: true, margin: "-60px" }}
@@ -225,7 +226,7 @@ const StoryItem = ({
         </Box>
       </Stack>
     </TimelineContent>
-  </TimelineItem>
+  </MotionTimelineItem>
 );
 
 const Story = () => {
