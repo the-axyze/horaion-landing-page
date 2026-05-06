@@ -1,3 +1,4 @@
+import flexiImg from "../../assets/product/flexi-scheduling.png";
 import type { ServiceData } from "../../types/service";
 
 export const flexiSchedulingData: ServiceData = {

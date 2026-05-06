@@ -1,3 +1,4 @@
+import gigImg from "../../assets/product/gig-scheduling.png";
 import type { ServiceData } from "../../types/service";
 
 export const gigSchedulingData: ServiceData = {

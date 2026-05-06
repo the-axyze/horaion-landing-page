@@ -1,3 +1,4 @@
+import leaveImg from "../../assets/product/leave-application.png";
 import type { ServiceData } from "../../types/service";
 
 export const leaveApplicationData: ServiceData = {

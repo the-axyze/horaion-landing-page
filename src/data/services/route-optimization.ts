@@ -1,3 +1,4 @@
+import routeImg from "../../assets/product/route-optimization.png";
 import type { ServiceData } from "../../types/service";
 
 export const routeOptimizationData: ServiceData = {

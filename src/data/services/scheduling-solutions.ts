@@ -1,3 +1,4 @@
+import overviewImg from "../../assets/product/overview.png";
 import type { ServiceData } from "../../types/service";
 
 export const schedulingSolutionsData: ServiceData = {

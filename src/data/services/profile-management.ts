@@ -1,3 +1,4 @@
+import profileImg from "../../assets/product/profile-management.png";
 import type { ServiceData } from "../../types/service";
 
 export const profileManagementData: ServiceData = {
