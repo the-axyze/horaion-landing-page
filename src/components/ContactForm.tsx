@@ -1,4 +1,4 @@
-import { Typography, Button, TextField, Box } from "@mui/material";
+import { Box, Button, TextField, Typography } from "@mui/material";
 import { useState } from "react";
 import { sendContactForm } from "../api/contact";
 
