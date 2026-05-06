@@ -73,7 +73,7 @@ const ServiceHero = ({ data }: Props) => {
           </MovingBorder>
         </Box>
 
-        {/* RIGHT - video or image */}
+        {/* RIGHT - video or image (mutually exclusive, see ServiceData type) */}
         <Box sx={{ flex: 1 }}>
           <Box sx={{ borderRadius: 4, overflow: "hidden", boxShadow: 4 }}>
             {data.videoSrc ? (
@@ -95,7 +95,6 @@ const ServiceHero = ({ data }: Props) => {
                 sx={{ width: "100%", display: "block", objectFit: "cover" }}
               />
             ) : (
-              // Placeholder if neither provided
               <Box
                 sx={{
                   width: "100%",

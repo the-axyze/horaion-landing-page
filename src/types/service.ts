@@ -1,14 +1,21 @@
+// XOR helper: at most one of `videoSrc` / `imageSrc` may be set; setting both
+// is a compile-time error.
+type HeroMedia =
+  | { videoSrc: string; imageSrc?: never }
+  | { imageSrc: string; videoSrc?: never }
+  | { videoSrc?: never; imageSrc?: never };
+
+type HeroBase = {
+  title: string;
+  subtitle: string;
+  badgeLabel?: string;
+  ctaText: string;
+  ctaLink: string;
+};
+
 export interface ServiceData {
-  title: string,
-  hero: {
-    title: string;
-    subtitle: string;
-    badgeLabel?: string;
-    ctaText: string;
-    ctaLink: string;
-    videoSrc?: string;
-    imageSrc?: string;
-  };
+  title: string;
+  hero: HeroBase & HeroMedia;
   features: {
     sectionTitle: string;
     sectionSubtitle: string;
