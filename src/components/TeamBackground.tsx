@@ -1,4 +1,4 @@
-import { Box, Typography, Grid, Avatar } from "@mui/material";
+import { Avatar, Box, Grid, Typography } from "@mui/material";
 
 // helper
 const getInitials = (name: string) =>
@@ -9,17 +9,29 @@ const getInitials = (name: string) =>
 
 const team = [
   {
-    name: "Person 1",
-    role: "Role",
-    description: "Description of person 1",
-    image: "",
+    name: "Lau Hoong Chuin",
+    role: "Founder",
+    description: `
+Professor Lau Hoong Chuin is a leading expert in artificial intelligence,
+operations research, and large-scale optimization.
+
+As the founder of Horaion, he brings deep expertise in AI-driven planning,
+scheduling, and decision-making systems.
+
+His research and industry work span logistics, transportation, urban systems,
+and enterprise optimization.
+
+He gives Horaion strong technical leadership, practical domain expertise,
+and credibility in intelligent workforce optimization.
+    `.trim(),
+    image: "/src/assets/team/hoong-chuin-lau.jpg",
   },
-  {
-    name: "Person 2",
-    role: "Role 2",
-    description: "Description of person 2",
-    image: "",
-  },
+  // {
+  //   name: "Person 2",
+  //   role: "Role 2",
+  //   description: "Description of person 2",
+  //   image: "",
+  // },
 ];
 
 const TeamBackground = () => {

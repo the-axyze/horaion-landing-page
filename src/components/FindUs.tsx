@@ -1,16 +1,20 @@
-import { Typography, Box, Stack, IconButton } from "@mui/material";
-import { LinkedIn, Instagram, LocationOnOutlined } from "@mui/icons-material";
+import { Instagram, LinkedIn, LocationOnOutlined } from "@mui/icons-material";
+import { Box, IconButton, Stack, Tooltip, Typography } from "@mui/material";
 
 const socials = [
   {
+    label: "Instagram",
     icon: <Instagram />,
     href: "https://instagram.com/",
     color: "#C13584",
+    disabled: true,
   },
   {
+    label: "LinkedIn",
     icon: <LinkedIn />,
     href: "https://sg.linkedin.com/",
     color: "#0077B5",
+    disabled: true,
   },
 ];
 
@@ -37,7 +41,9 @@ const FindUs = () => {
       <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
         <LocationOnOutlined sx={{ color: "rgba(255,255,255,0.7)" }} />
         <Typography variant="body2" color="rgba(255,255,255,0.7)">
-          Enter Address Here
+          Institute of Innovation and Entrepreneurship, SMU
+          <br />
+          81 Victoria St, Singapore 188065
         </Typography>
       </Box>
 
@@ -48,28 +54,51 @@ const FindUs = () => {
         </Typography>
 
         <Stack direction="row" spacing={2}>
-          {socials.map(({ icon, href, color }) => (
-            <IconButton
-              key={href}
-              component="a"
-              href={href}
-              target="_blank"
-              rel="noopener noreferrer"
-              sx={{
-                color: "rgba(255,255,255,0.7)",
-                border: "1px solid rgba(255,255,255,0.25)",
-                borderRadius: 2,
-                transition: "all 0.2s ease",
-                "&:hover": {
-                  color: color,
-                  borderColor: color,
-                  background: "#FFFCF6",
-                },
-              }}
-            >
-              {icon}
-            </IconButton>
-          ))}
+          {socials.map(({ label, icon, href, color, disabled }) => {
+            const button = (
+              <IconButton
+                aria-label={label}
+                component={disabled ? "button" : "a"}
+                href={disabled ? undefined : href}
+                target={disabled ? undefined : "_blank"}
+                rel={disabled ? undefined : "noopener noreferrer"}
+                disabled={disabled}
+                sx={{
+                  color: "rgba(255,255,255,0.7)",
+                  border: "1px solid rgba(255,255,255,0.25)",
+                  borderRadius: 2,
+                  transition: "all 0.2s ease",
+                  "&:hover": {
+                    color: color,
+                    borderColor: color,
+                    background: "#FFFCF6",
+                  },
+                  "&.Mui-disabled": {
+                    color: "rgba(255,255,255,0.3)",
+                    borderColor: "rgba(255,255,255,0.15)",
+                  },
+                }}
+              >
+                {icon}
+              </IconButton>
+            );
+
+            return (
+              <Tooltip
+                key={label}
+                title={disabled ? "Coming soon!" : label}
+                arrow
+              >
+                {disabled ? (
+                  <Box component="span" sx={{ display: "inline-flex" }}>
+                    {button}
+                  </Box>
+                ) : (
+                  button
+                )}
+              </Tooltip>
+            );
+          })}
         </Stack>
       </Box>
     </Box>
