@@ -1,4 +1,5 @@
 import { Avatar, Box, Grid, Typography } from "@mui/material";
+import hoongChuinLau from "../assets/team/hoong-chuin-lau.jpg";
 
 // helper
 const getInitials = (name: string) =>
@@ -24,7 +25,7 @@ and enterprise optimization.
 He gives Horaion strong technical leadership, practical domain expertise,
 and credibility in intelligent workforce optimization.
     `.trim(),
-    image: "/src/assets/team/hoong-chuin-lau.jpg",
+    image: hoongChuinLau,
   },
   // {
   //   name: "Person 2",
