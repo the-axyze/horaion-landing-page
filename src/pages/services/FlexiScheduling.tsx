@@ -1,3 +1,4 @@
+import flexiImg from "../../assets/product/flexi-scheduling.png";
 import type { ServiceData } from "../../types/service";
 import ServicePage from "./ServicePage";
 
@@ -9,7 +10,7 @@ const FlexiData: ServiceData = {
       "Hospitals, retailers, and 24/7 operations don't run on fixed shifts anymore. Build a roster that respects every employee's preferred hours — and still hits coverage every single day.",
     ctaText: "Book a Demo",
     ctaLink: "/demo",
-    imageSrc: "/src/assets/product/flexi-scheduling.png",
+    imageSrc: flexiImg,
   },
   features: {
     sectionTitle: "Flexibility, without the chaos",

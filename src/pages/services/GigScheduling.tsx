@@ -1,3 +1,4 @@
+import gigImg from "../../assets/product/gig-scheduling.png";
 import type { ServiceData } from "../../types/service";
 import ServicePage from "./ServicePage";
 
@@ -9,7 +10,7 @@ const gigData: ServiceData = {
       "Pizza Hut Singapore trusts us to fill shifts across their stores every week. Match a fluid pool of part-time and gig workers to demand peaks — automatically — with the same engine.",
     ctaText: "Book a Demo",
     ctaLink: "/demo",
-    imageSrc: "/src/assets/product/gig-scheduling.png",
+    imageSrc: gigImg,
   },
   features: {
     sectionTitle: "Built for fluid workforces",
