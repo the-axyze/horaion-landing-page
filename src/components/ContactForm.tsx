@@ -3,7 +3,7 @@ import { useState } from "react";
 import { sendContactForm } from "../api/contact";
 
 type Field = {
-  name: "name" | "email" | "phone" | "message";
+  name: "name" | "email" | "message";
   label: string;
   required: boolean;
   multiline?: boolean;
@@ -23,11 +23,6 @@ const fields: Field[] = [
     required: true,
     validate: (value) =>
       /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value) ? null : "Enter a valid email",
-  },
-  {
-    name: "phone",
-    label: "Phone Number (Optional)",
-    required: false,
   },
   {
     name: "message",
@@ -112,14 +107,17 @@ const ContactForm = () => {
       await sendContactForm({
         name: form.name,
         email: form.email,
-        phone: form.phone,
         message: form.message,
+        sourcePage:
+          typeof window !== "undefined"
+            ? window.location.pathname + window.location.search
+            : undefined,
       });
 
-      alert("✅ Message sent!");
+      alert("Message sent!");
       setForm({});
     } catch (err: any) {
-      alert("❌ " + err.message);
+      alert(err.message);
     }
   };
 

@@ -1,15 +1,20 @@
 import { apiFetch } from "./client";
 import { ENDPOINTS } from "./endpoints";
-import type { ApiResponse } from "./types";
+import type { SubmissionResponse } from "./types";
 
 export type DemoPayload = {
+  name: string;
+  workEmail: string;
+  phoneNumber?: string;
+  companyName: string;
+  jobTitleOrRole: string;
   industry: string;
-  otherIndustry?: string;
-  email: string;
+  companySize: number;
+  countryRegion: string;
 };
 
 export const sendDemoRequest = (payload: DemoPayload) =>
-  apiFetch<ApiResponse>(ENDPOINTS.demo, {
+  apiFetch<SubmissionResponse>(ENDPOINTS.demo, {
     method: "POST",
-    body: { type: "demo", ...payload },
+    body: payload,
   });
