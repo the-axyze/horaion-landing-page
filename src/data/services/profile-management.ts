@@ -1,3 +1,4 @@
+import profileImg from "../../assets/product/profile-management.png";
 import type { ServiceData } from "../../types/service";
 
 export const profileManagementData: ServiceData = {
@@ -8,7 +9,7 @@ export const profileManagementData: ServiceData = {
       "Skills, certifications, contracts, availability — the data your scheduler needs to work properly. We turn scattered spreadsheets and HR exports into one source of truth that powers every roster decision.",
     ctaText: "Book a Demo",
     ctaLink: "/demo",
-    imageSrc: "/src/assets/product/profile-management.png",
+    imageSrc: profileImg,
   },
   features: {
     sectionTitle: "The foundation under every good schedule",
