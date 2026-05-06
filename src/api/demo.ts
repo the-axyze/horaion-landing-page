@@ -1,6 +1,7 @@
 import { apiFetch } from "./client";
-import { ENDPOINTS } from "./endpoints";
 import type { SubmissionResponse } from "./types";
+
+const DEMO_PATH = "/api/v1/public/demo-requests";
 
 export type DemoPayload = {
   name: string;
@@ -14,7 +15,7 @@ export type DemoPayload = {
 };
 
 export const sendDemoRequest = (payload: DemoPayload) =>
-  apiFetch<SubmissionResponse>(ENDPOINTS.demo, {
+  apiFetch<SubmissionResponse>(DEMO_PATH, {
     method: "POST",
     body: payload,
   });

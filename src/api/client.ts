@@ -1,3 +1,5 @@
+import type { ApiErrorResponse } from "./types";
+
 const BASE_URL = import.meta.env.VITE_API_URL ?? "http://localhost:8080";
 
 type RequestOptions = Omit<RequestInit, "body"> & {
@@ -20,7 +22,8 @@ export const apiFetch = async <T>(
   const data = await res.json();
 
   if (!res.ok) {
-    throw new Error(data.message || "Request failed");
+    const err = data as ApiErrorResponse;
+    throw new Error(err.message || "Request failed");
   }
 
   return data as T;
