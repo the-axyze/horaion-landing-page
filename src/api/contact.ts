@@ -1,3 +1,7 @@
+import { apiFetch } from "./client";
+import { ENDPOINTS } from "./endpoints";
+import type { ApiResponse } from "./types";
+
 export type ContactPayload = {
   name: string;
   email: string;
@@ -5,27 +9,8 @@ export type ContactPayload = {
   message: string;
 };
 
-export type ContactResponse = {
-  success: boolean;
-  message: string;
-};
-
-export const sendContactForm = async (
-  payload: ContactPayload,
-): Promise<ContactResponse> => {
-  const res = await fetch("http://localhost:8080/api/v1/contact", {
+export const sendContactForm = (payload: ContactPayload) =>
+  apiFetch<ApiResponse>(ENDPOINTS.contact, {
     method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(payload),
+    body: payload,
   });
-
-  const data = await res.json();
-
-  if (!res.ok) {
-    throw new Error(data.message || "Request failed");
-  }
-
-  return data;
-};
