@@ -1,5 +1,6 @@
 import { Box } from "@mui/material";
-import type { ReactNode, SxProps, Theme } from "@mui/material";
+import type { SxProps, Theme } from "@mui/material";
+import type { ReactNode } from "react";
 
 const RADIUS = "12px";
 
