@@ -9,7 +9,7 @@ const ROData: ServiceData = {
       "Automatically calculate the most efficient delivery and transit routes based on real-time traffic, vehicle capacity, and time windows — reducing fuel costs and improving on-time performance.",
     ctaText: "Get Started",
     ctaLink: "/contact",
-    videoSrc: "/placeholder-video.mp4",
+    imageSrc: "/src/assets/product/route-optimization.png"
   },
   features: {
     sectionTitle: "Features",

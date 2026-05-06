@@ -9,7 +9,7 @@ const gigData: ServiceData = {
       "Manage on-demand and gig workers efficiently with smart scheduling tools designed for flexibility and scale.",
     ctaText: "Get Started",
     ctaLink: "/contact",
-    videoSrc: "/placeholder-video.mp4",
+    imageSrc: "/src/assets/product/gig-scheduling.png"
   },
   features: {
     sectionTitle: "Features",

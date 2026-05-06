@@ -9,7 +9,7 @@ const PMData: ServiceData = {
       "Centralise and manage employee profiles, skills, certifications, and availability in one place. Ensure the right people are assigned to the right roles with up-to-date information at your fingertips.",
     ctaText: "Get Started",
     ctaLink: "/contact",
-    videoSrc: "/placeholder-video.mp4",
+    imageSrc: "/src/assets/product/profile-management.png"
   },
   features: {
     sectionTitle: "Features",

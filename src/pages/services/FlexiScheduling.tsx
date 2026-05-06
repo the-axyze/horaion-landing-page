@@ -9,7 +9,7 @@ const FlexiData: ServiceData = {
       "Empower your workforce with flexible scheduling options that adapt to employee preferences and operational needs in real time.",
     ctaText: "Get Started",
     ctaLink: "/contact",
-    videoSrc: "/placeholder-video.mp4",
+    imageSrc: "/src/assets/product/flexi-scheduling.png",
   },
   features: {
     sectionTitle: "Features",

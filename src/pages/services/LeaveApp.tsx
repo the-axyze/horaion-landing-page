@@ -9,7 +9,7 @@ const leaveData: ServiceData = {
       "Simplify leave requests and approvals with a streamlined system that keeps everyone informed and operations running smoothly.",
     ctaText: "Get Started",
     ctaLink: "/contact",
-    videoSrc: "/placeholder-video.mp4",
+    imageSrc: "/src/assets/product/leave-application.png"
   },
   features: {
     sectionTitle: "Features",

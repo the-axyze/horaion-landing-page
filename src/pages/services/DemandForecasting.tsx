@@ -9,7 +9,7 @@ const DFData: ServiceData = {
       "Leverage historical data and AI-driven models to predict future demand with precision. Stay ahead of peak periods and make smarter staffing and inventory decisions.",
     ctaText: "Get Started",
     ctaLink: "/contact",
-    videoSrc: "/placeholder-video.mp4",
+    imageSrc: "/src/assets/product/demand-forecasting.png",
   },
   features: {
     sectionTitle: "Features",
