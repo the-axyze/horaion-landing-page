@@ -1,3 +1,4 @@
+// import { lazy, Suspense } from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
 import Layout from "./components/Layout";
 import { ServicePageTemplate } from "./components/service";

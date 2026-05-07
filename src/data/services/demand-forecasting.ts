@@ -1,4 +1,4 @@
-import demandImg from "../../assets/product/demand-forecasting.png";
+import demandImg from "../../assets/product/demand-forecasting.webp";
 import type { ServiceData } from "../../types/service";
 
 export const demandForecastingData: ServiceData = {

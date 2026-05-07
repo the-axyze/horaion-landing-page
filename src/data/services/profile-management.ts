@@ -1,4 +1,4 @@
-import profileImg from "../../assets/product/profile-management.png";
+import profileImg from "../../assets/product/profile-management.webp";
 import type { ServiceData } from "../../types/service";
 
 export const profileManagementData: ServiceData = {

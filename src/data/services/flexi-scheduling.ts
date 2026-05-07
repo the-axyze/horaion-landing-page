@@ -1,4 +1,4 @@
-import flexiImg from "../../assets/product/flexi-scheduling.png";
+import flexiImg from "../../assets/product/flexi-scheduling.webp";
 import type { ServiceData } from "../../types/service";
 
 export const flexiSchedulingData: ServiceData = {

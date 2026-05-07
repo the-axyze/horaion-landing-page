@@ -2,7 +2,7 @@ export const industries = [
   "Healthcare",
   "Public Safety",
   "Education",
-  "Retail & Hospitality",
+  "Hospitality, F&B and Retail",
   "Manufacturing",
   "Logistics",
   "Others",
