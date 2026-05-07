@@ -1,4 +1,3 @@
-// import overviewImg from "../public/overview.png";
 import type { ServiceData } from "../../types/service";
 
 export const schedulingSolutionsData: ServiceData = {
@@ -9,7 +8,7 @@ export const schedulingSolutionsData: ServiceData = {
       "From hospital wards to gig workforces, we turn weeks of manual rostering into minutes. Our engine pairs operations research with explainable AI to produce schedules that respect every hard constraint and every personal preference.",
     ctaText: "Book a Demo",
     ctaLink: "/demo",
-    imageSrc: "../public/overview.png",
+    imageSrc: "/products/overview.webp",
   },
   features: {
     sectionTitle: "Built for the hardest scheduling problems",

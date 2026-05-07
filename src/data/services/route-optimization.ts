@@ -1,4 +1,3 @@
-// import routeImg from "../public/route-optimization.webp";
 import type { ServiceData } from "../../types/service";
 
 export const routeOptimizationData: ServiceData = {
@@ -9,7 +8,7 @@ export const routeOptimizationData: ServiceData = {
       "Where Horaion started. Born from our work with UParcel on Singapore last-mile, our routing engine plans every stop against real traffic, capacity, and time windows — and re-plans the moment reality changes.",
     ctaText: "Book a Demo",
     ctaLink: "/demo",
-    imageSrc: "../public/route-optimization.webp",
+    imageSrc: "/products/route-optimization.webp",
   },
   features: {
     sectionTitle: "Routing that holds up in the real world",
