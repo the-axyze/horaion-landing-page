@@ -1,4 +1,4 @@
-import leaveImg from "../../assets/product/leave-application.webp";
+// import leaveImg from "../public/leave-application.webp";
 import type { ServiceData } from "../../types/service";
 
 export const leaveApplicationData: ServiceData = {
@@ -9,7 +9,7 @@ export const leaveApplicationData: ServiceData = {
       "Most leave systems treat coverage as someone else's problem. Ours doesn't. Approvals factor in the live roster, so a 'yes' never quietly breaks tomorrow's shift.",
     ctaText: "Book a Demo",
     ctaLink: "/demo",
-    imageSrc: leaveImg,
+    imageSrc: "../public/leave-application.webp",
   },
   features: {
     sectionTitle: "Coverage-aware leave management",

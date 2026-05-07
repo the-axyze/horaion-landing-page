@@ -2,7 +2,7 @@ import { Box, Button, Typography } from "@mui/material";
 import GlobalStyles from "@mui/material/GlobalStyles";
 import { motion, useReducedMotion } from "framer-motion";
 import { Link as RouterLink } from "react-router-dom";
-import heroImage from "../assets/product/overview.webp";
+import heroImage from "../../public/overview.webp";
 import { fadeUp, scaleIn, staggerParent } from "../lib/motion";
 import MediaFrame from "./MediaFrame";
 import { MovingBorder } from "./MovingBorder";

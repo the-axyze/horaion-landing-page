@@ -1,4 +1,4 @@
-import demandImg from "../../assets/product/demand-forecasting.webp";
+// import demandImg from "../public/demand-forecasting.webp";
 import type { ServiceData } from "../../types/service";
 
 export const demandForecastingData: ServiceData = {
@@ -9,7 +9,7 @@ export const demandForecastingData: ServiceData = {
       "A roster is only as good as the demand it's built for. We forecast at the granularity scheduling actually needs — by hour, by store, by skill — and feed it straight into your shift plan.",
     ctaText: "Book a Demo",
     ctaLink: "/demo",
-    imageSrc: demandImg,
+    imageSrc: "../public/demand-forecasting.webp",
   },
   features: {
     sectionTitle: "Forecasts your scheduler can act on",
