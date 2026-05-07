@@ -18,7 +18,7 @@ const Layout = () => {
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
-        backgroundAttachment: "fixed",
+        backgroundAttachment: { xs: "scroll", md: "fixed" },
       }}
     >
       <Aurora />

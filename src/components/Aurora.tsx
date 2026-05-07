@@ -65,14 +65,15 @@ const Aurora = () => (
         <Box
           key={i}
           sx={{
+            display: { xs: i === 0 ? "block" : "none", md: "block" },
             position: "absolute",
             ...b.pos,
-            width: b.size,
-            height: b.size,
+            width: { xs: "72vw", md: b.size },
+            height: { xs: "72vw", md: b.size },
             borderRadius: "50%",
             background: `radial-gradient(circle at 50% 50%, ${b.color}, transparent 60%)`,
-            filter: `blur(${b.blur})`,
-            animation: b.animation,
+            filter: { xs: "blur(40px)", md: `blur(${b.blur})` },
+            animation: { xs: "none", md: b.animation },
           }}
         />
       ))}

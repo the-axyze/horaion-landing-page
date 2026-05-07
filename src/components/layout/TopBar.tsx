@@ -9,7 +9,6 @@ import {
   type Theme,
 } from "@mui/material";
 import { Link as RouterLink, useLocation } from "react-router-dom";
-import HoraionLogo from "../../assets/HoraionLogo.png";
 import { TRANSITION_FAST } from "../../lib/transitions";
 import { primaryLinks } from "./navConfig";
 import SolutionsMenu from "./SolutionsMenu";
@@ -47,9 +46,10 @@ const TopBar = ({ onOpenDrawer }: Props) => {
       position="sticky"
       elevation={0}
       sx={{
-        background: "transparent",
-        backdropFilter: "blur(8px)",
-        borderBottom: "1px rgba(255,255,255,0.1)",
+        background: { xs: "rgba(5,10,26,0.92)", md: "transparent" },
+        backdropFilter: { xs: "none", md: "blur(8px)" },
+        WebkitBackdropFilter: { xs: "none", md: "blur(8px)" },
+        borderBottom: { xs: "1px solid rgba(255,255,255,0.1)", md: 0 },
       }}
     >
       <Toolbar sx={{ gap: 2 }}>
@@ -68,7 +68,9 @@ const TopBar = ({ onOpenDrawer }: Props) => {
             component="img"
             sx={{ width: "100%", height: "100%" }}
             alt="Horaion Logo"
-            src={HoraionLogo}
+            src="/HoraionLogo.webp"
+            loading="eager"
+            decoding="async"
           />
         </Box>
 

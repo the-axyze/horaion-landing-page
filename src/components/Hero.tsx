@@ -131,7 +131,7 @@ const HeroCopy = () => (
           WebkitBackgroundClip: "text",
           WebkitTextFillColor: "transparent",
           backgroundClip: "text",
-          animation: "shimmer 6s linear infinite",
+          animation: { xs: "none", md: "shimmer 6s linear infinite" },
         }}
       >
         AI
@@ -206,7 +206,10 @@ const HeroMedia = ({ float }: { float: boolean }) => (
     animate="show"
     sx={{
       flex: "1 1 26rem",
-      animation: float ? "heroFloat 7s ease-in-out infinite" : "none",
+      animation: {
+        xs: "none",
+        md: float ? "heroFloat 7s ease-in-out infinite" : "none",
+      },
     }}
   >
     <MediaFrame>
@@ -215,7 +218,9 @@ const HeroMedia = ({ float }: { float: boolean }) => (
         src="/products/overview.webp"
         alt="Master complex scheduling with AI"
         loading="eager"
-        sx={{ width: "100%", display: "block" }}
+        decoding="async"
+        fetchPriority="high"
+        sx={{ width: "100%", height: "auto", display: "block" }}
       />
     </MediaFrame>
   </Box>
