@@ -109,7 +109,6 @@ const HeroCopy = () => (
     animate="show"
     sx={{ flex: "1 1 26rem" }}
   >
-    <Eyebrow />
     <Typography
       component={motion.h1}
       variants={fadeUp}
@@ -240,14 +239,31 @@ const Hero = () => {
         <Box
           sx={{
             display: "flex",
-            flexWrap: "wrap",
-            alignItems: "center",
-            gap: "clamp(2rem, 5vw, 4rem)",
+            flexDirection: "column",
+            gap: "clamp(1.5rem, 3vw, 2.5rem)",
             width: "100%",
           }}
         >
-          <HeroMedia float={!reduce} />
-          <HeroCopy />
+          <Box
+            component={motion.div}
+            variants={staggerParent}
+            initial="hidden"
+            animate="show"
+          >
+            <Eyebrow />
+          </Box>
+          <Box
+            sx={{
+              display: "flex",
+              flexWrap: "wrap",
+              alignItems: "center",
+              gap: "clamp(2rem, 5vw, 4rem)",
+              width: "100%",
+            }}
+          >
+            <HeroMedia float={!reduce} />
+            <HeroCopy />
+          </Box>
         </Box>
       </Box>
     </>
