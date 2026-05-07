@@ -11,7 +11,7 @@ import { Box, Stack, Typography } from "@mui/material";
 import { motion, useReducedMotion } from "framer-motion";
 
 import aisgLogo from "../assets/logos/aisg.jpg";
-import horaionLogo from "../assets/logos/horaion-logo-black-bg.svg";
+import horaionLogo from "../assets/logos/horaion-logo-black-bg.webp";
 import pizzahutLogo from "../assets/logos/pizza-hut.jpg";
 import ttshLogo from "../assets/logos/ttsh.jpg";
 import uparcelLogo from "../assets/logos/uparcel.webp";

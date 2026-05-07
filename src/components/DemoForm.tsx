@@ -1,101 +1,55 @@
-import { useState } from "react";
 import {
   Box,
-  Typography,
-  Container,
-  TextField,
-  MenuItem,
   Button,
   Collapse,
+  Container,
+  MenuItem,
+  TextField,
+  Typography,
 } from "@mui/material";
+import { useState } from "react";
 import { sendDemoRequest } from "../api/demo";
+import {
+  companySizeOptions,
+  countryRegions,
+  industries,
+} from "../data/demoFormOptions";
+import { TRANSITION_FAST } from "../lib/transitions";
+import { glassFieldSx, glassSelectMenuProps } from "./forms/styles";
 
-const industries = [
-  "Healthcare",
-  "Public Safety",
-  "Education",
-  "Retail & Hospitality",
-  "Manufacturing",
-  "Logistics",
-  "Others",
-];
-
-const companySizeOptions: { label: string; value: number }[] = [
-  { label: "1–10", value: 10 },
-  { label: "11–50", value: 50 },
-  { label: "51–200", value: 200 },
-  { label: "201–1,000", value: 1000 },
-  { label: "1,001–5,000", value: 5000 },
-  { label: "5,000+", value: 10000 },
-];
-
-const countryRegions = [
-  "Singapore",
-  "Malaysia",
-  "Indonesia",
-  "Philippines",
-  "Thailand",
-  "Vietnam",
-  "Australia",
-  "United States",
-  "United Kingdom",
-  "Other",
-];
-
-const fieldSx = {
-  "& .MuiOutlinedInput-root": {
-    color: "#FFFCF6",
-    borderRadius: 2,
-    "& fieldset": { borderColor: "rgba(255,255,255,0.3)" },
-    "&:hover fieldset": { borderColor: "rgba(255,255,255,0.6)" },
-    "&.Mui-focused fieldset": { borderColor: "#FFFCF6" },
-  },
-  "& .MuiInputLabel-root": { color: "rgba(255,255,255,0.6)" },
-  "& .MuiInputLabel-root.Mui-focused": { color: "#FFFCF6" },
-  "& .MuiSelect-icon": { color: "rgba(255,255,255,0.6)" },
-};
-
-const selectMenuProps = {
-  MenuProps: {
-    PaperProps: {
-      sx: {
-        bgcolor: "#034488",
-        color: "#FFFCF6",
-        "& .MuiMenuItem-root:hover": {
-          bgcolor: "rgba(255,255,255,0.1)",
-        },
-        "& .MuiMenuItem-root.Mui-selected": {
-          bgcolor: "rgba(255,255,255,0.15)",
-        },
-      },
-    },
-  },
+const initialState = {
+  name: "",
+  workEmail: "",
+  phoneNumber: "",
+  companyName: "",
+  jobTitleOrRole: "",
+  industry: "",
+  otherIndustry: "",
+  companySize: "" as number | "",
+  countryRegion: "",
 };
 
 const DemoForm = () => {
-  const [name, setName] = useState("");
-  const [workEmail, setWorkEmail] = useState("");
-  const [phoneNumber, setPhoneNumber] = useState("");
-  const [companyName, setCompanyName] = useState("");
-  const [jobTitleOrRole, setJobTitleOrRole] = useState("");
-  const [industry, setIndustry] = useState("");
-  const [otherIndustry, setOtherIndustry] = useState("");
-  const [companySize, setCompanySize] = useState<number | "">("");
-  const [countryRegion, setCountryRegion] = useState("");
+  const [form, setForm] = useState(initialState);
   const [submitting, setSubmitting] = useState(false);
+
+  const set = <K extends keyof typeof initialState>(
+    key: K,
+    value: (typeof initialState)[K],
+  ) => setForm((prev) => ({ ...prev, [key]: value }));
 
   const handleSubmit = async () => {
     const resolvedIndustry =
-      industry === "Others" ? otherIndustry.trim() : industry;
+      form.industry === "Others" ? form.otherIndustry.trim() : form.industry;
 
     if (
-      !name.trim() ||
-      !workEmail.trim() ||
-      !companyName.trim() ||
-      !jobTitleOrRole.trim() ||
+      !form.name.trim() ||
+      !form.workEmail.trim() ||
+      !form.companyName.trim() ||
+      !form.jobTitleOrRole.trim() ||
       !resolvedIndustry ||
-      !companySize ||
-      !countryRegion
+      !form.companySize ||
+      !form.countryRegion
     ) {
       alert("Please fill in all required fields.");
       return;
@@ -104,26 +58,17 @@ const DemoForm = () => {
     setSubmitting(true);
     try {
       await sendDemoRequest({
-        name: name.trim(),
-        workEmail: workEmail.trim(),
-        phoneNumber: phoneNumber.trim() || undefined,
-        companyName: companyName.trim(),
-        jobTitleOrRole: jobTitleOrRole.trim(),
+        name: form.name.trim(),
+        workEmail: form.workEmail.trim(),
+        phoneNumber: form.phoneNumber.trim() || undefined,
+        companyName: form.companyName.trim(),
+        jobTitleOrRole: form.jobTitleOrRole.trim(),
         industry: resolvedIndustry,
-        companySize: Number(companySize),
-        countryRegion,
+        companySize: Number(form.companySize),
+        countryRegion: form.countryRegion,
       });
-
       alert("Demo request sent!");
-      setName("");
-      setWorkEmail("");
-      setPhoneNumber("");
-      setCompanyName("");
-      setJobTitleOrRole("");
-      setIndustry("");
-      setOtherIndustry("");
-      setCompanySize("");
-      setCountryRegion("");
+      setForm(initialState);
     } catch (err: any) {
       alert(err.message);
     } finally {
@@ -136,7 +81,7 @@ const DemoForm = () => {
       <Container maxWidth="sm">
         <Typography
           variant="h3"
-          color="#FFFCF6"
+          color="canvas.cream"
           fontWeight={700}
           align="center"
           sx={{ mb: 2 }}
@@ -169,45 +114,41 @@ const DemoForm = () => {
             fullWidth
             required
             label="Full Name"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            sx={fieldSx}
+            value={form.name}
+            onChange={(e) => set("name", e.target.value)}
+            sx={glassFieldSx}
           />
-
           <TextField
             fullWidth
             required
             type="email"
             label="Work Email"
-            value={workEmail}
-            onChange={(e) => setWorkEmail(e.target.value)}
-            sx={fieldSx}
+            value={form.workEmail}
+            onChange={(e) => set("workEmail", e.target.value)}
+            sx={glassFieldSx}
           />
-
           <TextField
             fullWidth
             label="Phone Number (Optional)"
-            value={phoneNumber}
-            onChange={(e) => setPhoneNumber(e.target.value)}
-            sx={fieldSx}
+            value={form.phoneNumber}
+            onChange={(e) => set("phoneNumber", e.target.value)}
+            sx={glassFieldSx}
           />
-
           <TextField
             fullWidth
             required
             label="Company Name"
-            value={companyName}
-            onChange={(e) => setCompanyName(e.target.value)}
-            sx={fieldSx}
+            value={form.companyName}
+            onChange={(e) => set("companyName", e.target.value)}
+            sx={glassFieldSx}
           />
-
           <TextField
             fullWidth
             required
             label="Job Title / Role"
-            value={jobTitleOrRole}
-            onChange={(e) => setJobTitleOrRole(e.target.value)}
-            sx={fieldSx}
+            value={form.jobTitleOrRole}
+            onChange={(e) => set("jobTitleOrRole", e.target.value)}
+            sx={glassFieldSx}
           />
 
           <TextField
@@ -215,10 +156,10 @@ const DemoForm = () => {
             fullWidth
             required
             label="Industry"
-            value={industry}
-            onChange={(e) => setIndustry(e.target.value)}
-            sx={fieldSx}
-            slotProps={{ select: selectMenuProps }}
+            value={form.industry}
+            onChange={(e) => set("industry", e.target.value)}
+            sx={glassFieldSx}
+            slotProps={{ select: glassSelectMenuProps }}
           >
             {industries.map((opt) => (
               <MenuItem key={opt} value={opt}>
@@ -227,14 +168,14 @@ const DemoForm = () => {
             ))}
           </TextField>
 
-          <Collapse in={industry === "Others"} unmountOnExit>
+          <Collapse in={form.industry === "Others"} unmountOnExit>
             <TextField
               fullWidth
               required
               label="Please specify your industry"
-              value={otherIndustry}
-              onChange={(e) => setOtherIndustry(e.target.value)}
-              sx={fieldSx}
+              value={form.otherIndustry}
+              onChange={(e) => set("otherIndustry", e.target.value)}
+              sx={glassFieldSx}
             />
           </Collapse>
 
@@ -243,10 +184,10 @@ const DemoForm = () => {
             fullWidth
             required
             label="Company Size"
-            value={companySize === "" ? "" : String(companySize)}
-            onChange={(e) => setCompanySize(Number(e.target.value))}
-            sx={fieldSx}
-            slotProps={{ select: selectMenuProps }}
+            value={form.companySize === "" ? "" : String(form.companySize)}
+            onChange={(e) => set("companySize", Number(e.target.value))}
+            sx={glassFieldSx}
+            slotProps={{ select: glassSelectMenuProps }}
           >
             {companySizeOptions.map((opt) => (
               <MenuItem key={opt.value} value={String(opt.value)}>
@@ -260,10 +201,10 @@ const DemoForm = () => {
             fullWidth
             required
             label="Country / Region"
-            value={countryRegion}
-            onChange={(e) => setCountryRegion(e.target.value)}
-            sx={fieldSx}
-            slotProps={{ select: selectMenuProps }}
+            value={form.countryRegion}
+            onChange={(e) => set("countryRegion", e.target.value)}
+            sx={glassFieldSx}
+            slotProps={{ select: glassSelectMenuProps }}
           >
             {countryRegions.map((opt) => (
               <MenuItem key={opt} value={opt}>
@@ -283,10 +224,10 @@ const DemoForm = () => {
               fontWeight: 700,
               fontSize: "1rem",
               borderRadius: 2,
-              bgcolor: "#178FD6",
-              color: "#FFFCF6",
-              transition: "transform 0.2s ease",
-              "&:hover": { transform: "scale(1.02)", bgcolor: "#034488" },
+              bgcolor: "primary.main",
+              color: "canvas.cream",
+              transition: TRANSITION_FAST,
+              "&:hover": { transform: "scale(1.02)", bgcolor: "primary.dark" },
             }}
           >
             {submitting ? "Sending..." : "Request a Demo"}

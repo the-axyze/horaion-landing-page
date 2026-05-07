@@ -2,7 +2,6 @@ import { Box, Button, Typography } from "@mui/material";
 import GlobalStyles from "@mui/material/GlobalStyles";
 import { motion, useReducedMotion } from "framer-motion";
 import { Link as RouterLink } from "react-router-dom";
-import heroImage from "../assets/product/overview.png";
 import { fadeUp, scaleIn, staggerParent } from "../lib/motion";
 import MediaFrame from "./MediaFrame";
 import { MovingBorder } from "./MovingBorder";
@@ -110,7 +109,6 @@ const HeroCopy = () => (
     animate="show"
     sx={{ flex: "1 1 26rem" }}
   >
-    <Eyebrow />
     <Typography
       component={motion.h1}
       variants={fadeUp}
@@ -133,7 +131,7 @@ const HeroCopy = () => (
           WebkitBackgroundClip: "text",
           WebkitTextFillColor: "transparent",
           backgroundClip: "text",
-          animation: "shimmer 6s linear infinite",
+          animation: { xs: "none", md: "shimmer 6s linear infinite" },
         }}
       >
         AI
@@ -208,16 +206,21 @@ const HeroMedia = ({ float }: { float: boolean }) => (
     animate="show"
     sx={{
       flex: "1 1 26rem",
-      animation: float ? "heroFloat 7s ease-in-out infinite" : "none",
+      animation: {
+        xs: "none",
+        md: float ? "heroFloat 7s ease-in-out infinite" : "none",
+      },
     }}
   >
     <MediaFrame>
       <Box
         component="img"
-        src={heroImage}
+        src="/products/overview.webp"
         alt="Master complex scheduling with AI"
         loading="eager"
-        sx={{ width: "100%", display: "block" }}
+        decoding="async"
+        fetchPriority="high"
+        sx={{ width: "100%", height: "auto", display: "block" }}
       />
     </MediaFrame>
   </Box>
@@ -241,14 +244,31 @@ const Hero = () => {
         <Box
           sx={{
             display: "flex",
-            flexWrap: "wrap",
-            alignItems: "center",
-            gap: "clamp(2rem, 5vw, 4rem)",
+            flexDirection: "column",
+            gap: "clamp(1.5rem, 3vw, 2.5rem)",
             width: "100%",
           }}
         >
-          <HeroMedia float={!reduce} />
-          <HeroCopy />
+          <Box
+            component={motion.div}
+            variants={staggerParent}
+            initial="hidden"
+            animate="show"
+          >
+            <Eyebrow />
+          </Box>
+          <Box
+            sx={{
+              display: "flex",
+              flexWrap: "wrap",
+              alignItems: "center",
+              gap: "clamp(2rem, 5vw, 4rem)",
+              width: "100%",
+            }}
+          >
+            <HeroMedia float={!reduce} />
+            <HeroCopy />
+          </Box>
         </Box>
       </Box>
     </>

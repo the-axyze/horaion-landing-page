@@ -79,18 +79,6 @@ const ContactForm = () => {
     setErrors((prev) => ({ ...prev, [name]: validateField(field, value) }));
   };
 
-  // const handleSubmit = () => {
-  //   const newErrors: Record<string, string | null> = {};
-  //   fields.forEach((field) => {
-  //     const value = form[field.name] || "";
-  //     newErrors[field.name] = validateField(field, value);
-  //   });
-  //   setErrors(newErrors);
-  //   if (!Object.values(newErrors).some((e) => e !== null)) {
-  //     alert("Message sent!");
-  //   }
-  // };
-
   const handleSubmit = async () => {
     const newErrors: Record<string, string | null> = {};
 

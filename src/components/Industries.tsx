@@ -10,6 +10,11 @@ import {
 
 const industries = [
   {
+    icon: <Restaurant fontSize="large" />, // ✅ better for hospitality
+    name: "Hospitality, F&B and Retail",
+    description: "Demand-driven staffing with seasonal and hourly variability.",
+  },
+  {
     icon: <LocalHospital fontSize="large" />,
     name: "Healthcare",
     description:
@@ -25,11 +30,6 @@ const industries = [
     icon: <School fontSize="large" />,
     name: "Education",
     description: "Scheduling for faculty, staff, and student services.",
-  },
-  {
-    icon: <Restaurant fontSize="large" />, // ✅ better for hospitality
-    name: "Retail & Hospitality",
-    description: "Demand-driven staffing with seasonal and hourly variability.",
   },
   {
     icon: <PrecisionManufacturing fontSize="large" />, // ✅ more modern

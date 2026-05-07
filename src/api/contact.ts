@@ -1,6 +1,7 @@
 import { apiFetch } from "./client";
-import { ENDPOINTS } from "./endpoints";
 import type { SubmissionResponse } from "./types";
+
+const CONTACT_PATH = "/api/v1/public/contact";
 
 export type ContactPayload = {
   name: string;
@@ -10,7 +11,7 @@ export type ContactPayload = {
 };
 
 export const sendContactForm = (payload: ContactPayload) =>
-  apiFetch<SubmissionResponse>(ENDPOINTS.contact, {
+  apiFetch<SubmissionResponse>(CONTACT_PATH, {
     method: "POST",
     body: payload,
   });

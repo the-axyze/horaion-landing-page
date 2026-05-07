@@ -1,9 +1,11 @@
+import { lazy, Suspense } from "react";
 import Hero from "../components/Hero";
-import ProdOverview from "../components/ProdOverview";
-import Industries from "../components/Industries";
-import Testimonials from "../components/Testimonials";
-import CTA from "../components/CTA";
 import { Helmet } from "react-helmet-async";
+
+const ProdOverview = lazy(() => import("../components/ProdOverview"));
+const Industries = lazy(() => import("../components/Industries"));
+const CTA = lazy(() => import("../components/CTA"));
+const Testimonials = lazy(() => import("../components/Testimonials"));
 
 const Home = () => {
   return (
@@ -12,10 +14,18 @@ const Home = () => {
         <title>Home</title>
       </Helmet>
       <Hero />
-      <ProdOverview />
-      <Industries />
-      <CTA />
-      <Testimonials />
+      <Suspense fallback={null}>
+        <ProdOverview />
+      </Suspense>
+      <Suspense fallback={null}>
+        <Industries />
+      </Suspense>
+      <Suspense fallback={null}>
+        <CTA />
+      </Suspense>
+      <Suspense fallback={null}>
+        <Testimonials />
+      </Suspense>
     </>
   );
 };

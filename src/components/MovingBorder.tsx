@@ -19,7 +19,7 @@ export const MovingBorder = ({
         padding: "2px", // border thickness
         background: "linear-gradient(90deg, #178FD6, #FFFCF6, #178FD6)",
         backgroundSize: "200% 200%",
-        animation: "borderMove 3s linear infinite",
+        animation: { xs: "none", md: "borderMove 3s linear infinite" },
         "&::before": {
           content: '""',
           position: "absolute",
