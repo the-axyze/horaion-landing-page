@@ -1,4 +1,5 @@
-import { Box, Button, TextField, Typography } from "@mui/material";
+import { Box, Button, Fade, Modal, TextField, Typography } from "@mui/material";
+import { CheckCircleOutline } from "@mui/icons-material";
 import { useState } from "react";
 import { sendContactForm } from "../api/contact";
 
@@ -57,6 +58,7 @@ const fieldSx = {
 const ContactForm = () => {
   const [form, setForm] = useState<Record<string, string>>({});
   const [errors, setErrors] = useState<Record<string, string | null>>({});
+  const [successOpen, setSuccessOpen] = useState(false);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
@@ -81,14 +83,11 @@ const ContactForm = () => {
 
   const handleSubmit = async () => {
     const newErrors: Record<string, string | null> = {};
-
     fields.forEach((field) => {
       const value = form[field.name] || "";
       newErrors[field.name] = validateField(field, value);
     });
-
     setErrors(newErrors);
-
     if (Object.values(newErrors).some((e) => e !== null)) return;
 
     try {
@@ -102,88 +101,150 @@ const ContactForm = () => {
             : undefined,
       });
 
-      alert("Message sent!");
       setForm({});
+      setSuccessOpen(true);
     } catch (err: any) {
       alert(err.message);
     }
   };
 
   return (
-    <Box
-      sx={{
-        borderRadius: 4,
-        height: "100%",
-        backdropFilter: "blur(12px)",
-        background: "rgba(255,255,255,0.08)",
-        border: "1px solid #178FD6",
-        p: { xs: 3, md: 4 },
-        display: "flex",
-        flexDirection: "column",
-        gap: 3,
-      }}
-    >
-      {fields.map((field) => (
-        <Box key={field.name}>
-          <Typography
-            variant="body2"
-            fontWeight={500}
-            color="rgba(255,255,255,0.85)"
-            sx={{ mb: 0.5 }}
+    <>
+      {/* Success Modal */}
+      <Modal
+        open={successOpen}
+        onClose={() => setSuccessOpen(false)}
+        closeAfterTransition
+      >
+        <Fade in={successOpen}>
+          <Box
+            sx={{
+              position: "absolute",
+              top: "50%",
+              left: "50%",
+              transform: "translate(-50%, -50%)",
+              width: { xs: "85%", sm: 420 },
+              backdropFilter: "blur(16px)",
+              background: "rgba(3, 68, 136, 0.85)",
+              border: "1px solid rgba(255,255,255,0.2)",
+              borderRadius: 4,
+              p: { xs: 4, md: 5 },
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              gap: 2,
+              textAlign: "center",
+              outline: "none",
+            }}
           >
-            {field.label}{" "}
-            {field.required && (
-              <Box component="span" sx={{ color: "#ff8a80" }}>
-                *
-              </Box>
-            )}
-          </Typography>
+            <CheckCircleOutline sx={{ fontSize: 56, color: "#178FD6" }} />
+            <Typography variant="h6" fontWeight={700} color="#FFFCF6">
+              Message Sent!
+            </Typography>
+            <Typography
+              variant="body1"
+              color="rgba(255,255,255,0.75)"
+              sx={{ lineHeight: 1.7 }}
+            >
+              We will get back to you as soon as we can.
+            </Typography>
+            <Button
+              variant="contained"
+              onClick={() => setSuccessOpen(false)}
+              sx={{
+                mt: 1,
+                fontWeight: 600,
+                borderRadius: 2,
+                bgcolor: "#178FD6",
+                color: "#FFFCF6",
+                px: 4,
+                "&:hover": { bgcolor: "#034488" },
+              }}
+            >
+              Close
+            </Button>
+          </Box>
+        </Fade>
+      </Modal>
 
-          <TextField
-            name={field.name}
-            placeholder={field.label}
-            fullWidth
-            required={field.required}
-            multiline={field.multiline}
-            rows={field.rows}
-            value={form[field.name] || ""}
-            onChange={handleChange}
-            onBlur={handleBlur}
-            error={!!errors[field.name]}
-            helperText={
-              errors[field.name] ||
-              (field.name === "message"
-                ? `${form.message?.length || 0}/200`
-                : "")
-            }
-            type={field.name === "email" ? "email" : "text"}
-            slotProps={
-              field.name === "message" ? { htmlInput: { maxLength: 200 } } : {}
-            }
-            sx={fieldSx}
-          />
-        </Box>
-      ))}
-
-      <Button
-        variant="contained"
-        size="medium"
-        onClick={handleSubmit}
+      {/* Form */}
+      <Box
         sx={{
-          borderRadius: 2,
-          textTransform: "none",
-          py: 1.5,
-          alignSelf: "flex-start",
-          fontWeight: 600,
-          bgcolor: "#178FD6",
-          color: "#FFFCF6",
-          transition: "transform 0.2s ease",
-          "&:hover": { transform: "scale(1.04)", bgcolor: "#034488" },
+          borderRadius: 4,
+          height: "100%",
+          backdropFilter: "blur(12px)",
+          background: "rgba(255,255,255,0.08)",
+          border: "1px solid #178FD6",
+          p: { xs: 3, md: 4 },
+          display: "flex",
+          flexDirection: "column",
+          gap: 3,
         }}
       >
-        Send Message
-      </Button>
-    </Box>
+        {fields.map((field) => (
+          <Box key={field.name}>
+            <Typography
+              variant="body2"
+              fontWeight={500}
+              color="rgba(255,255,255,0.85)"
+              sx={{ mb: 0.5 }}
+            >
+              {field.label}{" "}
+              {field.required && (
+                <Box component="span" sx={{ color: "#ff8a80" }}>
+                  *
+                </Box>
+              )}
+            </Typography>
+
+            <TextField
+              name={field.name}
+              placeholder={field.label}
+              fullWidth
+              required={field.required}
+              multiline={field.multiline}
+              rows={field.rows}
+              value={form[field.name] || ""}
+              onChange={handleChange}
+              onBlur={handleBlur}
+              error={!!errors[field.name]}
+              helperText={
+                errors[field.name] ||
+                (field.name === "message"
+                  ? `${form.message?.length || 0}/200`
+                  : "")
+              }
+              type={field.name === "email" ? "email" : "text"}
+              slotProps={
+                field.name === "message"
+                  ? { htmlInput: { maxLength: 200 } }
+                  : {}
+              }
+              sx={fieldSx}
+            />
+          </Box>
+        ))}
+
+        <Button
+          variant="contained"
+          size="medium"
+          onClick={handleSubmit}
+          sx={{
+            borderRadius: 2,
+            textTransform: "none",
+            py: 1.5,
+            alignSelf: "flex-start",
+            fontWeight: 600,
+            bgcolor: "#178FD6",
+            color: "#FFFCF6",
+            transition: "transform 0.2s ease",
+            "&:hover": { transform: "scale(1.04)", bgcolor: "#034488" },
+          }}
+        >
+          Send Message
+        </Button>
+      </Box>
+    </>
   );
 };
 

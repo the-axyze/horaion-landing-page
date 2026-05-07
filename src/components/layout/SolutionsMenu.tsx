@@ -65,12 +65,17 @@ const SolutionsMenu = () => {
           sx: {
             mt: 1,
             borderRadius: 2,
-            backdropFilter: "blur(12px)",
-            background: "rgba(255,255,255,0.15)",
-            border: "1px solid rgba(255,255,255,0.2)",
+
+            // opaque background
+            bgcolor: "#081120",
+
+            // optional subtle border
+            border: "1px solid rgba(255,255,255,0.08)",
+
             color: "canvas.cream",
+
             "& .MuiMenuItem-root:hover": {
-              background: "rgba(255,255,255,0.15)",
+              backgroundColor: "rgba(255,255,255,0.08)",
             },
           },
         }}

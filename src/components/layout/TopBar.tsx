@@ -8,6 +8,7 @@ import {
   type SxProps,
   type Theme,
 } from "@mui/material";
+import { useEffect, useState } from "react";
 import { Link as RouterLink, useLocation } from "react-router-dom";
 import { TRANSITION_FAST } from "../../lib/transitions";
 import { primaryLinks } from "./navConfig";
@@ -22,7 +23,14 @@ const navLinkSx = (active: boolean): SxProps<Theme> => ({
   position: "relative",
   whiteSpace: "nowrap",
   transition: TRANSITION_FAST,
-  "&:hover": { transform: "scale(1.07)" },
+
+  // improves readability on bright backgrounds
+  textShadow: "0 1px 3px rgba(0,0,0,0.45)",
+
+  "&:hover": {
+    transform: "scale(1.07)",
+  },
+
   "&::after": {
     content: '""',
     position: "absolute",
@@ -35,21 +43,65 @@ const navLinkSx = (active: boolean): SxProps<Theme> => ({
     borderRadius: 1,
     transition: "width 0.2s ease",
   },
-  "&:hover::after": { width: "70%" },
+
+  "&:hover::after": {
+    width: "70%",
+  },
 });
 
 const TopBar = ({ onOpenDrawer }: Props) => {
   const location = useLocation();
+
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
     <AppBar
       position="sticky"
       elevation={0}
       sx={{
-        background: { xs: "rgba(5,10,26,0.92)", md: "transparent" },
-        backdropFilter: { xs: "none", md: "blur(8px)" },
-        WebkitBackdropFilter: { xs: "none", md: "blur(8px)" },
-        borderBottom: { xs: "1px solid rgba(255,255,255,0.1)", md: 0 },
+        background: {
+          xs: "rgba(5,10,26,0.92)",
+          md: scrolled
+            ? "rgba(5,10,26,0.82)"
+            : "linear-gradient(to bottom, rgba(5,10,26,0.55), rgba(5,10,26,0.15))",
+        },
+
+        backdropFilter: {
+          xs: "none",
+          md: "blur(14px)",
+        },
+
+        WebkitBackdropFilter: {
+          xs: "none",
+          md: "blur(14px)",
+        },
+
+        borderBottom: {
+          xs: "1px solid rgba(255,255,255,0.1)",
+          md: scrolled
+            ? "1px solid rgba(255,255,255,0.08)"
+            : "1px solid transparent",
+        },
+
+        boxShadow: {
+          xs: "none",
+          md: scrolled ? "0 8px 32px rgba(0,0,0,0.25)" : "none",
+        },
+
+        transition:
+          "background 0.25s ease, border 0.25s ease, box-shadow 0.25s ease",
       }}
     >
       <Toolbar sx={{ gap: 2 }}>
@@ -128,6 +180,9 @@ const TopBar = ({ onOpenDrawer }: Props) => {
               color: "canvas.cream",
               whiteSpace: "nowrap",
               transition: TRANSITION_FAST,
+
+              textShadow: "0 1px 3px rgba(0,0,0,0.35)",
+
               "&:hover": {
                 transform: "scale(1.07)",
                 bgcolor: "primary.dark",
@@ -138,7 +193,10 @@ const TopBar = ({ onOpenDrawer }: Props) => {
           </Button>
 
           <IconButton
-            sx={{ color: "canvas.cream", display: { xs: "flex", md: "none" } }}
+            sx={{
+              color: "canvas.cream",
+              display: { xs: "flex", md: "none" },
+            }}
             onClick={onOpenDrawer}
           >
             <MenuIcon />
