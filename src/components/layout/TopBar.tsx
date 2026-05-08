@@ -20,6 +20,7 @@ interface Props {
 
 const navLinkSx = (active: boolean): SxProps<Theme> => ({
   fontWeight: 500,
+  fontSize: "1.25rem",
   position: "relative",
   whiteSpace: "nowrap",
   transition: TRANSITION_FAST,
@@ -132,7 +133,7 @@ const TopBar = ({ onOpenDrawer }: Props) => {
             flex: 1,
             justifyContent: "center",
             alignItems: "center",
-            gap: 1,
+            gap: 10,
           }}
         >
           <Button
