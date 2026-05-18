@@ -12,8 +12,6 @@ import { motion, useReducedMotion } from "framer-motion";
 
 import aisgLogo from "../assets/logos/aisg.jpg";
 import horaionLogo from "../assets/logos/horaion-logo-black-bg.webp";
-import pizzahutLogo from "../assets/logos/pizza-hut.jpg";
-import ttshLogo from "../assets/logos/ttsh.jpg";
 import uparcelLogo from "../assets/logos/uparcel.webp";
 import { EASE_OUT_EXPO } from "../lib/motion";
 import Reveal from "./Reveal";
@@ -37,25 +35,28 @@ type StoryEntry = {
 
 const story: StoryEntry[] = [
   {
-    date: "Mar 2023",
-    title: "Logistics, where it all began",
+    date: "2022 - 2023",
+    title: "On-demand delivery assignment recommender",
     description:
-      "Built last-mile route optimization with UParcel — our first taste of solving real operational chaos.",
-    logos: [{ src: uparcelLogo, alt: "UParcel" }],
+      "AI Singapore and UParcel project to improve delivery assignment matching for on-demand operations.",
+    logos: [
+      { src: aisgLogo, alt: "AI Singapore" },
+      { src: uparcelLogo, alt: "UParcel" },
+    ],
   },
   {
-    date: "Jan 2024",
-    title: "Scheduling at scale",
+    date: "2022 - 2024",
+    title: "Next-generation roster management via reinforcement learning",
     description:
-      "Took on gig-worker scheduling for Pizza Hut across stores, balancing demand peaks and worker availability.",
-    logos: [{ src: pizzahutLogo, alt: "Pizza Hut" }],
+      "AI Singapore and BIPO Services project using reinforcement learning to improve roster planning and scheduling.",
+    logos: [{ src: aisgLogo, alt: "AI Singapore" }],
   },
   {
-    date: "Aug 2024",
-    title: "Healthcare's hardest shift",
+    date: "2023 - 2025",
+    title: "Acute workforce response via Generative Flow Networks and Graph Neural Networks",
     description:
-      "Partnered with Tan Tock Seng Hospital on shift scheduling for nurses and doctors — one of the most constraint-heavy problems in the field.",
-    logos: [{ src: ttshLogo, alt: "Tan Tock Seng Hospital" }],
+      "AI Singapore and BIPO Services project using patient lifecycle demand signals, Generative Flow Networks, and Graph Neural Networks to improve staffing response.",
+    logos: [{ src: aisgLogo, alt: "AI Singapore" }],
   },
   {
     date: "Mar 2025",
