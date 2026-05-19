@@ -5,74 +5,67 @@ export const leaveApplicationData: ServiceData = {
   hero: {
     title: "Leave Application",
     subtitle:
-      "Most leave systems treat coverage as someone else's problem. Ours doesn't. Approvals factor in the live roster, so a 'yes' never quietly breaks tomorrow's shift.",
+      "Leave requests and scheduling stay in the same flow, so managers can approve time off with less back-and-forth.",
     ctaText: "Book a Demo",
     ctaLink: "/demo",
     imageSrc: "/products/leave-application.webp",
   },
   features: {
-    sectionTitle: "Coverage-aware leave management",
+    sectionTitle: "Leave management",
     sectionSubtitle: "",
     benefits: [
-      "Submit, approve, and reflect leave on the same platform",
-      "Real-time view of who's off and what's at risk",
-      "Automatic checks against coverage and contracts",
+      "Multi-level approvals for different teams and leave types",
+      "Simple approval management for managers",
+      "Leave updates flow straight into scheduling",
     ],
     items: [
       {
-        title: "Roster-Aware Approvals",
+        title: "Multi-Level Approvals",
         description:
-          "Every request shows the manager exactly what coverage looks like on those days — and flags conflicts before they're approved.",
+          "Set approval chains by team or leave type so the right people review each request.",
         icon: "EventNote",
       },
       {
-        title: "End-to-End Sync",
+        title: "Easy Approval Management",
         description:
-          "Approved leave updates the schedule instantly, triggers backfill where needed, and writes back to your HRIS.",
+          "Managers can review and decide on requests from one place.",
         icon: "CheckCircle",
       },
       {
-        title: "Entitlement & Balance Tracking",
+        title: "Fully Integrated Scheduling",
         description:
-          "Annual leave, medical, time-in-lieu, and custom categories — all tracked, accrued, and reported automatically.",
+          "Approved leave flows straight into scheduling.",
         icon: "Insights",
-      },
-      {
-        title: "Multi-Level Approvals",
-        description:
-          "Configure approval chains by team, leave type, or duration. Delegate when approvers are themselves out of office.",
-        icon: "Groups",
       },
     ],
   },
   howItWorks: {
     sectionTitle: "How It Works",
-    sectionSubtitle:
-      "From request to a fully-rebalanced roster in three steps.",
+    sectionSubtitle: "From request to updated scheduling in three steps.",
     steps: [
       {
         stepNumber: 1,
         title: "Submit a request",
         description:
-          "Employees pick the dates and type of leave from any device. Entitlements and balances are checked automatically.",
+          "Employees submit leave from any device.",
       },
       {
         stepNumber: 2,
-        title: "Manager reviews against coverage",
+        title: "Managers review it",
         description:
-          "Approvers see the impact on the roster side-by-side with the request — no more switching between three systems.",
+          "Approvers review requests in one place.",
       },
       {
         stepNumber: 3,
-        title: "Auto-update the roster",
+        title: "Update scheduling automatically",
         description:
-          "Approved leave triggers backfill, notifies affected staff, and syncs to payroll and HRIS.",
+          "Once approved, the leave updates scheduling automatically.",
       },
     ],
   },
   cta: {
-    title: "Stop approving leave blind",
-    subtitle: "Give your managers the full picture before they say yes.",
+    title: "Keep leave and scheduling in sync",
+    subtitle: "Reduce manual coordination between leave requests and the roster.",
     primaryButtonText: "Book a Demo",
     primaryButtonLink: "/demo",
   },
