@@ -5,7 +5,7 @@ export const routeOptimizationData: ServiceData = {
   hero: {
     title: "Route Optimization",
     subtitle:
-      "Where Horaion started. Born from our work with UParcel on Singapore last-mile, our routing engine plans every stop against real traffic, capacity, and time windows — and re-plans the moment reality changes.",
+      "Where Horaion started. Born from our work with UParcel on Singapore last-mile, our routing engine plans every stop around real traffic, service duration, time windows, and transport constraints - then re-plans the moment reality changes.",
     ctaText: "Book a Demo",
     ctaLink: "/demo",
     imageSrc: "/products/route-optimization.webp",
@@ -14,64 +14,71 @@ export const routeOptimizationData: ServiceData = {
     sectionTitle: "Routing that holds up in the real world",
     sectionSubtitle: "",
     benefits: [
-      "Live re-routing on traffic, cancellations, and new orders",
-      "Multi-vehicle, multi-depot, multi-shift planning",
-      "Per-route analytics on cost, distance, and on-time performance",
+      "Account for service duration at every stop, not just drive time",
+      "Respect both customer service windows and provider availability windows",
+      "Choose routes based on the right transport mode, cost, and travel time",
     ],
     items: [
       {
-        title: "Smart Route Planning",
+        title: "Service-Aware Planning",
         description:
-          "Plan thousands of stops across vehicles in seconds — respecting time windows, capacity, driver hours, and customer SLAs.",
+          "Plan thousands of stops in seconds while factoring in on-site service duration, appointment windows, capacity, and operational SLAs.",
         icon: "RocketLaunch",
+      },
+      {
+        title: "Time Window Matching",
+        description:
+          "Match each job to the right service window and the right provider window, so schedules stay realistic before the route even starts.",
+        icon: "Schedule",
+      },
+      {
+        title: "Transport-Aware Optimization",
+        description:
+          "Optimize differently for cars, vans, bikes, or mixed fleets - balancing travel time, route cost, and operational fit for each job.",
+        icon: "TrendingUp",
       },
       {
         title: "Real-Time Re-Routing",
         description:
-          "Traffic spikes, cancellations, and add-on orders trigger an instant re-plan. Drivers see updates in their app without manual dispatch.",
-        icon: "TrendingUp",
-      },
-      {
-        title: "Driver-First Mobile App",
-        description:
-          "Drivers get turn-by-turn directions, proof of delivery, and one-tap escalation built in — no second app, no extra logins.",
+          "Traffic spikes, cancellations, and add-on orders trigger an instant re-plan. Drivers and service providers see updates in their app without manual dispatch.",
         icon: "FlashOn",
       },
       {
         title: "Operations Analytics",
         description:
-          "See cost-per-stop, on-time rate, and idle time per driver and per route. Identify the patterns that move the needle.",
+          "See cost-per-stop, on-time rate, utilization, and idle time by provider, transport type, and route. Identify the patterns that move the needle.",
         icon: "Insights",
       },
     ],
   },
   howItWorks: {
     sectionTitle: "How It Works",
-    sectionSubtitle: "From a list of stops to a dispatched fleet in minutes.",
+    sectionSubtitle: "From a list of jobs to a dispatched field team in minutes.",
     steps: [
       {
         stepNumber: 1,
-        title: "Upload your stops",
+        title: "Load jobs, windows, and resources",
         description:
-          "Connect your order management system or upload a CSV. Vehicle and driver constraints are configured once.",
+          "Connect your order management system or upload a CSV with job duration, service windows, provider availability, and transport constraints.",
       },
       {
         stepNumber: 2,
         title: "Generate optimized routes",
         description:
-          "The engine produces routes that meet every constraint and minimize distance, time, and cost — your call which to optimize for.",
+          "The engine builds routes that respect every constraint and optimize for the right outcome - travel time, cost, transport mode, or a balanced mix.",
       },
       {
         stepNumber: 3,
         title: "Dispatch and track",
         description:
-          "Drivers receive routes on their phone. Operations sees live progress; the engine re-plans on the fly when reality shifts.",
+          "Drivers and service providers receive their assignments on their phone. Operations sees live progress, and the engine re-plans on the fly when reality shifts.",
       },
     ],
   },
   cta: {
     title: "Routes that keep up with your day",
-    subtitle: "See the engine that powered our first deployment with UParcel.",
+    subtitle:
+      "See how service duration, time windows, and transport-aware planning fit into one routing engine.",
     primaryButtonText: "Book a Demo",
     primaryButtonLink: "/demo",
   },
