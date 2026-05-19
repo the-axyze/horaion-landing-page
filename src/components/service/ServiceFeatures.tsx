@@ -48,48 +48,50 @@ const ServiceFeatures = ({ data }: Props) => {
         </Typography>
 
         {/* Feature cards */}
-        <Grid container spacing={4} justifyContent="center">
-          {data.items.map((feature, index) => (
-            <Grid key={index} size={{ xs: 12, sm: 6, md: 4 }}>
-              <Box
-                sx={{
-                  p: 4,
-                  height: "100%",
-                  borderRadius: 3,
-                  backdropFilter: "blur(12px)",
-                  background: "rgba(255,255,255,0.08)",
-                  border: "1px solid #FFFCF6",
-                  transition: "all 0.2s ease",
-                  "&:hover": {
-                    background: "rgba(255,255,255,0.06)",
-                    borderColor: "rgba(255,255,255,0.2)",
-                    transform: "translateY(-4px)",
-                    boxShadow: "0 12px 40px rgba(0,0,0,0.2)",
-                  },
-                }}
-              >
-                <Box sx={{ mb: 2 }}>
-                  {iconMap[feature.icon ?? "Default"] ?? iconMap["Default"]}
+        {data.items.length > 0 && (
+          <Grid container spacing={4} justifyContent="center">
+            {data.items.map((feature, index) => (
+              <Grid key={index} size={{ xs: 12, sm: 6, md: 4 }}>
+                <Box
+                  sx={{
+                    p: 4,
+                    height: "100%",
+                    borderRadius: 3,
+                    backdropFilter: "blur(12px)",
+                    background: "rgba(255,255,255,0.08)",
+                    border: "1px solid #FFFCF6",
+                    transition: "all 0.2s ease",
+                    "&:hover": {
+                      background: "rgba(255,255,255,0.06)",
+                      borderColor: "rgba(255,255,255,0.2)",
+                      transform: "translateY(-4px)",
+                      boxShadow: "0 12px 40px rgba(0,0,0,0.2)",
+                    },
+                  }}
+                >
+                  <Box sx={{ mb: 2 }}>
+                    {iconMap[feature.icon ?? "Default"] ?? iconMap["Default"]}
+                  </Box>
+                  <Typography
+                    variant="h6"
+                    fontWeight={600}
+                    color="#FFFCF6"
+                    sx={{ mb: 1 }}
+                  >
+                    {feature.title}
+                  </Typography>
+                  <Typography
+                    variant="body2"
+                    color="#FFFCF6"
+                    sx={{ lineHeight: 1.7 }}
+                  >
+                    {feature.description}
+                  </Typography>
                 </Box>
-                <Typography
-                  variant="h6"
-                  fontWeight={600}
-                  color="#FFFCF6"
-                  sx={{ mb: 1 }}
-                >
-                  {feature.title}
-                </Typography>
-                <Typography
-                  variant="body2"
-                  color="#FFFCF6"
-                  sx={{ lineHeight: 1.7 }}
-                >
-                  {feature.description}
-                </Typography>
-              </Box>
-            </Grid>
-          ))}
-        </Grid>
+              </Grid>
+            ))}
+          </Grid>
+        )}
 
         {/* Benefits subsection */}
         {data.benefits && data.benefits.length > 0 && (
