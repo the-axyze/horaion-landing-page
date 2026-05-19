@@ -5,7 +5,7 @@ export const gigSchedulingData: ServiceData = {
   hero: {
     title: "Gig Scheduling",
     subtitle:
-      "Pizza Hut Singapore trusts us to fill shifts across their stores every week. Match a fluid pool of part-time and gig workers to demand peaks — automatically — with the same engine.",
+      "Pizza Hut Singapore trusts us to fill shifts across their stores every week. Match a fluid pool of part-time and gig workers to demand peaks, while keeping worker availability and coverage in sync.",
     ctaText: "Book a Demo",
     ctaLink: "/demo",
     imageSrc: "/products/gig-scheduling.webp",
@@ -14,65 +14,59 @@ export const gigSchedulingData: ServiceData = {
     sectionTitle: "Built for fluid workforces",
     sectionSubtitle: "",
     benefits: [
-      "Open shifts auto-matched to available workers in seconds",
-      "Backfill no-shows and last-minute drops without phone calls",
-      "Honor worker preferences and weekly hour caps",
+      "Workers define their availability in one place",
+      "Coverage requirements are matched automatically",
+      "Gig workers stay inside your employee management system",
     ],
     items: [
       {
-        title: "Demand-Driven Shift Filling",
+        title: "Worker Availability",
         description:
-          "Forecasted demand becomes a shift plan, then a worker assignment — with skill, location, and availability constraints baked in.",
+          "Workers set when they can work, so the schedule starts from real availability instead of assumptions.",
         icon: "FlashOn",
       },
       {
-        title: "Self-Serve for Workers",
+        title: "Coverage Matching",
         description:
-          "Workers claim, swap, or release shifts from their phones. Managers approve in one tap, and the schedule updates everywhere instantly.",
+          "Availability feeds directly into shift coverage, helping managers fill the gaps that matter most.",
         icon: "AutoAwesome",
       },
       {
-        title: "No-Show Backfill",
+        title: "Employee Management Integration",
         description:
-          "When a worker drops out, the system instantly offers the slot to the next-best matches — most gaps fill before a manager even sees them.",
+          "Keep gig workers connected to the same employee management workflows your team already uses.",
         icon: "Update",
-      },
-      {
-        title: "Multi-Site Visibility",
-        description:
-          "Run dozens of stores, branches, or service areas from one console. Workers can see open shifts across sites they're qualified for.",
-        icon: "Groups",
       },
     ],
   },
   howItWorks: {
     sectionTitle: "How It Works",
-    sectionSubtitle: "From open shifts to confirmed coverage in three steps.",
+    sectionSubtitle: "From availability capture to confirmed coverage in three steps.",
     steps: [
       {
         stepNumber: 1,
-        title: "Define your shift patterns",
+        title: "Capture worker availability",
         description:
-          "Tell us what coverage looks like — by store, role, time block. We translate it into a model.",
+          "Workers share their available days, times, and constraints so the schedule reflects reality from the start.",
       },
       {
         stepNumber: 2,
-        title: "Open shifts to your worker pool",
+        title: "Match coverage requirements",
         description:
-          "The engine matches shifts to qualified, available workers and offers them through the channels you already use.",
+          "The engine matches available workers to required shifts, roles, and coverage targets.",
       },
       {
         stepNumber: 3,
-        title: "Auto-fill and confirm",
+        title: "Sync into employee management",
         description:
-          "Workers accept; the schedule confirms automatically. Managers see only the exceptions that need their attention.",
+          "Confirmed assignments flow back into your employee management system for easier day-to-day administration.",
       },
     ],
   },
   cta: {
     title: "Scale your gig workforce without scaling chaos",
     subtitle:
-      "See how teams running hundreds of shifts a week stay on top of coverage.",
+      "See how teams running hundreds of shifts a week keep availability, coverage, and employee management aligned.",
     primaryButtonText: "Book a Demo",
     primaryButtonLink: "/demo",
   },
