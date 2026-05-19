@@ -5,7 +5,7 @@ export const gigSchedulingData: ServiceData = {
   hero: {
     title: "Gig Scheduling",
     subtitle:
-      "Pizza Hut Singapore trusts us to fill shifts across their stores every week. Match a fluid pool of part-time and gig workers to demand peaks, while keeping worker availability and coverage in sync.",
+      "Match a fluid pool of part-time and gig workers to demand peaks, while keeping worker availability and coverage in sync.",
     ctaText: "Book a Demo",
     ctaLink: "/demo",
     imageSrc: "/products/gig-scheduling.webp",
