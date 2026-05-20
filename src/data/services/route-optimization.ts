@@ -5,7 +5,7 @@ export const routeOptimizationData: ServiceData = {
   hero: {
     title: "Route Optimization",
     subtitle:
-      "Where Horaion started. Born from our work with UParcel on Singapore last-mile, our routing engine plans every stop around real traffic, service duration, time windows, and transport constraints - then re-plans the moment reality changes.",
+      "Where Horaion started. Born from our work with UParcel on Singapore last-mile, our routing engine plans every stop around real traffic, service duration, time windows, and transport constraints.",
     ctaText: "Book a Demo",
     ctaLink: "/demo",
     imageSrc: "/products/route-optimization.webp",
@@ -36,19 +36,7 @@ export const routeOptimizationData: ServiceData = {
         description:
           "Optimize differently for cars, vans, bikes, or mixed fleets - balancing travel time, route cost, and operational fit for each job.",
         icon: "TrendingUp",
-      },
-      {
-        title: "Real-Time Re-Routing",
-        description:
-          "Traffic spikes, cancellations, and add-on orders trigger an instant re-plan. Drivers and service providers see updates in their app without manual dispatch.",
-        icon: "FlashOn",
-      },
-      {
-        title: "Operations Analytics",
-        description:
-          "See cost-per-stop, on-time rate, utilization, and idle time by provider, transport type, and route. Identify the patterns that move the needle.",
-        icon: "Insights",
-      },
+      }
     ],
   },
   howItWorks: {
@@ -69,9 +57,9 @@ export const routeOptimizationData: ServiceData = {
       },
       {
         stepNumber: 3,
-        title: "Dispatch and track",
+        title: "Review and assign",
         description:
-          "Drivers and service providers receive their assignments on their phone. Operations sees live progress, and the engine re-plans on the fly when reality shifts.",
+          "Review the generated routes, assign them to the right drivers or service providers, and share the plan with your operations team.",
       },
     ],
   },
