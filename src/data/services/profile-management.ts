@@ -16,7 +16,6 @@ export const profileManagementData: ServiceData = {
     benefits: [
       "One profile per employee, used by every workflow",
       "Profile updates stay aligned with scheduling inputs",
-      "Two-way sync with HRIS and payroll, no double-entry",
     ],
     items: [
       {
@@ -24,12 +23,6 @@ export const profileManagementData: ServiceData = {
         description:
           "Skills, qualifications, contracts, working-time rules, and personal preferences in one record — referenced by scheduling, leave, and reporting.",
         icon: "Groups",
-      },
-      {
-        title: "HRIS and Payroll Sync",
-        description:
-          "Keep employee records aligned across HRIS, payroll, and scheduling without repeated manual updates.",
-        icon: "Security",
       },
       {
         title: "Scheduling-Ready Workforce Data",
