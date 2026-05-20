@@ -32,12 +32,6 @@ export const demandForecastingData: ServiceData = {
         icon: "TrendingUp",
       },
       {
-        title: "Anomaly & Event Awareness",
-        description:
-          "Holidays, promotions, weather, and historical anomalies are factored in — and flagged to your team for review.",
-        icon: "AutoAwesome",
-      },
-      {
         title: "Direct to Scheduling",
         description:
           "Forecasts plug straight into our scheduling engine. The team that needs the demand signal already has it.",
