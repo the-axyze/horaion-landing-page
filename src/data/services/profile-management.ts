@@ -5,7 +5,7 @@ export const profileManagementData: ServiceData = {
   hero: {
     title: "Profile Management",
     subtitle:
-      "Skills, certifications, contracts, availability — the data your scheduler needs to work properly. We turn scattered spreadsheets and HR exports into one source of truth that powers every roster decision.",
+      "Skills, contracts, availability, and work rules — the data your scheduler needs to work properly. We turn scattered spreadsheets and HR exports into one source of truth that powers every roster decision.",
     ctaText: "Book a Demo",
     ctaLink: "/demo",
     imageSrc: "/products/profile-management.webp",
@@ -15,7 +15,7 @@ export const profileManagementData: ServiceData = {
     sectionSubtitle: "",
     benefits: [
       "One profile per employee, used by every workflow",
-      "Cert expiries and contract changes flow through automatically",
+      "Profile updates stay aligned with scheduling inputs",
       "Two-way sync with HRIS and payroll, no double-entry",
     ],
     items: [
@@ -26,21 +26,21 @@ export const profileManagementData: ServiceData = {
         icon: "Groups",
       },
       {
-        title: "Role-Based Access & Audit",
+        title: "HRIS and Payroll Sync",
         description:
-          "Granular permissions for HR, managers, and employees, with a full audit trail of who changed what — built for compliance reviews.",
+          "Keep employee records aligned across HRIS, payroll, and scheduling without repeated manual updates.",
         icon: "Security",
       },
       {
-        title: "Certification & Expiry Tracking",
+        title: "Scheduling-Ready Workforce Data",
         description:
-          "Track qualifications with expiry dates and automatic alerts. Schedules won't assign someone whose cert lapsed yesterday.",
+          "Keep availability, work rules, and role requirements structured in a format the scheduling engine can use directly.",
         icon: "EventNote",
       },
       {
-        title: "Self-Service for Staff",
+        title: "Full Integration With Scheduling",
         description:
-          "Employees update their own contact info, availability, and preferences — with manager approvals where you need them.",
+          "Changes to employee profiles flow straight into scheduling, so rosters always use the latest workforce data.",
         icon: "AutoAwesome",
       },
     ],
@@ -60,7 +60,7 @@ export const profileManagementData: ServiceData = {
         stepNumber: 2,
         title: "Map skills and constraints",
         description:
-          "Define the qualifications, certifications, and working-time rules that matter for your operations — once.",
+          "Define the skills, availability, and working-time rules that matter for your operations — once.",
       },
       {
         stepNumber: 3,
