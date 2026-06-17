@@ -1,4 +1,3 @@
-import gigImg from "../../assets/product/gig-scheduling.png";
 import type { ServiceData } from "../../types/service";
 
 export const gigSchedulingData: ServiceData = {
@@ -42,7 +41,8 @@ export const gigSchedulingData: ServiceData = {
   },
   howItWorks: {
     sectionTitle: "How It Works",
-    sectionSubtitle: "From availability capture to confirmed coverage in three steps.",
+    sectionSubtitle:
+      "From availability capture to confirmed coverage in three steps.",
     steps: [
       {
         stepNumber: 1,

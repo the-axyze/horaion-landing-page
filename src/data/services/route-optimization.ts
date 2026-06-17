@@ -1,4 +1,3 @@
-import routeImg from "../../assets/product/route-optimization.png";
 import type { ServiceData } from "../../types/service";
 
 export const routeOptimizationData: ServiceData = {
@@ -37,12 +36,13 @@ export const routeOptimizationData: ServiceData = {
         description:
           "Optimize differently for cars, vans, bikes, or mixed fleets - balancing travel time, route cost, and operational fit for each job.",
         icon: "TrendingUp",
-      }
+      },
     ],
   },
   howItWorks: {
     sectionTitle: "How It Works",
-    sectionSubtitle: "From a list of jobs to a dispatched field team in minutes.",
+    sectionSubtitle:
+      "From a list of jobs to a dispatched field team in minutes.",
     steps: [
       {
         stepNumber: 1,

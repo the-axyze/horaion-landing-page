@@ -1,4 +1,3 @@
-import overviewImg from "../../assets/product/overview.png";
 import type { ServiceData } from "../../types/service";
 
 export const schedulingSolutionsData: ServiceData = {
@@ -32,7 +31,6 @@ export const schedulingSolutionsData: ServiceData = {
           "Built-in checks for labor laws and contractual rules, with audit-ready logs that show exactly why each shift was assigned.",
         icon: "TrendingUp",
       },
-
     ],
   },
   howItWorks: {

@@ -1,4 +1,3 @@
-import flexiImg from "../../assets/product/flexi-scheduling.png";
 import type { ServiceData } from "../../types/service";
 
 export const flexiSchedulingData: ServiceData = {
@@ -23,8 +22,7 @@ export const flexiSchedulingData: ServiceData = {
   },
   howItWorks: {
     sectionTitle: "How It Works",
-    sectionSubtitle:
-      "From variable availability to a workable roster.",
+    sectionSubtitle: "From variable availability to a workable roster.",
     steps: [
       {
         stepNumber: 1,

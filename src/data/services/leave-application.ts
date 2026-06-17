@@ -1,4 +1,3 @@
-import leaveImg from "../../assets/product/leave-application.png";
 import type { ServiceData } from "../../types/service";
 
 export const leaveApplicationData: ServiceData = {
@@ -34,8 +33,7 @@ export const leaveApplicationData: ServiceData = {
       },
       {
         title: "Fully Integrated Scheduling",
-        description:
-          "Approved leave flows straight into scheduling.",
+        description: "Approved leave flows straight into scheduling.",
         icon: "Insights",
       },
     ],
@@ -47,14 +45,12 @@ export const leaveApplicationData: ServiceData = {
       {
         stepNumber: 1,
         title: "Submit a request",
-        description:
-          "Employees submit leave from any device.",
+        description: "Employees submit leave from any device.",
       },
       {
         stepNumber: 2,
         title: "Managers review it",
-        description:
-          "Approvers review requests in one place.",
+        description: "Approvers review requests in one place.",
       },
       {
         stepNumber: 3,
@@ -66,7 +62,8 @@ export const leaveApplicationData: ServiceData = {
   },
   cta: {
     title: "Keep leave and scheduling in sync",
-    subtitle: "Reduce manual coordination between leave requests and the roster.",
+    subtitle:
+      "Reduce manual coordination between leave requests and the roster.",
     primaryButtonText: "Book a Demo",
     primaryButtonLink: "/demo",
   },
