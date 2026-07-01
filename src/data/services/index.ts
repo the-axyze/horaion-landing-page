@@ -6,6 +6,7 @@ import { leaveApplicationData } from "./leave-application";
 import { profileManagementData } from "./profile-management";
 import { routeOptimizationData } from "./route-optimization";
 import { schedulingSolutionsData } from "./scheduling-solutions";
+import { shiftPreferencesData } from "./shift-preferences";
 
 export type ServiceRouteEntry = {
   /** URL path segment, no leading slash. */
@@ -19,6 +20,7 @@ export const services: ServiceRouteEntry[] = [
   { slug: "demand-forecasting", data: demandForecastingData },
   { slug: "profile-management", data: profileManagementData },
   { slug: "flexi-scheduling", data: flexiSchedulingData },
+  { slug: "shift-preferences", data: shiftPreferencesData },
   { slug: "gig-scheduling", data: gigSchedulingData },
   { slug: "leave-application", data: leaveApplicationData },
 ];

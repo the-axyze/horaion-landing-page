@@ -8,6 +8,7 @@ export const serviceLinks: NavLink[] = [
     children: [
       { label: "Flexi Scheduling", path: "/flexi-scheduling" },
       { label: "Gig Scheduling", path: "/gig-scheduling" },
+      { label: "Shift Preferences", path: "/shift-preferences" },
       { label: "Leave Application", path: "/leave-application" },
     ],
   },
