@@ -121,7 +121,7 @@ const TopBar = ({ onOpenDrawer }: Props) => {
             component="img"
             sx={{ width: "100%", height: "100%" }}
             alt="Horaion Logo"
-            src="/HoraionLogo.webp"
+            src="src/assets/logos/horaion-logo-transparent.svg"
             loading="eager"
             decoding="async"
           />

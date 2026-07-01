@@ -32,7 +32,7 @@ export const gigSchedulingData: ServiceData = {
         icon: "AutoAwesome",
       },
       {
-        title: "Employee Management Integration",
+        title: "Unified Workflows",
         description:
           "Keep gig workers connected to the same employee management workflows your team already uses.",
         icon: "Update",

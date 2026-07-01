@@ -11,9 +11,9 @@ export const serviceLinks: NavLink[] = [
       { label: "Leave Application", path: "/leave-application" },
     ],
   },
-  { label: "Route Optimization", path: "/route-optimization" },
   { label: "Demand Forecasting", path: "/demand-forecasting" },
   { label: "Profile Management", path: "/profile-management" },
+  { label: "Route Optimization", path: "/route-optimization" },
 ];
 
 export const primaryLinks: { label: string; path: string }[] = [

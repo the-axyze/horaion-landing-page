@@ -11,7 +11,7 @@ import { Box, Stack, Typography } from "@mui/material";
 import { motion, useReducedMotion } from "framer-motion";
 
 import aisgLogo from "../assets/logos/aisg.jpg";
-import horaionLogo from "../assets/logos/horaion-logo-black-bg.webp";
+import horaionLogo from "../assets/logos/horaion-logo-transparent.svg";
 import uparcelLogo from "../assets/logos/uparcel.webp";
 import { EASE_OUT_EXPO } from "../lib/motion";
 import Reveal from "./Reveal";

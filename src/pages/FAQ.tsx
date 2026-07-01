@@ -14,7 +14,7 @@ const faqs = [
   {
     question: "How does Horaion's AI scheduling work?",
     answer:
-      "Horaion uses advanced machine learning algorithms to analyse your constraints, preferences, and historical data. It then generates optimal schedules in seconds, automatically resolving conflicts and balancing workloads across your team.",
+      "Horaion uses advanced machine learning algorithms to analyse your constraints, preferences, and historical data. It then generates optimal schedules to fulfil your business requirements.",
   },
   {
     question: "How long does it take to get set up?",

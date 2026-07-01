@@ -31,7 +31,7 @@ const features = [
     icon: <ElectricBolt fontSize="large" />,
     title: "Lightning Fast Results",
     description:
-      "Generate complex schedules in seconds, not hours. What used to take days now happens instantly.",
+      "Generate complex schedules to meet your requirements. What used to take days now happens instantly.",
   },
   {
     icon: <Security fontSize="large" />,

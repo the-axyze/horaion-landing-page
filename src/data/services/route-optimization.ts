@@ -22,7 +22,7 @@ export const routeOptimizationData: ServiceData = {
       {
         title: "Service-Aware Planning",
         description:
-          "Plan thousands of stops in seconds while factoring in on-site service duration, appointment windows, capacity, and operational SLAs.",
+          "Plan thousands of stops while factoring in on-site service duration, appointment windows, capacity, and operational SLAs.",
         icon: "RocketLaunch",
       },
       {

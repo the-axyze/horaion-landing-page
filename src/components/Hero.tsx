@@ -151,7 +151,7 @@ const HeroCopy = () => (
     >
       Transform your most challenging scheduling problems into automated
       solutions. Our AI engine understands constraints, preferences, and
-      conflicts to create optimal schedules in seconds.
+      conflicts to create optimal schedules.
     </Typography>
     <Box
       component={motion.div}
