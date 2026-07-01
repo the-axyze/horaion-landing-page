@@ -37,30 +37,28 @@ const story: StoryEntry[] = [
     date: "2022 - 2023",
     title: "On-demand delivery assignment recommender",
     description:
-      "Developed in collaboration with AI Singapore and a logistics partner to improve delivery assignment matching for real-time on-demand operations.",
-    logos: [
-      { src: aisgLogo, alt: "AI Singapore" }
-    ]
+      "Built with AI Singapore and a logistics partner to improve real-time delivery assignment, helping on-demand operations match jobs to available capacity more effectively.",
+    logos: [{ src: aisgLogo, alt: "AI Singapore" }],
   },
   {
     date: "2022 - 2024",
     title: "Next-generation roster management via reinforcement learning",
     description:
-      "A joint project in collaboration with AI Singapore and a company sponsor, using reinforcement learning to improve complex roster planning and scheduling.",
+      "Developed with AI Singapore and a company sponsor to explore reinforcement learning for complex roster planning, balancing coverage needs, constraints, and workforce preferences.",
     logos: [{ src: aisgLogo, alt: "AI Singapore" }],
   },
   {
     date: "2023 - 2025",
     title: "Acute workforce response via Generative Flow Networks and Graph Neural Networks",
     description:
-      "A joint project with AI Singapore and company sponsor using patient lifecycle demand signals, Generative Flow Networks, and Graph Neural Networks to improve staffing response.",
+      "Built with AI Singapore and a company sponsor to turn patient lifecycle demand signals into better staffing response, using Generative Flow Networks and Graph Neural Networks.",
     logos: [{ src: aisgLogo, alt: "AI Singapore" }],
   },
   {
     date: "2026 to present",
     title: "Horaion is born",
     description:
-      "Three years of work, a team that spans software engineering, business development and investor relations — all pulling in one direction.",
+      "Formed from years of applied optimisation work across logistics, gig workforces, and healthcare, bringing engineering, business, and investor experience into one focused team.",
     logos: [{ src: horaionIcon, alt: "Horaion" }],
   },
 ];
