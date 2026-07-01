@@ -1,6 +1,7 @@
 import { lazy, Suspense, type ReactNode } from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
 import Layout from "./components/Layout";
+import ScrollToTop from "./components/ScrollToTop";
 import { services } from "./data/services";
 import Home from "./pages/Home";
 
@@ -25,26 +26,29 @@ const withSuspense = (element: ReactNode) => (
 
 const App = () => {
   return (
-    <Routes>
-      <Route path="/" element={<Layout />}>
-        <Route index element={<Home />} />
-        <Route path="contact" element={withSuspense(<Contact />)} />
-        <Route path="about" element={withSuspense(<About />)} />
-        <Route path="pricing" element={withSuspense(<Pricing />)} />
-        <Route path="demo" element={withSuspense(<Demo />)} />
-        <Route path="faq" element={withSuspense(<FAQ />)} />
-        <Route path="start-free" element={withSuspense(<StartFree />)} />
+    <>
+      <ScrollToTop />
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="contact" element={withSuspense(<Contact />)} />
+          <Route path="about" element={withSuspense(<About />)} />
+          <Route path="pricing" element={withSuspense(<Pricing />)} />
+          <Route path="demo" element={withSuspense(<Demo />)} />
+          <Route path="faq" element={withSuspense(<FAQ />)} />
+          <Route path="start-free" element={withSuspense(<StartFree />)} />
 
-        {services.map(({ slug, data }) => (
-          <Route
-            key={slug}
-            path={slug}
-            element={withSuspense(<ServicePageTemplate data={data} />)}
-          />
-        ))}
-      </Route>
-      <Route path="*" element={<Navigate to="/" />} />
-    </Routes>
+          {services.map(({ slug, data }) => (
+            <Route
+              key={slug}
+              path={slug}
+              element={withSuspense(<ServicePageTemplate data={data} />)}
+            />
+          ))}
+        </Route>
+        <Route path="*" element={<Navigate to="/" />} />
+      </Routes>
+    </>
   );
 };
 
