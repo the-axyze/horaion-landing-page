@@ -215,7 +215,7 @@ const HeroMedia = ({ float }: { float: boolean }) => (
     <MediaFrame>
       <Box
         component="img"
-        src="/products/overview.webp"
+        src="/products/dashboard.webp"
         alt="Master complex scheduling with AI"
         loading="eager"
         decoding="async"
