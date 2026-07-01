@@ -12,19 +12,59 @@ import { Helmet } from "react-helmet-async";
 
 const faqs = [
   {
-    question: "How does Horaion's AI scheduling work?",
+    question: "How can Horaion help control labour costs?",
     answer:
-      "Horaion uses advanced machine learning algorithms to analyse your constraints, preferences, and historical data. It then generates optimal schedules to fulfil your business requirements.",
+      "Horaion helps teams plan staffing around expected demand, so busy periods are covered without overloading quieter shifts. Better demand matching can reduce unnecessary overtime, last-minute fixes, and avoidable labour spend.",
   },
   {
-    question: "How long does it take to get set up?",
+    question: "Can Horaion help with compliance and workforce rules?",
     answer:
-      "Most teams are up and running within a day. Our onboarding team will guide you through the initial configuration, and our platform is designed to integrate seamlessly with the tools you already use.",
+      "Yes. Rest-day expectations, approved leave, role requirements, coverage policies, and contract rules can be reflected in the scheduling process. Managers still review the final roster, but Horaion helps flag plans that may need attention before they reach the floor.",
   },
   {
-    question: "Can I cancel my subscription at any time?",
+    question: "How does Horaion improve employee fairness?",
     answer:
-      "Yes, absolutely. There are no long-term commitments. You can cancel your subscription at any time from your account settings, and you won't be charged beyond your current billing period.",
+      "Horaion can account for availability, leave, preferred shifts, and how preferences were handled in past schedules. This gives managers a more consistent way to balance business needs with employee wellbeing and fairness.",
+  },
+  {
+    question: "Will managers lose control of the roster?",
+    answer:
+      "No. Horaion gives managers a stronger starting point, not a black-box final answer. Managers can review schedules, understand trade-offs, make adjustments, and decide what gets published.",
+  },
+  {
+    question: "Can Horaion support teams that share staff?",
+    answer:
+      "Yes. When employees work across departments, locations, or roles, Horaion can account for confirmed commitments elsewhere. This helps reduce double-booking and makes cross-team planning easier for managers.",
+  },
+  {
+    question: "Can Horaion help design better shifts?",
+    answer:
+      "Yes. Horaion can help propose shift structures around peak hours, business demand, allowed start times, and preferred shift lengths. This helps teams move beyond outdated templates and build shifts that better match how the business actually operates.",
+  },
+  {
+    question: "How does demand forecasting improve planning?",
+    answer:
+      "Demand forecasting gives leaders a clearer view of future staffing needs before the schedule is built. That helps with labour budgeting, peak-period planning, department-level coverage, and earlier decisions around staffing gaps.",
+  },
+  {
+    question: "What day-to-day problems can Horaion reduce?",
+    answer:
+      "Horaion is built to reduce common roster problems: uncovered shifts, unnecessary overtime, double-booked staff, uneven preference handling, and repeated manual edits. The aim is a calmer planning cycle and fewer surprises during operations.",
+  },
+  {
+    question: "Can Horaion handle part-time, flexi, or gig workers?",
+    answer:
+      "Yes. Horaion is designed for workforces where availability changes and coverage needs move quickly. Managers can plan around different availability windows, role requirements, and demand peaks without relying on manual spreadsheet matching.",
+  },
+  {
+    question: "How does leave management connect to scheduling?",
+    answer:
+      "Approved leave can flow into scheduling so managers do not have to manually reconcile time-off requests against the roster. This helps reduce accidental assignments, back-and-forth approvals, and schedule rework.",
+  },
+  {
+    question: "What does implementation usually involve?",
+    answer:
+      "The key step is mapping how your operation already works: departments, roles, employee profiles, shift rules, demand patterns, leave policies, and approval workflows. Once that foundation is clear, Horaion can support repeatable planning instead of one-off spreadsheet work.",
   },
 ];
 
