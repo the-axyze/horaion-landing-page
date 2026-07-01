@@ -11,15 +11,15 @@ import {
 const features = [
   {
     icon: <RocketLaunch fontSize="large" />,
-    title: "AI-Powered Intelligence",
+    title: "Constraint-Aware Planning",
     description:
-      "Advanced machine learning algorithms understand complex scheduling constraints and preferences to generate optimal solutions.",
+      "Model your scheduling rules, preferences, and coverage needs so the roster starts from the realities of your operation.",
   },
   {
     icon: <AccessTime fontSize="large" />,
-    title: "Real-Time Optimization",
+    title: "Responsive Planning",
     description:
-      "Instantly adapt to changes, conflicts, and new requirements. Your schedule stays perfect as conditions evolve.",
+      "Adjust to changes, conflicts, and new requirements while keeping the roster aligned with operational needs.",
   },
   {
     icon: <Groups fontSize="large" />,
@@ -29,15 +29,15 @@ const features = [
   },
   {
     icon: <ElectricBolt fontSize="large" />,
-    title: "Lightning Fast Results",
+    title: "Faster Planning Cycles",
     description:
-      "Generate complex schedules to meet your requirements. What used to take days now happens instantly.",
+      "Generate schedule options more efficiently, helping teams reduce manual effort and review trade-offs sooner.",
   },
   {
     icon: <Security fontSize="large" />,
-    title: "Enterprise Security",
+    title: "Security-Minded Workflows",
     description:
-      "Bank-grade encryption and compliance with SOC 2, GDPR, and HIPAA standards protect your sensitive data.",
+      "Support careful handling of workforce data across scheduling workflows, access needs, and operational reviews.",
   },
   {
     icon: <Insights fontSize="large" />,

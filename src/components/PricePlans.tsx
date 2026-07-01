@@ -151,8 +151,8 @@ const PricePlans = () => (
         color="canvas.mist"
         sx={{ mb: 8, lineHeight: 1.6 }}
       >
-        Achieve more with our advanced plans or try it out free for 30 days.
-        Change or cancel your plans anytime.
+        Tell us about your workforce, rules, and rollout needs. We'll help scope
+        a plan that fits how your operation schedules.
       </Typography>
     </Container>
 

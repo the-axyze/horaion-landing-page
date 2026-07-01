@@ -13,8 +13,8 @@ const team = [
     name: "Lau Hoong Chuin",
     role: "Founder",
     description: `
-Professor Lau Hoong Chuin is a leading expert in artificial intelligence,
-operations research, and large-scale optimization.
+Professor Lau Hoong Chuin works across artificial intelligence, operations
+research, and large-scale optimization.
 
 As the founder of Horaion, he brings deep expertise in AI-driven planning,
 scheduling, and decision-making systems.
@@ -22,8 +22,8 @@ scheduling, and decision-making systems.
 His research and industry work span logistics, transportation, urban systems,
 and enterprise optimization.
 
-He gives Horaion strong technical leadership, practical domain expertise,
-and credibility in intelligent workforce optimization.
+He brings Horaion technical leadership and practical domain expertise in
+intelligent workforce optimization.
     `.trim(),
     image: hoongChuinLau,
   },

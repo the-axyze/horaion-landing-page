@@ -16,7 +16,7 @@ export const demandForecastingData: ServiceData = {
     sectionSubtitle: "",
     benefits: [
       "Hour-level forecasts, by location and skill",
-      "Auto-detected seasonality, holidays, and one-off events",
+      "Seasonality patterns and manual event adjustments",
       "Forecast feeds directly into shift planning — no CSVs in between",
     ],
     items: [
@@ -29,7 +29,7 @@ export const demandForecastingData: ServiceData = {
       {
         title: "Peak Period Planning",
         description:
-          "Spot demand surges weeks in advance. Plan staffing, inventory, and overtime budget before the pressure hits.",
+          "Spot likely demand changes earlier, so teams can plan staffing, inventory, and overtime budgets with more lead time.",
         icon: "TrendingUp",
       },
       {
@@ -61,7 +61,7 @@ export const demandForecastingData: ServiceData = {
         stepNumber: 3,
         title: "Plug into staffing decisions",
         description:
-          "Forecasts feed scheduling, shift opening, and capacity planning — with confidence intervals your team can reason about.",
+          "Forecasts feed scheduling, shift opening, and capacity planning so teams can plan staffing around expected demand.",
       },
     ],
   },

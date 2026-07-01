@@ -34,7 +34,7 @@ export const profileManagementData: ServiceData = {
       {
         title: "Full Integration With Scheduling",
         description:
-          "Changes to employee profiles flow straight into scheduling, so rosters always use the latest workforce data.",
+          "Changes to employee profiles flow into scheduling, so rosters use updated workforce data.",
         icon: "AutoAwesome",
       },
     ],
@@ -60,7 +60,7 @@ export const profileManagementData: ServiceData = {
         stepNumber: 3,
         title: "Sync with scheduling and ops",
         description:
-          "Profiles feed directly into rosters, leave approvals, and payroll. Updates propagate everywhere in real time.",
+          "Profiles feed into rosters, leave approvals, and payroll so teams can work from a more consistent source of workforce data.",
       },
     ],
   },

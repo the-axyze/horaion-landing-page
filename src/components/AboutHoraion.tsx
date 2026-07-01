@@ -22,10 +22,10 @@ const AboutHoraion = () => {
           At Horaion, our mission is to reimagine HR systems with AI and
           humanity — streamlining operations while keeping people at the center.
           Our core technology was developed at SMU and commercialized by a
-          talented team of builders and researchers. We combine state-of-the-art
+          talented team of builders and researchers. We combine applied
           optimization, responsible AI, and thoughtful design to help
           organizations schedule smarter, support employees better, and make
-          data-informed decisions with confidence.
+          more informed planning decisions.
         </Typography>
       </Container>
     </Box>

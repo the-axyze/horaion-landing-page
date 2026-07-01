@@ -6,7 +6,7 @@ export const schedulingSolutionsData: ServiceData = {
     badgeLabel: "AI Scheduling Solutions",
     title: "Stop fighting your spreadsheets",
     subtitle:
-      "From hospital wards to gig workforces, we turn weeks of manual rostering into minutes. Our engine pairs operations research with explainable AI to produce schedules that respect hard constraints, preferences, and real operational trade-offs.",
+      "From hospital wards to gig workforces, Horaion helps teams generate roster options in minutes. Our engine pairs operations research with practical AI to produce schedules around regulations, hard constraints, preferences, and real operational trade-offs.",
     ctaText: "Book a Demo",
     ctaLink: "/demo",
     imageSrc: "/products/overview.webp",
@@ -15,7 +15,7 @@ export const schedulingSolutionsData: ServiceData = {
     sectionTitle: "Built for the hardest scheduling problems",
     sectionSubtitle: "",
     benefits: [
-      "Generate schedules that respect every hard constraint",
+      "Generate schedules around regulations, coverage requirements, and hard operational rules",
       "See why each assignment was chosen",
       "Fit cleanly into your roster, payroll, and HRIS workflow",
     ],
@@ -29,7 +29,7 @@ export const schedulingSolutionsData: ServiceData = {
       {
         title: "Fair, Compliant, Transparent",
         description:
-          "Built-in checks for labor laws and contractual rules, with audit-ready logs that show exactly why each shift was assigned.",
+          "Configurable checks help managers consider labour rules, contractual requirements, and assignment rationale before publishing.",
         icon: "TrendingUp",
       },
     ],
@@ -37,7 +37,7 @@ export const schedulingSolutionsData: ServiceData = {
   howItWorks: {
     sectionTitle: "How It Works",
     sectionSubtitle:
-      "From your first conversation to a live schedule — typically inside a few weeks.",
+      "From your first conversation to a scheduling workflow your team can test.",
     steps: [
       {
         stepNumber: 1,
@@ -55,7 +55,7 @@ export const schedulingSolutionsData: ServiceData = {
         stepNumber: 3,
         title: "Roll out and refine",
         description:
-          "Publish to your existing tools, gather feedback, and tune the model. Each cycle gets faster and more accurate.",
+          "Publish to your existing tools, gather feedback, and tune the model so each planning cycle has clearer inputs.",
       },
     ],
   },

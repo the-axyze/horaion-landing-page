@@ -3,9 +3,9 @@ import { Link as RouterLink } from "react-router-dom";
 import { MovingBorder } from "./MovingBorder";
 
 const stats = [
-  { value: "10,000+", label: "Organizations Trust Us" },
-  { value: "99.9%", label: "Uptime Guarantee" },
-  { value: "24/7", label: "Expert Support" },
+  { value: "Rules", label: "Mapped to Your Operation" },
+  { value: "Demand", label: "Aligned to Staffing Needs" },
+  { value: "People", label: "Preferences Considered" },
 ];
 
 const CTA = () => {
@@ -19,7 +19,7 @@ const CTA = () => {
           align="center"
           sx={{ mb: 2 }}
         >
-          Ready to Transform Your Scheduling Process?
+          Ready to Improve Your Scheduling Process?
         </Typography>
         <Typography
           variant="h6"
@@ -27,8 +27,8 @@ const CTA = () => {
           color="#FFFCF6"
           sx={{ mb: 6, lineHeight: 1.6, maxWidth: 600, mx: "auto" }}
         >
-          Join thousands of organizations already using our AI technology to
-          solve their most complex scheduling challenges.
+          See how Horaion can help your team plan staffing around demand,
+          constraints, and employee preferences.
         </Typography>
 
         <Box

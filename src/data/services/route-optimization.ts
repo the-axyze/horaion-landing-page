@@ -6,7 +6,7 @@ export const routeOptimizationData: ServiceData = {
     badgeLabel: "Route Optimization",
     title: "Routes that keep up with your day",
     subtitle:
-      "Where Horaion started. Born from our work with UParcel on Singapore last-mile, our routing engine plans every stop around real traffic, service duration, time windows, and transport constraints.",
+      "Where Horaion started. Born from our work with a logistics company on Singapore last-mile operations, our routing engine plans stops around travel time, service duration, time windows, and transport constraints.",
     ctaText: "Book a Demo",
     ctaLink: "/demo",
     imageSrc: "/products/route-optimization.webp",
@@ -23,7 +23,7 @@ export const routeOptimizationData: ServiceData = {
       {
         title: "Service-Aware Planning",
         description:
-          "Plan thousands of stops while factoring in on-site service duration, appointment windows, capacity, and operational SLAs.",
+          "Plan large sets of stops while factoring in on-site service duration, appointment windows, capacity, and service commitments.",
         icon: "RocketLaunch",
       },
       {
@@ -43,7 +43,7 @@ export const routeOptimizationData: ServiceData = {
   howItWorks: {
     sectionTitle: "How It Works",
     sectionSubtitle:
-      "From a list of jobs to a dispatched field team in minutes.",
+      "From a list of jobs to route options your team can review.",
     steps: [
       {
         stepNumber: 1,
@@ -55,7 +55,7 @@ export const routeOptimizationData: ServiceData = {
         stepNumber: 2,
         title: "Generate optimized routes",
         description:
-          "The engine builds routes that respect every constraint and optimize for the right outcome - travel time, cost, transport mode, or a balanced mix.",
+          "The engine builds route options around your constraints and target outcomes - travel time, cost, transport mode, or a balanced mix.",
       },
       {
         stepNumber: 3,

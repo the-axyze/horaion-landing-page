@@ -2,27 +2,21 @@ import { useState, useEffect } from "react";
 import { Box, Typography, Container, Paper, IconButton } from "@mui/material";
 import { FormatQuote, ArrowBack, ArrowForward } from "@mui/icons-material";
 
-const testimonials = [
+const planningNotes = [
   {
     quote:
-      "Horaion completely transformed how our team operates. We cut our reporting time in half within the first month alone.",
-    name: "Sarah Lim",
-    role: "Operations Manager",
-    company: "TechCorp Pte Ltd",
+      "Availability, leave, demand, and role requirements often sit in different places. Horaion brings those inputs into the scheduling flow.",
+    title: "Connected planning inputs",
   },
   {
     quote:
-      "The onboarding was seamless and the support team was incredibly responsive. I'd recommend this to any growing business.",
-    name: "James Tan",
-    role: "Head of Product",
-    company: "Finova Solutions",
+      "Managers need rosters that meet coverage needs without ignoring employee preferences, fairness, and operational constraints.",
+    title: "Balanced roster decisions",
   },
   {
     quote:
-      "We evaluated five platforms before choosing Horaion. The depth of features at this price point is unmatched.",
-    name: "Priya Nair",
-    role: "CTO",
-    company: "Meridian Health",
+      "When schedules change, teams need a clearer way to review trade-offs and adjust the plan before it reaches the floor.",
+    title: "More practical review cycles",
   },
 ];
 
@@ -42,18 +36,18 @@ const Testimonials = () => {
   };
 
   const prev = () =>
-    goTo((current - 1 + testimonials.length) % testimonials.length);
-  const next = () => goTo((current + 1) % testimonials.length);
+    goTo((current - 1 + planningNotes.length) % planningNotes.length);
+  const next = () => goTo((current + 1) % planningNotes.length);
 
   useEffect(() => {
     if (paused) return;
     const timer = setInterval(() => {
-      goTo((current + 1) % testimonials.length);
+      goTo((current + 1) % planningNotes.length);
     }, INTERVAL_MS);
     return () => clearInterval(timer);
   }, [current, paused]);
 
-  const t = testimonials[current];
+  const t = planningNotes[current];
 
   return (
     <Box sx={{ pt: 4, pb: 10, px: { xs: 3, md: 8 } }}>
@@ -64,8 +58,7 @@ const Testimonials = () => {
           color="#FFFCF6"
           sx={{ mb: 6, lineHeight: 1.6, maxWidth: 600, mx: "auto" }}
         >
-          Don't just take it from us. Hear what our customers have to say about
-          our solution.
+          Practical scheduling problems Horaion is built to help teams manage.
         </Typography>
 
         <Paper
@@ -106,10 +99,7 @@ const Testimonials = () => {
           <Box display="flex" alignItems="center" gap={2}>
             <Box>
               <Typography color="#FFFCF6" variant="subtitle1" fontWeight={700}>
-                {t.name}
-              </Typography>
-              <Typography variant="body2" color="#EDECE8">
-                {t.role}, {t.company}
+                {t.title}
               </Typography>
             </Box>
           </Box>
@@ -127,7 +117,7 @@ const Testimonials = () => {
             <ArrowBack fontSize="small" sx={{ color: "#FFFCF6" }} />
           </IconButton>
 
-          {testimonials.map((_, index) => (
+          {planningNotes.map((_, index) => (
             <Box
               key={index}
               onClick={() => goTo(index)}

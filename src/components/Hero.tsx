@@ -7,9 +7,9 @@ import MediaFrame from "./MediaFrame";
 import { MovingBorder } from "./MovingBorder";
 
 const stats = [
-  { value: "98%", label: "Accuracy" },
-  { value: "10x", label: "Faster" },
-  { value: "24/7", label: "Available" },
+  { value: "Rules", label: "Mapped" },
+  { value: "Demand", label: "Aligned" },
+  { value: "People", label: "Considered" },
 ];
 
 const heroKeyframes = {
@@ -149,9 +149,8 @@ const HeroCopy = () => (
         fontWeight: 400,
       }}
     >
-      Transform your most challenging scheduling problems into automated
-      solutions. Our AI engine understands constraints, preferences, and
-      conflicts to create optimal schedules.
+      Build workable rosters around demand, constraints, preferences, and
+      conflicts, so managers spend less time piecing schedules together by hand.
     </Typography>
     <Box
       component={motion.div}
