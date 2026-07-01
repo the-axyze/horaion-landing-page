@@ -9,7 +9,7 @@ export const shiftPreferencesData: ServiceData = {
       "Employees can mark the shifts they prefer for specific dates, giving managers a clearer signal before the roster is generated. Horaion uses those preferences alongside coverage needs and the past 30 days of fulfilment history.",
     ctaText: "Book a Demo",
     ctaLink: "/demo",
-    imageSrc: "/products/shift-preferences.webp",
+    imageSrc: "/products/shift-preference.webp",
   },
   features: {
     sectionTitle: "Preference-aware scheduling",
