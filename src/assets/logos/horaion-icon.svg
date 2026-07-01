@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 520" width="520" height="520">
+<defs>
+  <linearGradient id="goldRay" x1="0%" y1="0%" x2="100%" y2="100%">
+    <stop offset="0%" stop-color="#F6DFA0"/>
+    <stop offset="50%" stop-color="#D2AC57"/>
+    <stop offset="100%" stop-color="#A9823C"/>
+  </linearGradient>
+  <linearGradient id="silverRay" x1="0%" y1="0%" x2="100%" y2="100%">
+    <stop offset="0%" stop-color="#F2F4F7"/>
+    <stop offset="50%" stop-color="#C2C9D3"/>
+    <stop offset="100%" stop-color="#8E97A3"/>
+  </linearGradient>
+  <radialGradient id="pearlHub" cx="35%" cy="35%" r="75%">
+    <stop offset="0%" stop-color="#FFFFFF"/>
+    <stop offset="100%" stop-color="#DCE2EA"/>
+  </radialGradient>
+</defs>
+<rect x="0" y="0" width="520" height="520" rx="96" fill="#0A1B33"/>
+<g transform="translate(0,0)"><path d="M 262.60 216.00 L 260.00 66.00 L 257.40 216.00 Z" fill="url(#goldRay)"/>
+<path d="M 271.13 217.35 L 289.65 110.92 L 266.03 216.34 Z" fill="#F5F7FA"/>
+<path d="M 279.24 220.34 L 310.51 138.05 L 274.44 218.35 Z" fill="#F5F7FA"/>
+<path d="M 286.61 224.86 L 346.67 130.29 L 282.28 221.97 Z" fill="#F5F7FA"/>
+<path d="M 292.95 230.73 L 402.84 117.16 L 289.27 227.05 Z" fill="url(#silverRay)"/>
+<path d="M 298.03 237.72 L 371.42 185.55 L 295.14 233.39 Z" fill="#F5F7FA"/>
+<path d="M 301.65 245.56 L 402.28 201.07 L 299.66 240.76 Z" fill="#F5F7FA"/>
+<path d="M 303.66 253.97 L 387.50 234.64 L 302.65 248.87 Z" fill="#F5F7FA"/>
+<path d="M 304.00 262.60 L 454.00 260.00 L 304.00 257.40 Z" fill="url(#goldRay)"/>
+<path d="M 302.65 271.13 L 409.08 289.65 L 303.66 266.03 Z" fill="#F5F7FA"/>
+<path d="M 299.66 279.24 L 381.95 310.51 L 301.65 274.44 Z" fill="#F5F7FA"/>
+<path d="M 295.14 286.61 L 389.71 346.67 L 298.03 282.28 Z" fill="#F5F7FA"/>
+<path d="M 289.27 292.95 L 402.84 402.84 L 292.95 289.27 Z" fill="url(#silverRay)"/>
+<path d="M 282.28 298.03 L 334.45 371.42 L 286.61 295.14 Z" fill="#F5F7FA"/>
+<path d="M 274.44 301.65 L 318.93 402.28 L 279.24 299.66 Z" fill="#F5F7FA"/>
+<path d="M 266.03 303.66 L 285.36 387.50 L 271.13 302.65 Z" fill="#F5F7FA"/>
+<path d="M 257.40 304.00 L 260.00 454.00 L 262.60 304.00 Z" fill="url(#goldRay)"/>
+<path d="M 248.87 302.65 L 230.35 409.08 L 253.97 303.66 Z" fill="#F5F7FA"/>
+<path d="M 240.76 299.66 L 209.49 381.95 L 245.56 301.65 Z" fill="#F5F7FA"/>
+<path d="M 233.39 295.14 L 173.33 389.71 L 237.72 298.03 Z" fill="#F5F7FA"/>
+<path d="M 227.05 289.27 L 117.16 402.84 L 230.73 292.95 Z" fill="url(#silverRay)"/>
+<path d="M 221.97 282.28 L 148.58 334.45 L 224.86 286.61 Z" fill="#F5F7FA"/>
+<path d="M 218.35 274.44 L 117.72 318.93 L 220.34 279.24 Z" fill="#F5F7FA"/>
+<path d="M 216.34 266.03 L 132.50 285.36 L 217.35 271.13 Z" fill="#F5F7FA"/>
+<path d="M 216.00 257.40 L 66.00 260.00 L 216.00 262.60 Z" fill="url(#goldRay)"/>
+<path d="M 217.35 248.87 L 110.92 230.35 L 216.34 253.97 Z" fill="#F5F7FA"/>
+<path d="M 220.34 240.76 L 138.05 209.49 L 218.35 245.56 Z" fill="#F5F7FA"/>
+<path d="M 224.86 233.39 L 130.29 173.33 L 221.97 237.72 Z" fill="#F5F7FA"/>
+<path d="M 230.73 227.05 L 117.16 117.16 L 227.05 230.73 Z" fill="url(#silverRay)"/>
+<path d="M 237.72 221.97 L 185.55 148.58 L 233.39 224.86 Z" fill="#F5F7FA"/>
+<path d="M 245.56 218.35 L 201.07 117.72 L 240.76 220.34 Z" fill="#F5F7FA"/>
+<path d="M 253.97 216.34 L 234.64 132.50 L 248.87 217.35 Z" fill="#F5F7FA"/>
+<circle cx="260" cy="260" r="42" fill="none" stroke="url(#goldRay)" stroke-width="1.6"/>
+<circle cx="260" cy="260" r="34" fill="url(#pearlHub)"/>
+<circle cx="260" cy="260" r="34" fill="none" stroke="url(#silverRay)" stroke-width="1.3"/>
+</g>
+</svg>

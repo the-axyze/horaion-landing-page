@@ -11,8 +11,7 @@ import { Box, Stack, Typography } from "@mui/material";
 import { motion, useReducedMotion } from "framer-motion";
 
 import aisgLogo from "../assets/logos/aisg.jpg";
-import horaionLogo from "../assets/logos/horaion-logo-transparent.svg";
-import uparcelLogo from "../assets/logos/uparcel.webp";
+import horaionIcon from "../assets/logos/horaion-icon.svg";
 import { EASE_OUT_EXPO } from "../lib/motion";
 import Reveal from "./Reveal";
 
@@ -38,39 +37,31 @@ const story: StoryEntry[] = [
     date: "2022 - 2023",
     title: "On-demand delivery assignment recommender",
     description:
-      "AI Singapore and UParcel project to improve delivery assignment matching for on-demand operations.",
+      "Developed in collaboration with AI Singapore and a logistics partner to improve delivery assignment matching for real-time on-demand operations.",
     logos: [
-      { src: aisgLogo, alt: "AI Singapore" },
-      { src: uparcelLogo, alt: "UParcel" },
-    ],
+      { src: aisgLogo, alt: "AI Singapore" }
+    ]
   },
   {
     date: "2022 - 2024",
     title: "Next-generation roster management via reinforcement learning",
     description:
-      "AI Singapore and BIPO Services project using reinforcement learning to improve roster planning and scheduling.",
+      "A joint project in collaboration with AI Singapore and a company sponsor, using reinforcement learning to improve complex roster planning and scheduling.",
     logos: [{ src: aisgLogo, alt: "AI Singapore" }],
   },
   {
     date: "2023 - 2025",
     title: "Acute workforce response via Generative Flow Networks and Graph Neural Networks",
     description:
-      "AI Singapore and BIPO Services project using patient lifecycle demand signals, Generative Flow Networks, and Graph Neural Networks to improve staffing response.",
+      "A joint project with AI Singapore and company sponsor using patient lifecycle demand signals, Generative Flow Networks, and Graph Neural Networks to improve staffing response.",
     logos: [{ src: aisgLogo, alt: "AI Singapore" }],
   },
   {
-    date: "Mar 2025",
-    title: "Backed by AI Singapore",
-    description:
-      "Joined forces with AI Singapore to push our scheduling research deeper into applied AI.",
-    logos: [{ src: aisgLogo, alt: "AI Singapore" }],
-  },
-  {
-    date: "Late 2025 → 2026",
+    date: "2026 to present",
     title: "Horaion is born",
     description:
       "Three years of work, a team that spans software engineering, business development and investor relations — all pulling in one direction.",
-    logos: [{ src: horaionLogo, alt: "Horaion" }],
+    logos: [{ src: horaionIcon, alt: "Horaion" }],
   },
 ];
 
@@ -87,7 +78,6 @@ const LogoTile = ({ logo }: { logo: StoryLogo }) => {
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        p: 1.25,
         overflow: "hidden",
       }}
     >
@@ -96,7 +86,11 @@ const LogoTile = ({ logo }: { logo: StoryLogo }) => {
         src={logo.src}
         alt={logo.alt}
         loading="lazy"
-        sx={{ maxWidth: "100%", maxHeight: "100%", objectFit: "contain" }}
+        sx={{
+          width: "100%",
+          height: "100%",
+          objectFit: "contain",
+        }}
       />
     </Box>
   );
