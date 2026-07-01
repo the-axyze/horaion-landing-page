@@ -3,7 +3,8 @@ import type { ServiceData } from "../../types/service";
 export const flexiSchedulingData: ServiceData = {
   title: "Flexi Scheduling",
   hero: {
-    title: "Flexi Scheduling",
+    badgeLabel: "Flexi Scheduling",
+    title: "Make flexible scheduling less manual",
     subtitle:
       "For teams with variable demand and changing availability, we build rosters that keep coverage steady without turning scheduling into a manual grind.",
     ctaText: "Book a Demo",
@@ -45,7 +46,7 @@ export const flexiSchedulingData: ServiceData = {
     ],
   },
   cta: {
-    title: "Make flexible scheduling less manual",
+    title: "See it on your busiest week",
     subtitle:
       "See how the same scheduling engine can handle variable demand without a pile of spreadsheets.",
     primaryButtonText: "Book a Demo",

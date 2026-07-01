@@ -3,7 +3,8 @@ import type { ServiceData } from "../../types/service";
 export const profileManagementData: ServiceData = {
   title: "Profile Management",
   hero: {
-    title: "Profile Management",
+    badgeLabel: "Profile Management",
+    title: "One source of truth for your workforce",
     subtitle:
       "Skills, contracts, availability, and work rules — the data your scheduler needs to work properly. We turn scattered spreadsheets and HR exports into one source of truth that powers every roster decision.",
     ctaText: "Book a Demo",
@@ -64,7 +65,7 @@ export const profileManagementData: ServiceData = {
     ],
   },
   cta: {
-    title: "One source of truth for your workforce",
+    title: "See it on your workforce data",
     subtitle:
       "See how a clean profile layer makes every downstream system work better.",
     primaryButtonText: "Book a Demo",

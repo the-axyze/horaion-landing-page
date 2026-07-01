@@ -3,7 +3,8 @@ import type { ServiceData } from "../../types/service";
 export const demandForecastingData: ServiceData = {
   title: "Demand Forecasting",
   hero: {
-    title: "Demand Forecasting",
+    badgeLabel: "Demand Forecasting",
+    title: "Forecast like you mean to act on it",
     subtitle:
       "A roster is only as good as the demand it's built for. We forecast at the granularity scheduling actually needs — by hour, by store, by skill — and feed it straight into your shift plan.",
     ctaText: "Book a Demo",
@@ -65,9 +66,9 @@ export const demandForecastingData: ServiceData = {
     ],
   },
   cta: {
-    title: "Forecast like you mean to act on it",
+    title: "See it forecast your demand",
     subtitle:
-      "Demand forecasts that actually drive better schedules — see it on your data.",
+      "Demand forecasts that actually drive better schedules — run it on your own data.",
     primaryButtonText: "Book a Demo",
     primaryButtonLink: "/demo",
   },

@@ -3,7 +3,8 @@ import type { ServiceData } from "../../types/service";
 export const gigSchedulingData: ServiceData = {
   title: "Gig Scheduling",
   hero: {
-    title: "Gig Scheduling",
+    badgeLabel: "Gig Scheduling",
+    title: "Scale your gig workforce without scaling chaos",
     subtitle:
       "Match a fluid pool of part-time and gig workers to demand peaks, while keeping worker availability and coverage in sync.",
     ctaText: "Book a Demo",
@@ -65,7 +66,7 @@ export const gigSchedulingData: ServiceData = {
     ],
   },
   cta: {
-    title: "Scale your gig workforce without scaling chaos",
+    title: "Put it to work on your shifts",
     subtitle:
       "See how teams running hundreds of shifts a week keep availability, coverage, and employee management aligned.",
     primaryButtonText: "Book a Demo",

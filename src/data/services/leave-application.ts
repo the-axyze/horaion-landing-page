@@ -3,7 +3,8 @@ import type { ServiceData } from "../../types/service";
 export const leaveApplicationData: ServiceData = {
   title: "Leave Application",
   hero: {
-    title: "Leave Application",
+    badgeLabel: "Leave Application",
+    title: "Keep leave and scheduling in sync",
     subtitle:
       "Leave requests and scheduling stay in the same flow, so managers can approve time off with less back-and-forth.",
     ctaText: "Book a Demo",
@@ -61,7 +62,7 @@ export const leaveApplicationData: ServiceData = {
     ],
   },
   cta: {
-    title: "Keep leave and scheduling in sync",
+    title: "See it fit your leave workflow",
     subtitle:
       "Reduce manual coordination between leave requests and the roster.",
     primaryButtonText: "Book a Demo",

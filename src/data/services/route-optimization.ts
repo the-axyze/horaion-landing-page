@@ -3,7 +3,8 @@ import type { ServiceData } from "../../types/service";
 export const routeOptimizationData: ServiceData = {
   title: "Route Optimization",
   hero: {
-    title: "Route Optimization",
+    badgeLabel: "Route Optimization",
+    title: "Routes that keep up with your day",
     subtitle:
       "Where Horaion started. Born from our work with UParcel on Singapore last-mile, our routing engine plans every stop around real traffic, service duration, time windows, and transport constraints.",
     ctaText: "Book a Demo",
@@ -65,7 +66,7 @@ export const routeOptimizationData: ServiceData = {
     ],
   },
   cta: {
-    title: "Routes that keep up with your day",
+    title: "See it plan your routes",
     subtitle:
       "See how service duration, time windows, and transport-aware planning fit into one routing engine.",
     primaryButtonText: "Book a Demo",

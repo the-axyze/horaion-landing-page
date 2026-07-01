@@ -3,7 +3,8 @@ import type { ServiceData } from "../../types/service";
 export const schedulingSolutionsData: ServiceData = {
   title: "AI Scheduling Solutions",
   hero: {
-    title: "AI Scheduling Solutions",
+    badgeLabel: "AI Scheduling Solutions",
+    title: "Stop fighting your spreadsheets",
     subtitle:
       "From hospital wards to gig workforces, we turn weeks of manual rostering into minutes. Our engine pairs operations research with explainable AI to produce schedules that respect hard constraints, preferences, and real operational trade-offs.",
     ctaText: "Book a Demo",
@@ -59,9 +60,9 @@ export const schedulingSolutionsData: ServiceData = {
     ],
   },
   cta: {
-    title: "Stop fighting your spreadsheets",
+    title: "See it run on your roster",
     subtitle:
-      "See it run on your own schedule. Book a demo and we'll show you.",
+      "Book a demo and we'll run the engine on your real constraints.",
     primaryButtonText: "Book a demo",
     primaryButtonLink: "/demo",
   },
