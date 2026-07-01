@@ -10,6 +10,7 @@ import {
 } from "@mui/material";
 import { useEffect, useState } from "react";
 import { Link as RouterLink, useLocation } from "react-router-dom";
+import horaionLogo from "../../assets/logos/horaion-logo-transparent.svg";
 import { TRANSITION_FAST } from "../../lib/transitions";
 import { primaryLinks } from "./navConfig";
 import SolutionsMenu from "./SolutionsMenu";
@@ -121,7 +122,7 @@ const TopBar = ({ onOpenDrawer }: Props) => {
             component="img"
             sx={{ width: "100%", height: "100%" }}
             alt="Horaion Logo"
-            src="src/assets/logos/horaion-logo-transparent.svg"
+            src={horaionLogo}
             loading="eager"
             decoding="async"
           />
