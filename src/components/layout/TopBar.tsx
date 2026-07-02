@@ -111,16 +111,16 @@ const TopBar = ({ onOpenDrawer }: Props) => {
           component={RouterLink}
           to="/"
           sx={{
-            height: 150,
-            width: 150,
-            maxHeight: { xs: 100, md: 125 },
-            maxWidth: { xs: 100, md: 125 },
-            display: "inline-block",
+            width: { xs: 150, md: 240 },
+            height: { xs: 76, md: 96 },
+            display: "inline-flex",
+            alignItems: "center",
+            flexShrink: 0,
           }}
         >
           <Box
             component="img"
-            sx={{ width: "100%", height: "100%" }}
+            sx={{ width: "100%", height: "100%", objectFit: "contain" }}
             alt="Horaion Logo"
             src={horaionLogo}
             loading="eager"

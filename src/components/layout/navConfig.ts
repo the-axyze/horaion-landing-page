@@ -1,14 +1,23 @@
-export type NavLink =
-  | { label: string; path: string; children?: never }
-  | { label: string; path?: never; children: { label: string; path: string }[] };
+export type NavLink = {
+  label: string;
+  path?: string;
+  pathLabel?: string;
+  children?: NavLink[];
+};
 
 export const serviceLinks: NavLink[] = [
   {
     label: "Scheduling",
     children: [
-      { label: "Flexi Scheduling", path: "/flexi-scheduling" },
-      { label: "Gig Scheduling", path: "/gig-scheduling" },
-      { label: "Shift Preferences", path: "/shift-preferences" },
+      {
+        label: "Flexi Scheduling",
+        path: "/flexi-scheduling",
+        pathLabel: "Flexible Rostering",
+        children: [
+          { label: "Gig Scheduling", path: "/gig-scheduling" },
+          { label: "Shift Preferences", path: "/shift-preferences" },
+        ],
+      },
       { label: "Leave Application", path: "/leave-application" },
     ],
   },

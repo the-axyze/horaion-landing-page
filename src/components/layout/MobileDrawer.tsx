@@ -12,15 +12,33 @@ import {
 import { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { TRANSITION_FAST } from "../../lib/transitions";
-import { drawerOnlyLinks, primaryLinks, serviceLinks } from "./navConfig";
+import {
+  drawerOnlyLinks,
+  primaryLinks,
+  serviceLinks,
+  type NavLink,
+} from "./navConfig";
 
 interface Props {
   open: boolean;
   onClose: () => void;
 }
 
+const listItemStateSx = {
+  "&:hover": {
+    bgcolor: "rgba(255,255,255,0.08)",
+  },
+  "&.Mui-selected": {
+    bgcolor: "rgba(255,255,255,0.16)",
+  },
+  "&.Mui-selected:hover": {
+    bgcolor: "rgba(255,255,255,0.2)",
+  },
+};
+
 const MobileDrawer = ({ open, onClose }: Props) => {
   const [solutionsOpen, setSolutionsOpen] = useState(false);
+  const [openNested, setOpenNested] = useState<Record<string, boolean>>({});
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -28,10 +46,72 @@ const MobileDrawer = ({ open, onClose }: Props) => {
     navigate(path);
     onClose();
     setSolutionsOpen(false);
+    setOpenNested({});
   };
 
-  const selectedSx = {
-    "&.Mui-selected": { bgcolor: "rgba(255,255,255,0.15)" },
+  const toggleNested = (label: string) =>
+    setOpenNested((current) => ({
+      ...current,
+      [label]: !current[label],
+    }));
+
+  const isActivePath = (link: NavLink): boolean =>
+    link.path === location.pathname ||
+    Boolean(link.children?.some((child) => isActivePath(child)));
+
+  const renderServiceLink = (link: NavLink, depth = 1): React.ReactNode => {
+    const active = isActivePath(link);
+    const nestedOpen = openNested[link.label] ?? active;
+
+    if (link.children?.length) {
+      return (
+        <Box key={link.label}>
+          <ListItemButton
+            onClick={() => toggleNested(link.label)}
+            selected={active}
+            sx={{ ...listItemStateSx, pl: 2 + depth * 2 }}
+          >
+            <ListItemText
+              primary={link.label}
+              primaryTypographyProps={{ fontWeight: depth === 1 ? 600 : 500 }}
+            />
+            <KeyboardArrowDown
+              sx={{
+                transition: TRANSITION_FAST,
+                transform: nestedOpen ? "rotate(180deg)" : "rotate(0deg)",
+              }}
+            />
+          </ListItemButton>
+          <Collapse in={nestedOpen} timeout="auto" unmountOnExit>
+            <List disablePadding>
+              {link.path && (
+                <ListItemButton
+                  sx={{ ...listItemStateSx, pl: 4 + depth * 2 }}
+                  selected={location.pathname === link.path}
+                  onClick={() => go(link.path!)}
+                >
+                  <ListItemText primary={link.pathLabel ?? link.label} />
+                </ListItemButton>
+              )}
+              {link.children.map((child) => renderServiceLink(child, depth + 1))}
+            </List>
+          </Collapse>
+        </Box>
+      );
+    }
+
+    if (!link.path) return null;
+
+    return (
+      <ListItemButton
+        key={link.path}
+        sx={{ ...listItemStateSx, pl: 2 + depth * 2 }}
+        selected={location.pathname === link.path}
+        onClick={() => go(link.path!)}
+      >
+        <ListItemText primary={link.label} />
+      </ListItemButton>
+    );
   };
 
   return (
@@ -52,14 +132,17 @@ const MobileDrawer = ({ open, onClose }: Props) => {
           <ListItemButton
             onClick={() => go("/")}
             selected={location.pathname === "/"}
-            sx={selectedSx}
+            sx={listItemStateSx}
           >
             <ListItemText primary="Home" />
           </ListItemButton>
 
           <Divider sx={{ borderColor: "rgba(255,255,255,0.1)" }} />
 
-          <ListItemButton onClick={() => setSolutionsOpen(!solutionsOpen)}>
+          <ListItemButton
+            onClick={() => setSolutionsOpen(!solutionsOpen)}
+            sx={listItemStateSx}
+          >
             <ListItemText primary="Solutions" />
             <KeyboardArrowDown
               sx={{
@@ -71,30 +154,24 @@ const MobileDrawer = ({ open, onClose }: Props) => {
           <Collapse in={solutionsOpen} timeout="auto" unmountOnExit>
             <List disablePadding>
               {serviceLinks.map((s) =>
-                s.children ? (
+                s.children?.length && !s.path ? (
                   <Box key={s.label}>
-                    <ListItemButton>
-                      <ListItemText primary={s.label} />
+                    <ListItemButton disabled sx={{ opacity: "1 !important" }}>
+                      <ListItemText
+                        primary={s.label}
+                        primaryTypographyProps={{
+                          color: "rgba(255,252,246,0.58)",
+                          fontSize: "0.72rem",
+                          fontWeight: 800,
+                          letterSpacing: "0.12em",
+                          textTransform: "uppercase",
+                        }}
+                      />
                     </ListItemButton>
-                    {s.children.map((child) => (
-                      <ListItemButton
-                        key={child.path}
-                        sx={{ pl: 4 }}
-                        selected={location.pathname === child.path}
-                        onClick={() => go(child.path)}
-                      >
-                        <ListItemText primary={child.label} />
-                      </ListItemButton>
-                    ))}
+                    {s.children.map((child) => renderServiceLink(child))}
                   </Box>
                 ) : (
-                  <ListItemButton
-                    key={s.path}
-                    selected={location.pathname === s.path}
-                    onClick={() => go(s.path!)}
-                  >
-                    <ListItemText primary={s.label} />
-                  </ListItemButton>
+                  renderServiceLink(s, 0)
                 ),
               )}
             </List>
@@ -107,7 +184,7 @@ const MobileDrawer = ({ open, onClose }: Props) => {
               key={item.path}
               onClick={() => go(item.path)}
               selected={location.pathname === item.path}
-              sx={selectedSx}
+              sx={listItemStateSx}
             >
               <ListItemText primary={item.label} />
             </ListItemButton>
