@@ -110,6 +110,7 @@ const TopBar = ({ onOpenDrawer }: Props) => {
         <Box
           component={RouterLink}
           to="/"
+          aria-label="Horaion Home"
           sx={{
             width: { xs: 150, md: 240 },
             height: { xs: 76, md: 96 },
@@ -121,7 +122,7 @@ const TopBar = ({ onOpenDrawer }: Props) => {
           <Box
             component="img"
             sx={{ width: "100%", height: "100%", objectFit: "contain" }}
-            alt="Horaion Logo"
+            alt="Horaion"
             src={horaionLogo}
             loading="eager"
             decoding="async"

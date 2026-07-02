@@ -11,7 +11,17 @@ const Home = () => {
   return (
     <>
       <Helmet>
-        <title>Home</title>
+        <title>Horaion | AI Workforce Scheduling</title>
+        <meta
+          name="description"
+          content="Horaion helps teams build workforce schedules around demand, rules, employee preferences, and operational constraints."
+        />
+        <meta property="og:title" content="Horaion | AI Workforce Scheduling" />
+        <meta
+          property="og:description"
+          content="Build workable rosters around demand, constraints, preferences, and conflicts."
+        />
+        <meta property="og:site_name" content="Horaion" />
       </Helmet>
       <Hero />
       <Suspense fallback={null}>
