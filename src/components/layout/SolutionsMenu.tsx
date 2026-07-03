@@ -120,7 +120,7 @@ const SolutionsMenu = () => {
         }
         sx={{
           fontWeight: 500,
-          fontSize: "1.25rem",
+          fontSize: "1.0rem",
           position: "relative",
           whiteSpace: "nowrap",
           transition: TRANSITION_FAST,
@@ -169,7 +169,7 @@ const SolutionsMenu = () => {
                 sx={{
                   bgcolor: "transparent",
                   color: "rgba(255,252,246,0.58)",
-                  fontSize: "0.72rem",
+                  fontSize: "0.70rem",
                   fontWeight: 800,
                   letterSpacing: "0.12em",
                   lineHeight: 1,

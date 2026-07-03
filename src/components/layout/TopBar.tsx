@@ -21,7 +21,7 @@ interface Props {
 
 const navLinkSx = (active: boolean): SxProps<Theme> => ({
   fontWeight: 500,
-  fontSize: "1.25rem",
+  fontSize: "1.0rem",
   position: "relative",
   whiteSpace: "nowrap",
   transition: TRANSITION_FAST,
@@ -106,14 +106,20 @@ const TopBar = ({ onOpenDrawer }: Props) => {
           "background 0.25s ease, border 0.25s ease, box-shadow 0.25s ease",
       }}
     >
-      <Toolbar sx={{ gap: 2 }}>
+      <Toolbar
+        sx={{
+          minHeight: { xs: 60, md: 96 },
+          gap: { xs: 1, md: 2 },
+          px: { xs: 1.5, sm: 2, md: 3 },
+        }}
+      >
         <Box
           component={RouterLink}
           to="/"
           aria-label="Horaion Home"
           sx={{
-            width: { xs: 150, md: 240 },
-            height: { xs: 76, md: 96 },
+            width: { xs: 136, sm: 150, md: 240 },
+            height: { xs: 56, sm: 64, md: 96 },
             display: "inline-flex",
             alignItems: "center",
             flexShrink: 0,
