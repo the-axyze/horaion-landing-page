@@ -12,9 +12,9 @@ const socials = [
   {
     label: "LinkedIn",
     icon: <LinkedIn />,
-    href: "https://sg.linkedin.com/",
+    href: "https://www.linkedin.com/company/horaion",
     color: "#0077B5",
-    disabled: true,
+    disabled: false,
   },
 ];
 
