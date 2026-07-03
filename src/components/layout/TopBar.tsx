@@ -21,7 +21,7 @@ interface Props {
 
 const navLinkSx = (active: boolean): SxProps<Theme> => ({
   fontWeight: 500,
-  fontSize: "1.0rem",
+  fontSize: "0.8rem",
   position: "relative",
   whiteSpace: "nowrap",
   transition: TRANSITION_FAST,
