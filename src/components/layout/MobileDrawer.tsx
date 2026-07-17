@@ -13,7 +13,6 @@ import { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { TRANSITION_FAST } from "../../lib/transitions";
 import {
-  drawerOnlyLinks,
   primaryLinks,
   serviceLinks,
   type NavLink,
@@ -179,7 +178,7 @@ const MobileDrawer = ({ open, onClose }: Props) => {
 
           <Divider sx={{ borderColor: "rgba(255,255,255,0.1)" }} />
 
-          {[...primaryLinks, ...drawerOnlyLinks].map((item) => (
+          {primaryLinks.map((item) => (
             <ListItemButton
               key={item.path}
               onClick={() => go(item.path)}

@@ -31,8 +31,3 @@ export const primaryLinks: { label: string; path: string }[] = [
   { label: "Contact Us", path: "/contact" },
   { label: "FAQ", path: "/faq" },
 ];
-
-/** Links shown only inside the mobile drawer. */
-export const drawerOnlyLinks: { label: string; path: string }[] = [
-  { label: "Pricing", path: "/pricing" },
-];
